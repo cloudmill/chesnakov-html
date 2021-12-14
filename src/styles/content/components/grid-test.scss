@@ -1,0 +1,26 @@
+.grid-test {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  pointer-events: none;
+
+  &__container {
+    height: 100%;
+  }
+
+  &__row {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 40px;
+  }
+
+  &__col {
+    background-color: black;
+    opacity: 0.1;
+  }
+}

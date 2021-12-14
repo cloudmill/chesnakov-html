@@ -1,0 +1,27 @@
+// @use 'list';
+
+.header {
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(9, calc((100% - (40px * 11)) / 12) 40px) auto 40px auto;
+    grid-template-areas: "a a a . b b b . c c c c c c c . d . e . f";
+  }
+
+  &__area {
+    $areas: (a, b, c, d, e, f);
+
+    background-color: lightcyan;
+
+    @for $index from 1 to length($list: $areas) + 1 {
+      &--#{$index} {
+        grid-area: nth($list: $areas, $n: $index);
+      }
+    }
+  }
+}
