@@ -1,0 +1,38 @@
+// fonts
+$ff-1: "Manrope";
+$ff-2: "Kizo";
+
+// breakpoints
+$br-xxs: 320px;
+$br-xs: 375px;
+$br-s: 576px;
+$br-m: 768px;
+$br-t: 1024px;
+
+$br: 1280px;
+
+$br-l: 1366px;
+$br-ll: 1440px;
+$br-xl: 1680px;
+$br-xxl: 1920px;
+
+// grid
+$col-count: 12;
+$col-gap: 40px;
+$col: calc((100% - (#{$col-gap} * (#{$col-count} - 1))) / #{$col-count});
+
+// colors
+$colors: (
+  main: #3670ff,
+  black: #1d212c,
+  white: #ffffff,
+  gray-dark: #a8aebb,
+  gray: #cbd0db,
+  gray-light: #edeff3,
+);
+
+:root {
+  @each $color, $value in $colors {
+    --color-#{$color}: #{$value};
+  }
+}

@@ -1,3 +1,41 @@
 mixin footer
   footer.footer
-    |footer
+    .container
+      .footer__grid
+        .footer__grid-item
+          nav.footer__nav
+            ul.footer__list
+              each item in data.nav.slice(0, 3)
+                li.footer__list-item
+                  a.footer__link(href='#')
+                    |#{item}
+        .footer__grid-item
+          nav.footer__nav
+            ul.footer__list
+              each item in data.nav.slice(3)
+                li.footer__list-item
+                  a.footer__link(href='#')
+                    |#{item}
+        .footer__grid-item
+          ul.footer__list
+            each item in data.socials
+              li.footer__list-item
+                a.footer__link(href='#')
+                  |#{item}
+        .footer__grid-item
+          a.footer__link(href=`mailto:${data.email}`)
+            |#{data.email}
+        .footer__grid-item.justify-self--end
+          a.button(hred='#')
+            |задать вопрос
+        .footer__grid-item
+          small.footer__copyright
+            |© 2021 Официальный сайт Алексея Чеснокова
+        .footer__grid-item
+          a.footer__link.footer__link--small(href='#')
+            |Политика конфиденциальности
+        .footer__grid-item
+          .footer__company
+            |сделано в 
+            a.footer__company-link(href='#')
+              |cloudmill

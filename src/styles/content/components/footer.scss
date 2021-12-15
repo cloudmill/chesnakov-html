@@ -1,0 +1,67 @@
+.footer {
+  padding: 80px 0 64px 0;
+
+  background-color: var(--color-gray-light);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      "a a a b b b c c d d e e"
+      "f f f g g g g g h h h h";
+    column-gap: $col-gap;
+    row-gap: 80px;
+  }
+
+  &__grid-item {
+    $items: a b c d e f g h;
+
+    @for $i from 1 to length($items) + 1 {
+      &:nth-child(#{$i}) {
+        grid-area: nth($items, $i);
+      }
+    }
+
+    @media (max-width: ($br-xl - 1px)) {
+      @for $i from 1 to length($items) + 1 {
+        $item: nth($items, $i);
+
+        @if ($item == c) or ($item == g) {
+          &:nth-child(#{$i}) {
+            padding-right: $col-gap;
+          }
+        }
+
+        @if ($item == d) or ($item == h) {
+          &:nth-child(#{$i}) {
+            margin-left: -$col-gap;
+          }
+        }
+      }
+    }
+  }
+
+  &__nav {
+
+  }
+
+  &__list {
+
+  }
+  &__list-item {
+    &:not(:first-child) {
+      margin-top: 8px;
+    }
+  }
+
+  &__link {
+    display: inline;
+
+    font-size: 20px;
+    text-transform: uppercase;
+
+    &:hover {
+      color: lightgray;
+    }
+  }
+}

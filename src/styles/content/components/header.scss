@@ -1,27 +1,67 @@
-// @use 'list';
-
 .header {
+  $gap: 40px;
+
   position: fixed;
   z-index: 500;
   top: 0;
   left: 0;
   right: 0;
 
-  &__grid {
+  &__row {
+    $gap: 40px;
+    $count: 12;
+    $col: calc((100% - #{$gap} * (#{$count} - 1)) / #{$count});
+    
     display: grid;
-    grid-template-columns: repeat(9, calc((100% - (40px * 11)) / 12) 40px) auto 40px auto;
+    grid-template-columns: repeat(9, calc((100% - (#{$gap} * 11)) / 12) #{$gap}) auto $gap auto;
     grid-template-areas: "a a a . b b b . c c c c c c c . d . e . f";
+    
+    @media (max-width: ($br-xl - 1px)) {
+      grid-template-columns: repeat(7, #{$col} #{$gap}) #{$col} auto 1fr auto 1fr auto;
+      grid-template-areas: "a a a . b b b . c c c c c c c d . e . f";
+    }
+
+    @media (max-width: ($br-l - 1px)) {
+      grid-template-columns: #{$col} #{$gap} #{col} #{$gap} auto #{$gap} auto #{$gap}  ;
+      grid-template-areas: "a a a . b b b . c c c c c c c d . e . f";
+    }
   }
 
-  &__area {
+  &__col {
     $areas: (a, b, c, d, e, f);
 
-    background-color: lightcyan;
-
     @for $index from 1 to length($list: $areas) + 1 {
-      &--#{$index} {
+      &:nth-child(#{$index}) {
         grid-area: nth($list: $areas, $n: $index);
       }
+    }
+
+    &:last-child {
+      justify-self: end;
+    }
+  }
+
+  &__nav {
+
+  }
+
+  &__list {
+
+  }
+  &__list-item {
+    &:not(:first-child) {
+      margin-top: 5px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+
+    font-size: 14px;
+    text-transform: uppercase;
+
+    &:hover {
+      color: blue;
     }
   }
 }
