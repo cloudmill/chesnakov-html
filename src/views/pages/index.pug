@@ -2,15 +2,16 @@ extends ../layouts/master
 
 
 
-//- block header
-//- block footer
+block header
+block footer
 
-//- block grid-test
+block grid-test
 
 
 
 block content
-  ul
-    each route in data.routes
-      li
-        a(href=route.href)= route.title
+  .container
+    ul
+      each route in data.routes
+        li.margin.margin--10
+          a.button(href=route.href)= route.title

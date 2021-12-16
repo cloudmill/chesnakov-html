@@ -2,9 +2,6 @@
 $ff-1: "Manrope";
 $ff-2: "Kizo";
 
-$ff-root: $ff-1;
-$fw-root: 600;
-
 // breakpoints
 $br-xxs: 320px;
 $br-xs: 375px;
@@ -32,6 +29,4 @@ $col: calc((100% - (#{$col-gap} * (#{$col-count} - 1))) / #{$col-count});
   --color-gray-dark: #a8aebb;
   --color-gray: #cbd0db;
   --color-gray-light: #edeff3;
-
-  --color-root: var(--color-black);
 }

@@ -1,0 +1,28 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+  outline: none;
+}
+
+body {
+  font-family: $ff-1;
+  font-weight: 600;
+
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+a {
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
