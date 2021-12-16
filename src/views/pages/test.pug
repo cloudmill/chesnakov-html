@@ -1,0 +1,13 @@
+extends ../layouts/master
+
+block header
+block footer
+
+//- block grid-test
+
+block content
+  .container
+    .test
+      - for (let i = 0; i < 8; i++)
+        .test__item
+          |test-#{i}
