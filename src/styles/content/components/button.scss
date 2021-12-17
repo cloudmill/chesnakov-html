@@ -19,5 +19,12 @@
     &:hover {
       background-color: var(--color-blue-dark);
     }
+
+    @media (min-width: $breakpoint-d) {
+      padding: 12px 25px;
+
+      font-size: 14px;
+      line-height: (19 / 14);
+    }
   }
 }

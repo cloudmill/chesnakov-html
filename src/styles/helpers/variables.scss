@@ -8,8 +8,9 @@ $breakpoint-m: 320px;
 $breakpoint-t: 768px;
 
 $breakpoint-d: 1280px;
-$breakpoint-xd: 1680px;
-$breakpoint-xxd: 1920px;
+$breakpoint-xd: 1366px;
+$breakpoint-xxd: 1680px;
+$breakpoint-xxxd: 1920px;
 
 // grid
 $col-count-d: 12;
@@ -20,13 +21,13 @@ $col-gap-d: 40px;
 $col-gap-t: 20px;
 $col-gap-m: 15px;
 
-$col-d: '((100% - (#{$col-gap-d} * (#{$col-count-d - 1}))) / #{$col-count-d})';
-$col-t: '((100% - (#{$col-gap-t} * (#{$col-count-t - 1}))) / #{$col-count-t})';
-$col-m: '((100% - (#{$col-gap-m} * (#{$col-count-m - 1}))) / #{$col-count-m})';
+$col-d: "((100% - (#{$col-gap-d} * (#{$col-count-d - 1}))) / #{$col-count-d})";
+$col-t: "((100% - (#{$col-gap-t} * (#{$col-count-t - 1}))) / #{$col-count-t})";
+$col-m: "((100% - (#{$col-gap-m} * (#{$col-count-m - 1}))) / #{$col-count-m})";
 
-$col-with-gap-d: '(#{$col-d} + #{$col-gap-d})';
-$col-with-gap-t: '(#{$col-t} + #{$col-gap-t})';
-$col-with-gap-m: '(#{$col-m} + #{$col-gap-m})';
+$col-with-gap-d: "(#{$col-d} + #{$col-gap-d})";
+$col-with-gap-t: "(#{$col-t} + #{$col-gap-t})";
+$col-with-gap-m: "(#{$col-m} + #{$col-gap-m})";
 
 // colors
 :root {
