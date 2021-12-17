@@ -3,11 +3,11 @@ extends ../layouts/master
 block header
 block footer
 
-//- block grid-test
+block grid-test
 
 block content
   .container
     .test
-      - for (let i = 0; i < 8; i++)
-        .test__item
-          |test-#{i}
+      |test
+    .button
+      a.button__button.button__button--theme--dark(href='#')

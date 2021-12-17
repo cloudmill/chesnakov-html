@@ -10,9 +10,11 @@
       "href": "/about",
       "title": "О компании"
     },
+
     {
       "href": "/test",
-      "title": "Тестовая"
+      "title": "Тестовая",
+      "isTest": true
     }
   ],
 
