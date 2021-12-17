@@ -1,5 +1,12 @@
 .test {
-  min-height: 300vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 
-  background-image: linear-gradient(var(--color-white), var(--color-black));
+  &__item {
+    border: 1px solid black;
+
+    &:last-child {
+      margin-left: 10px;
+    }
+  }
 }

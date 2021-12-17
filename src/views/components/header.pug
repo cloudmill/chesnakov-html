@@ -1,37 +1,56 @@
 mixin header
   header.header
     .container
-      .header__row
-        .header__col
-          +logo.header__logo
-        .header__col
-          nav.header__nav
-            ul.header__list
-              - 
-                var items = [
-                  'Политическая экспертиза',
-                  'Мероприятия',
-                  'Книжная критика',
-                ]
-              each item in items
-                li.header__list-item
-                  a.header__link(href='#')
-                    |#{item}
-        .header__col
-          nav.header__nav
-            a.header__link(href='#')
-              |Обо мне
-        .header__col
-          ul.header__list
-            each item in data.socials
-              li.header__list-item
-                a.header__link(href='#')
-                  |#{item}
-        .header__col
-          - var email = 'info@chesnakov.ru'
-          a.header__link(href=`mailto:${email}`)
-            |#{email}
-        .header__col
-          a.button(href='#')
-            |задать вопрос
+      .header__grid
+        .header__grid-item
+          |logo
+
+        .header__grid-item
+          |nav
+        .header__grid-item
+          |about
+        .header__grid-item
+          |socials
+        .header__grid-item
+          |email
+
+        .header__grid-item
+          |button
+
+        .header__grid-item
+          |email-mobile
+        .header__grid-item
+          |menu
+        //- .header__col
+        //-   +logo.header__logo
+        //- .header__col
+        //-   nav.header__nav
+        //-     ul.header__list
+        //-       - 
+        //-         var items = [
+        //-           'Политическая экспертиза',
+        //-           'Мероприятия',
+        //-           'Книжная критика',
+        //-         ]
+        //-       each item in items
+        //-         li.header__list-item
+        //-           a.header__link(href='#')
+        //-             |#{item}
+        //- .header__col
+        //-   nav.header__nav
+        //-     a.header__link(href='#')
+        //-       |Обо мне
+        //- .header__col
+        //-   ul.header__list
+        //-     each item in data.socials
+        //-       li.header__list-item
+        //-         a.header__link(href='#')
+        //-           |#{item}
+        //- .header__col
+        //-   - var email = 'info@chesnakov.ru'
+        //-   a.header__link(href=`mailto:${email}`)
+        //-     |#{email}
+        //- .header__col
+        //-   a.button(href='#')
+        //-     |задать вопрос
 

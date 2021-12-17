@@ -1,0 +1,72 @@
+.header {
+  &__grid {
+    $button-width: 36px;
+
+    display: grid;
+    grid-template-columns: 1fr $col-gap-m $button-width 8px $button-width;
+
+
+    &-item {
+      /*
+      // logo
+      &:nth-child(1) {
+
+      }
+
+      // nav
+      &:nth-child(2) {
+
+      }
+      // about
+      &:nth-child(3) {
+
+      }
+      // socials
+      &:nth-child(4) {
+
+      }
+      // email
+      &:nth-child(5) {
+
+      }
+
+      // button
+      &:nth-child(6) {
+
+      }
+
+      // email-mobile
+      &:nth-child(7) {
+
+      }
+      // menu
+      &:nth-child(8) {
+
+      }
+      */
+
+      // logo
+      &:nth-child(1) {
+
+      }
+
+      // nav
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6) {
+        display: none;
+      }
+
+      // email-mobile
+      &:nth-child(7) {
+        
+      }
+      // menu
+      &:nth-child(8) {
+
+      }
+    }
+  }
+}

@@ -3,16 +3,12 @@
 
   "routes": [
     {
-      "href": "/main",
+      "href": "main",
       "title": "Главная"
-    },
-    {
-      "href": "/about",
-      "title": "О компании"
     },
 
     {
-      "href": "/test",
+      "href": "test",
       "title": "Тестовая",
       "isTest": true
     }
