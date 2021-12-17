@@ -3,30 +3,48 @@ $ff-1: "Manrope";
 $ff-2: "Kizo";
 
 // breakpoints
-$br-xxs: 320px;
-$br-xs: 375px;
-$br-s: 576px;
-$br-m: 768px;
-$br-t: 1024px;
+$breakpoint-m: 320px;
 
-$br: 1280px;
+$breakpoint-t: 768px;
 
-$br-l: 1366px;
-$br-ll: 1440px;
-$br-xl: 1680px;
-$br-xxl: 1920px;
+$breakpoint-d: 1280px;
+$breakpoint-xd: 1680px;
+$breakpoint-xxd: 1920px;
 
 // grid
-$col-count: 12;
-$col-gap: 40px;
-$col: calc((100% - (#{$col-gap} * (#{$col-count} - 1))) / #{$col-count});
+$col-count-d: 12;
+$col-count-t: 8;
+$col-count-m: 4;
+
+$col-gap-d: 40px;
+$col-gap-t: 20px;
+$col-gap-m: 15px;
+
+$col-d: calc(
+  (100% - (#{$col-gap-d} * (#{$col-count-d - 1}))) / #{$col-count-d}
+);
+$col-t: calc(
+  (100% - (#{$col-gap-t} * (#{$col-count-t - 1}))) / #{$col-count-t}
+);
+$col-m: calc(
+  (100% - (#{$col-gap-m} * (#{$col-count-m - 1}))) / #{$col-count-m}
+);
 
 // colors
 :root {
-  --color-main: #3670ff;
+  --color-blue-dark: #134AD5;
+  --color-blue: #3670ff;
   --color-black: #1d212c;
   --color-white: #ffffff;
   --color-gray-dark: #a8aebb;
   --color-gray: #cbd0db;
   --color-gray-light: #edeff3;
 }
+
+// z-index
+$z-index-grid-test: 1000;
+
+// transition
+$transition-duration: 0.25s;
+$transition-function: ease;
+$transition: $transition-duration $transition-function;

@@ -1,10 +1,7 @@
 .grid-test {
   position: fixed;
-  z-index: 1000;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  z-index: $z-index-grid-test;
+  @include inset();
 
   pointer-events: none;
 
@@ -15,12 +12,23 @@
   &__row {
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    column-gap: 40px;
+    grid-template-columns: repeat(#{$col-count-m}, 1fr);
+    grid-template-rows: 100%;
+    column-gap: $col-gap-m;
+
+    @media (min-width: $breakpoint-t) {
+      grid-template-columns: repeat(#{$col-count-t}, 1fr);
+      column-gap: $col-gap-t;
+    }
+
+    @media (min-width: $breakpoint-d) {
+      grid-template-columns: repeat(#{$col-count-d}, 1fr);
+      column-gap: $col-gap-d;
+    }
   }
 
   &__col {
-    background-color: black;
+    background-color: var(--color-black);
     opacity: 0.1;
   }
 }

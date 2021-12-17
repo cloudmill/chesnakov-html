@@ -1,11 +1,7 @@
-.justify-self {
-  &--end {
-    justify-self: end;
-  }
-}
-
-.margin {
-  &--10 {
-    margin: 10px;
+.u {
+  &-display {
+    &--flex {
+      display: flex;
+    }
   }
 }

@@ -1,0 +1,6 @@
+@mixin inset($offset: 0) {
+  top: $offset;
+  bottom: $offset;
+  left: $offset;
+  right: $offset;
+}

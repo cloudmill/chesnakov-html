@@ -1,67 +1,65 @@
 .footer {
-  padding: 80px 0 64px 0;
+  padding: 48px 0;
 
   background-color: var(--color-gray-light);
 
+  @media (min-width: $breakpoint-d) {
+    padding: 80px 0;
+  }
+
   &__grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-areas:
-      "a a a b b b c c d d e e"
-      "f f f g g g g g h h h h";
-    column-gap: $col-gap;
-    row-gap: 80px;
-  }
+    &-item {
+      &:not(:last-child, :first-child) {
+        margin-top: 24px;
+      }
 
-  &__grid-item {
-    $items: a b c d e f g h;
-
-    @for $i from 1 to length($items) + 1 {
-      &:nth-child(#{$i}) {
-        grid-area: nth($items, $i);
+      &:last-child {
+        margin-top: 2px;
       }
     }
-
-    @media (max-width: ($br-xl - 1px)) {
-      @for $i from 1 to length($items) + 1 {
-        $item: nth($items, $i);
-
-        @if ($item == c) or ($item == g) {
-          &:nth-child(#{$i}) {
-            padding-right: $col-gap;
-          }
-        }
-
-        @if ($item == d) or ($item == h) {
-          &:nth-child(#{$i}) {
-            margin-left: -$col-gap;
-          }
-        }
-      }
-    }
-  }
-
-  &__nav {
-
   }
 
   &__list {
+    &-item {
+      display: flex;
 
-  }
-  &__list-item {
-    &:not(:first-child) {
-      margin-top: 8px;
+      &:not(:first-child) {
+        margin-top: 8px;
+      }
     }
   }
 
   &__link {
-    display: inline;
-
-    font-size: 20px;
+    font-size: 10px;
+    line-height: (14 / 10);
     text-transform: uppercase;
+    transition: color $transition;
 
     &:hover {
-      color: lightgray;
+      color: var(--color-gray-dark);
+    }
+
+    &--small {
+      font-size: 8px;
+      line-height: (11 / 8);
+    }
+  }
+
+  &__copyright {
+    display: flex;
+
+    color: var(--color-gray-dark);
+  }
+
+  &__company {
+    display: flex;
+
+    &:hover {
+      color: var(--color-black);
+    }
+
+    &-link {
+      color: var(--color-blue);
     }
   }
 }

@@ -1,3 +1,11 @@
 .container {
-  padding: 0 40px;
+  padding: 0 $col-gap-m;
+
+  @media (min-width: $breakpoint-t) {
+    padding: 0 $col-gap-t;
+  }
+
+  @media (min-width: $breakpoint-d) {
+    padding: 0 $col-gap-d;
+  }
 }

@@ -1,17 +1,23 @@
 .button {
-  padding: 0 28px;
-  height: 44px;
-  display: inline-flex;
-  align-items: center;
+  display: flex;
 
-  background-color: blue;
-  border-radius: 4px;
-  color: white;
-  white-space: nowrap;
-  text-transform: uppercase;
-  cursor: pointer;
+  &__button {
+    padding: 15px;
+    min-height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  &:hover {
-    background-color: darkblue;
+    background-color: var(--color-blue);
+    border-radius: 4px;
+    font-size: 10px;
+    line-height: (14 / 10);
+    color: var(--color-white);
+    text-transform: uppercase;
+    transition: background-color $transition;
+
+    &:hover {
+      background-color: var(--color-blue-dark);
+    }
   }
 }
