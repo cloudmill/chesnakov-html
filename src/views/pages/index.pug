@@ -1,17 +1,14 @@
 extends ../layouts/master
 
-
-
 block header
 block footer
 
 block grid-test
-
-
 
 block content
   .container
     ul
       each route in data.routes
         li.margin.margin--10
-          a.button(href=route.href)= route.title
+          .button.u-margin.u-margin--10
+            a.button__button(href=route.href)= route.title
