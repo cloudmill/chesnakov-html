@@ -7,6 +7,10 @@
 
   background-color: var(--color-gray-dark); // test
 
+  @media (min-width: $breakpoint-t) {
+    padding-top: 20px;
+  }
+
   &__grid {
     display: grid;
     grid-template-columns: 1fr $col-gap-m $button-width-m 8px $button-width-m;
@@ -52,6 +56,15 @@
     }
     
     &-item {
+      // tablet & desktop
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6) {
+        display: none;
+      }
+
       // email-button
       &:nth-child(7) {
         grid-area: 1 / 3;

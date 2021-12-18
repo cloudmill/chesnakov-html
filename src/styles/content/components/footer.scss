@@ -164,6 +164,7 @@
   }
 
   &__button {
+    padding: 0 25px;
     width: 100%;
 
     @media (min-width: $breakpoint-t) {

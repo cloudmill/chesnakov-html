@@ -3,13 +3,18 @@
 *::after {
   margin: 0;
   padding: 0;
-
   box-sizing: border-box;
 
   outline: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  min-width: $breakpoint-m;
+
   font-family: $ff-1;
   font-weight: 600;
 

@@ -3,11 +3,6 @@
   &-display-flex {
     display: flex;
   }
-  &-display-none-m {
-    @media (max-width: ($breakpoint-t - 1px)) {
-      display: none;
-    }
-  }
 
   // margin
   &-margin-10 {

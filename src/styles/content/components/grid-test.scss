@@ -3,6 +3,7 @@
   z-index: $z-index-grid-test;
   @include inset();
 
+  min-width: $breakpoint-m;
   pointer-events: none;
 
   &__container {
