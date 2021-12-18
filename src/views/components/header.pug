@@ -1,56 +1,28 @@
+//- doctype html
+
 mixin header
   header.header
     .container
       .header__grid
         .header__grid-item
-          |logo
+          a.header__logo.u-display-flex(href='#')
+            +logo-svg
 
-        .header__grid-item
+        .header__grid-item.u-display-none-m
           |nav
-        .header__grid-item
+        .header__grid-item.u-display-none-m
           |about
-        .header__grid-item
+        .header__grid-item.u-display-none-m
           |socials
-        .header__grid-item
+        .header__grid-item.u-display-none-m
           |email
 
-        .header__grid-item
+        .header__grid-item.u-display-none-m
           |button
 
         .header__grid-item
-          |email-mobile
+          a.u-display-flex(href=`mailto:${data.email}`)
+            +email-button-svg
         .header__grid-item
-          |menu
-        //- .header__col
-        //-   +logo.header__logo
-        //- .header__col
-        //-   nav.header__nav
-        //-     ul.header__list
-        //-       - 
-        //-         var items = [
-        //-           'Политическая экспертиза',
-        //-           'Мероприятия',
-        //-           'Книжная критика',
-        //-         ]
-        //-       each item in items
-        //-         li.header__list-item
-        //-           a.header__link(href='#')
-        //-             |#{item}
-        //- .header__col
-        //-   nav.header__nav
-        //-     a.header__link(href='#')
-        //-       |Обо мне
-        //- .header__col
-        //-   ul.header__list
-        //-     each item in data.socials
-        //-       li.header__list-item
-        //-         a.header__link(href='#')
-        //-           |#{item}
-        //- .header__col
-        //-   - var email = 'info@chesnakov.ru'
-        //-   a.header__link(href=`mailto:${email}`)
-        //-     |#{email}
-        //- .header__col
-        //-   a.button(href='#')
-        //-     |задать вопрос
-
+          .u-display-flex
+            +menu-button-svg(data-menu-button='open')

@@ -7,13 +7,13 @@ block grid-test
 
 block content
   .container
-    ul.u-margin-top.u-margin-top--40
+    ul.u-margin-top-40
       each route in data.routes.filter((route) => !route.isTest)
-        li.margin.margin--10
-          .button.u-margin.u-margin--10
+        li.u-margin-top-10
+          .button
             a.button__button(href=route.href)= route.title
-    ul.u-margin-top.u-margin-top--40
+    ul.u-margin-top-40
       each route in data.routes.filter((route) => route.isTest)
-        li.margin.margin--10
-          .button.u-margin.u-margin--10
+        li.u-margin-top-10
+          .button
             a.button__button.button__button--theme--dark(href=route.href)= route.title
