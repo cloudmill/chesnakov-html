@@ -1,26 +1,58 @@
 mixin header
   header.header
     .container
-      .header__grid
-        .header__grid-item
-          a.header__logo.u-display-flex(href='#')
-            +logo-svg
-
-        .header__grid-item
-          |nav
-        .header__grid-item
-          |about
-        .header__grid-item
-          |socials
-        .header__grid-item
-          |email
-
-        .header__grid-item
-          |button
-
-        .header__grid-item
-          a.u-display-flex(href=`mailto:${data.email}`)
+      .header__row
+        .header__col
+          .header__logo
+            a.header__logo-link(href='#')
+              +logo-svg.header__logo-svg
+          nav.header__nav.header__nav--first-part
+            ul.header__list
+              each item in data.nav.slice(0, 3)
+                li.header__list-item
+                  a.header__link(href='#')
+                    |#{item}
+          nav.header__nav
+            ul.header__list
+              each item in data.nav.slice(3)
+                li.header__list-item
+                  a.header__link(href='#')
+                    |#{item}
+        .header__col
+          ul.header__list.header__socials
+            each item in data.socials
+              li.header__list-item
+                a.header__link(href='#')
+                  |#{item}
+          a.header__link.header__email(href=`mailto:${data.email}`)
+            |#{data.email}
+          .button.header__question-button
+            .button__button.header__button
+              |задать вопрос
+          a.header__mobile-button(href=`mailto:${data.email}`)
             +email-button-svg
-        .header__grid-item
-          .u-display-flex
+          .header__mobile-button
             +menu-button-svg(data-menu-button='open')
+      //- .header__grid
+      //-   .header__grid-item
+      //-     a.header__logo.u-display-flex(href='#')
+      //-       +logo-svg
+
+      //-   .header__grid-item
+      //-     |nav
+      //-   .header__grid-item
+      //-     |about
+      //-   .header__grid-item
+      //-     |socials
+      //-   .header__grid-item
+      //-     |email
+
+      //-   .header__grid-item
+      //-     |button
+
+      //-   .header__grid-item
+      //-     a.u-display-flex(href=`mailto:${data.email}`)
+      //-       +email-button-svg
+      //-   .header__grid-item
+      //-     .u-display-flex
+      //-       +menu-button-svg(data-menu-button='open')
