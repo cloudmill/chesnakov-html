@@ -1,4 +1,16 @@
 extends ../layouts/master
 
 block content
-  |main
+  .top
+    .top__back
+      +logo-svg.top__logo
+      .container.top__back-container
+        h1.top__title
+          |политолог
+    .top__front
+      .container
+        .top__front-content
+          p
+            |Более 30 лет занимаюсь аналитикой политических процессов и событий. Являюсь одним из самых известных и цитируемых российских экспертов в сфере политики.
+          a(href='#')
+            |подробнее

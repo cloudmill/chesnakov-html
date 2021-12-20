@@ -1,0 +1,30 @@
+.top {
+  &__back {
+    position: relative;
+    height: 300px;
+
+    background-color: var(--color-gray-dark);
+
+    &-container {
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
+  &__title {
+    @media (max-width: ($breakpoint-t - 1px)) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    @media (max-width: ($breakpoint-t - 1px)) {
+      display: none;
+    }
+  }
+}
