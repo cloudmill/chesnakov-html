@@ -42,8 +42,9 @@ $col-with-gap-m: "(#{$col-m} + #{$col-gap-m})";
 
 // z-index
 $z-index-grid-test: 1000;
+$z-index-header: 900;
 
 // transition
-$transition-duration: 0.5s;
+$transition-duration: 0.3s;
 $transition-function: ease;
 $transition: $transition-duration $transition-function;

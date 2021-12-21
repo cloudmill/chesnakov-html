@@ -1,18 +1,36 @@
 .top {
   &__back {
     position: relative;
-    height: 300px;
+    height: 220px;
 
-    background-color: var(--color-gray-dark);
+    background-image: url('assets/images/chesnakov-photo.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+
+    @media (min-width: $breakpoint-t) {
+      height: 274px;
+    }
 
     &-container {
+      padding-bottom: 8px;
       height: 100%;
       display: flex;
       align-items: flex-end;
     }
   }
 
+  &__front {
+    padding-top: 15px;
+  }
+
   &__title {
+    font-family: $ff-2;
+    font-size: 92px;
+    line-height: 1;
+    color: var(--color-white);
+    text-transform: uppercase;
+
     @media (max-width: ($breakpoint-t - 1px)) {
       display: none;
     }
@@ -23,8 +41,34 @@
     bottom: 0;
     right: 0;
 
+    max-width: 46px;
+
     @media (max-width: ($breakpoint-t - 1px)) {
       display: none;
     }
+  }
+
+  &__front {
+    padding: 15px 0;
+    
+    @media (min-width: $breakpoint-t) {
+      padding: 24px 0;
+    }
+  }
+  
+  &__text {
+    margin-bottom: 12px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+
+    @media (min-width: $breakpoint-t) {
+      font-size: 16px;
+    }
+  }
+
+  &__link {
+    width: 136px;
   }
 }
