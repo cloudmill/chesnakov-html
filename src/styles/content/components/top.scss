@@ -1,9 +1,13 @@
 .top {
-  &__back {
+  position: relative;
+
+  // ! background
+
+  &__background {
     position: relative;
     height: 220px;
 
-    background-image: url('assets/images/chesnakov-photo.jpg');
+    background-image: url("assets/images/chesnakov-photo.jpg");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -12,16 +16,31 @@
       height: 274px;
     }
 
+    @media (min-width: $breakpoint-d) {
+      height: 488px;
+    }
+
+    @media (min-width: $breakpoint-xxd) {
+      height: 600px;
+    }
+
     &-container {
       padding-bottom: 8px;
       height: 100%;
       display: flex;
       align-items: flex-end;
+
+      @media (min-width: $breakpoint-d) {
+        padding-bottom: 23px;
+      }
     }
   }
 
-  &__front {
-    padding-top: 15px;
+  &__title,
+  &__logo {
+    @media (max-width: ($breakpoint-t - 1px)) {
+      display: none;
+    }
   }
 
   &__title {
@@ -31,8 +50,9 @@
     color: var(--color-white);
     text-transform: uppercase;
 
-    @media (max-width: ($breakpoint-t - 1px)) {
-      display: none;
+    @media (min-width: $breakpoint-d) {
+      font-size: 180px;
+      line-height: 0.85;
     }
   }
 
@@ -41,21 +61,49 @@
     bottom: 0;
     right: 0;
 
-    max-width: 46px;
-
-    @media (max-width: ($breakpoint-t - 1px)) {
-      display: none;
+    @media (max-width: ($breakpoint-d - 1px)) {
+      max-width: 46px;
     }
   }
+
+  // ! front
 
   &__front {
     padding: 15px 0;
-    
+
+    @media (max-width: ($breakpoint-d - 1px)) {
+      background-color: var(--color-white);
+    }
+
     @media (min-width: $breakpoint-t) {
       padding: 24px 0;
     }
+
+    @media (min-width: $breakpoint-d) {
+      position: absolute;
+      @include inset();
+
+      padding: 186px 0 23px 0;
+      pointer-events: none;
+    }
+
+    @media (min-width: $breakpoint-xxd) {
+      padding-top: 234px;
+    }
+
+    &-content {
+      @media (min-width: $breakpoint-d) {
+        margin-left: auto;
+        width: calc(#{$col-with-gap-d} * 4);
+        pointer-events: all;
+      }
+
+      @media (min-width: $breakpoint-xxd) {
+        width: calc(#{$col-with-gap-d} * 4 - #{$col-gap-d});
+      }
+    }
   }
-  
+
   &__text {
     margin-bottom: 12px;
 
@@ -66,9 +114,28 @@
     @media (min-width: $breakpoint-t) {
       font-size: 16px;
     }
+
+    @media (min-width: $breakpoint-d) {
+      margin-bottom: 40px;
+      max-width: 405px;
+
+      font-size: 20px;
+      line-height: 1.3;
+      color: var(--color-white);
+    }
+
+    @media (min-width: $breakpoint-xxd) {
+      font-size: 22px;
+    }
   }
 
   &__link {
     width: 136px;
+
+    @media (min-width: $breakpoint-d) {
+      width: 125px;
+
+      color: var(--color-white);
+    }
   }
 }

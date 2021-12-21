@@ -12,6 +12,13 @@
     line-height: (14 / 10);
     text-transform: uppercase;
 
+    @media (min-width: $breakpoint-d) {
+      padding-bottom: 12px;
+
+      font-size: 14px;
+      line-height: (19 / 14);
+    }
+
     &:hover {
       #{$component}__arrow {
         &--default {
