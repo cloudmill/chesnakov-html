@@ -7,10 +7,10 @@
 
   &--margin {
     &--default {
-      margin-top: 24px;
+      margin: 24px 0 48px;
 
       @media (min-width: $breakpoint-d) {
-        margin-top: 80px;
+        margin-top: 80px 0;
       }
     }
   }
@@ -26,6 +26,10 @@
   }
 
   &__aside {
+    @media (max-width: ($breakpoint-d - 1px)) {
+      margin-top: 48px;
+    }
+
     @media (min-width: $breakpoint-d) {
       grid-column: span 4 / -1;
     }

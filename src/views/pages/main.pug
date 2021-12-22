@@ -215,4 +215,19 @@ block content
                     |11.10.2021
 
       aside.page__aside
-        |aside
+        .socials
+          h3
+            |я в социальных сетях
+          .socials__row
+            a.socials__item(href='#')
+              +vk-svg.socials__vk
+              .socials__text
+                |Вконтакте
+            a.socials__item(href='#')
+              +fb-svg.socials__fb
+              .socials__text
+                |Facebook
+            a.socials__item(href='#')
+              +tg-svg.socials__tg
+              .socials__text
+                |Telegram

@@ -75,13 +75,16 @@
 .news-list {
   @media (min-width: $breakpoint-t) {
     display: grid;
-    grid-template-columns: repeat(2, calc(#{$col-with-gap-t} * 4 - #{$col-gap-t}));
+    grid-template-columns: repeat(
+      2,
+      calc(#{$col-with-gap-t} * 4 - #{$col-gap-t})
+    );
     column-gap: $col-gap-t;
   }
 
   @media (min-width: $breakpoint-d) {
     column-gap: $col-gap-d;
-    grid-template-columns: repeat(2, calc((100% - #{$col-gap-d}) / 2))
+    grid-template-columns: repeat(2, calc((100% - #{$col-gap-d}) / 2));
   }
 }
 
@@ -125,15 +128,15 @@
 
   &--news-list {
     position: relative;
-  
+
     padding: 12px 0;
-  
+
     border-bottom: 1px solid var(--color-gray);
 
     &:first-child {
       border-top: 1px solid var(--color-gray);
     }
-    
+
     @media (max-width: ($breakpoint-t - 1px)) {
       display: block;
     }
@@ -141,23 +144,23 @@
     @media (min-width: $breakpoint-t) {
       padding: 16px $col-gap-t 16px 0;
       min-height: 149px;
-  
+
       &:nth-child(odd) {
         &::before {
           $offset: 8px;
-          
+
           position: absolute;
           top: $offset;
           bottom: $offset;
           right: 0;
-  
-          content: '';
+
+          content: "";
           width: 1px;
-          
+
           background-color: var(--color-gray);
         }
       }
-  
+
       &:nth-child(2) {
         border-top: 1px solid var(--color-gray);
       }
@@ -210,7 +213,8 @@
     color: var(--color-gray-dark);
     white-space: nowrap;
     text-transform: uppercase;
-    transition: color $transition, background-color $transition, border-color $transition;
+    transition: color $transition, background-color $transition,
+      border-color $transition;
 
     @media (min-width: $breakpoint-d) {
       height: 26px;
@@ -232,7 +236,7 @@
 
   display: block;
   overflow: hidden;
-  
+
   background-color: var(--color-gray-light);
   border-radius: 4px;
 
@@ -244,18 +248,22 @@
 
   @media (min-width: $breakpoint-t) {
     display: grid;
-    grid-template-columns: calc(#{$col-with-gap-t} * 4 - #{$col-gap-t}) calc(#{$col-with-gap-t} * 4);
+    grid-template-columns: calc(#{$col-with-gap-t} * 4 - #{$col-gap-t}) calc(
+        #{$col-with-gap-t} * 4
+      );
   }
 
   @media (min-width: $breakpoint-d) {
-    grid-template-columns: calc((100% - #{$col-gap-d}) / 2) calc((100% - #{$col-gap-d}) / 2 + #{$col-gap-d});
+    grid-template-columns: calc((100% - #{$col-gap-d}) / 2) calc(
+        (100% - #{$col-gap-d}) / 2 + #{$col-gap-d}
+      );
   }
 
   &__image-block {
     position: relative;
 
     display: flex;
-    
+
     @media (max-width: ($breakpoint-t - 1px)) {
       height: 146px;
     }
@@ -273,5 +281,82 @@
     object-position: top;
 
     border-radius: 4px;
+  }
+}
+
+.socials {
+  padding: $col-gap-m;
+
+  background-color: var(--color-gray-light);
+  border-radius: 4px;
+
+  @media (min-width: $breakpoint-t) {
+    padding: $col-gap-t;
+  }
+
+  &__row {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, calc((100% - 4px * 2) / 3));
+    column-gap: 4px;
+
+    @media (min-width: $breakpoint-t) {
+      margin-top: 20px;
+      grid-template-columns: repeat(3, calc((100% - 8px * 2) / 3));
+      column-gap: 8px;
+    }
+
+    @media (min-width: $breakpoint-d) {
+      grid-template-columns: repeat(3, calc((100% - 9px * 2) / 3));
+      column-gap: 9px;
+    }
+  }
+
+  &__item {
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--color-white);
+    border-radius: 4px;
+
+    @media (min-width: $breakpoint-t) {
+      height: 40px;
+    }
+  }
+
+  &__text {
+    margin-left: 4px;
+
+    font-weight: 500;
+    font-size: 10px;
+    line-height: (14 / 10);
+
+    @media (min-width: $breakpoint-t) {
+      font-size: 12px;
+      line-height: (16 / 12);
+    }
+  }
+
+  &__vk {
+    @media (max-width: ($breakpoint-t - 1px)) {
+      width: 16px;
+      height: 11px;
+    }
+  }
+
+  &__fb {
+    @media (max-width: ($breakpoint-t - 1px)) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &__tg {
+    @media (max-width: ($breakpoint-t - 1px)) {
+      width: 14px;
+      height: 14px;
+    }
   }
 }
