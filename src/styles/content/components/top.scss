@@ -136,10 +136,6 @@
       width: 125px;
 
       color: var(--color-white);
-
-      @include arrow-link-front() {
-        @include arrow-link-theme("white");
-      }
     }
   }
 }
