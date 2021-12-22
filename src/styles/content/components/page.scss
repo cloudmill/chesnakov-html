@@ -5,9 +5,23 @@
     column-gap: $col-gap-d;
   }
 
+  &--margin {
+    &--default {
+      margin-top: 24px;
+
+      @media (min-width: $breakpoint-d) {
+        margin-top: 80px;
+      }
+    }
+  }
+
   &__main {
     @media (min-width: $breakpoint-d) {
       grid-column: 1 / span 8;
+    }
+    
+    @media (min-width: $breakpoint-xxxd) {
+      grid-column: 1 / span 7;
     }
   }
 

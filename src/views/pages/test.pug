@@ -5,22 +5,7 @@ block footer
 
 block content
   .container
-    
-    .page
-      .page__main
-      .page__aside
-        
-        .tags
-          .tags__list
-            - for (let i = 0; i < 10; i++)
-              .tags__item
-                
-                .tag
-                  .tag__button
-                    |tag tag
-              
-              .tags__item
-                
-                .tag
-                  .tag__button.tag__button--active
-                    |tag
+    .pin
+      a.pin__button(href='#')
+        |Колонки
+

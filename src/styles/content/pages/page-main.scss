@@ -1,9 +1,9 @@
 .page-main {
-  &__page {
-    margin-top: 24px;
+  &__content {
+    margin-top: 28px;
 
     @media (min-width: $breakpoint-d) {
-      margin-top: 80px;
+      margin-top: 60px;
     }
   }
 }

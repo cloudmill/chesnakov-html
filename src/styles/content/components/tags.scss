@@ -1,41 +1,65 @@
 .tags {
-  --tags-gap: 6px;
+  $component: &;
 
-  @media (min-width: $breakpoint-d) {
-    --tags-gap: 10px;
-  }
+  &--themes {
+    --tags-gap: 6px;
 
-  @media (max-width: ($breakpoint-t - 1px)) {
-    @include scrollbar-hidden;
-
-    margin: 0 (-$col-gap-m); // ?
-    display: flex;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch; // ?
-  }
-
-  &__list {
-    display: flex;
-
-    @media (max-width: ($breakpoint-t - 1px)) {
-      padding: 0 $col-gap-m;
+    @media (min-width: $breakpoint-d) {
+      --tags-gap: 10px;
     }
 
-    @media (min-width: $breakpoint-t) {
+    @media (max-width: ($breakpoint-t - 1px)) {
+      @include scrollbar-hidden;
+  
+      margin: 0 (-$col-gap-m); // ?
+      display: flex;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch; // ?
+    }
+  
+    #{$component}__list {
+      display: flex;
+  
+      @media (max-width: ($breakpoint-t - 1px)) {
+        padding: 0 $col-gap-m;
+      }
+  
+      @media (min-width: $breakpoint-t) {
+        margin-top: calc(-1 * var(--tags-gap));
+        margin-left: calc(-1 * var(--tags-gap));
+        flex-wrap: wrap;
+      }
+    }
+  
+    #{$component}__item {
+      @media (max-width: ($breakpoint-t - 1px)) {
+        &:not(:first-child) {
+          margin-left: var(--tags-gap);
+        }
+      }
+  
+      @media (min-width: $breakpoint-t) {
+        margin-top: var(--tags-gap);
+        margin-left: var(--tags-gap);
+      }
+    }
+  }
+
+  &--pins {
+    --tags-gap: 6px;
+
+    @media (min-width: $breakpoint-d) {
+      --tags-gap: 10px;
+    }
+  
+    #{$component}__list {
+      display: flex;
       margin-top: calc(-1 * var(--tags-gap));
       margin-left: calc(-1 * var(--tags-gap));
       flex-wrap: wrap;
     }
-  }
-
-  &__item {
-    @media (max-width: ($breakpoint-t - 1px)) {
-      &:not(:first-child) {
-        margin-left: var(--tags-gap);
-      }
-    }
-
-    @media (min-width: $breakpoint-t) {
+  
+    #{$component}__item {
       margin-top: var(--tags-gap);
       margin-left: var(--tags-gap);
     }

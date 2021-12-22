@@ -10,21 +10,209 @@ block content
 
   .container
 
-    .page.page-main__page
+    .page.page--margin--default
       .page__main
 
-        .tags
-          ul.tags__list
-            li.tags__item
-            
-              .tag
-                .tag__button.tag__button--active= data.themes[0]
-                
-            each theme in data.themes.slice(1)
-              li.tags__item
+        section.themes
 
+          h3.themes__title
+            |темы
+
+          .tags.tags--themes
+            ul.tags__list
+              li.tags__item
+              
                 .tag
-                  .tag__button= theme
+                  .tag__button.tag__button--active= data.themes[0]
+                  
+              each i in [1, 2]
+                each theme in data.themes.slice(1)
+                  li.tags__item
+
+                    .tag
+                      .tag__button= theme
+
+        .page-main__content
+          
+          section.news-block
+            p.label.news-block__label
+              |Последние публикации
+            .news-block__top
+              h2
+                |политическая экспертиза
+              .arrow-link.news-block__link
+                a.arrow-link__link(href='#')
+                  |перейти в категорию
+                  .arrow-link__arrow.arrow-link__arrow--back
+                  .arrow-link__arrow.arrow-link__arrow--front
+            
+            .news-block__content
+
+              a.top-card.news-block__top-card(href='#')
+                
+                .top-card__image-block
+                  img.top-card__image(src="assets/images/card-photo.jpg")
+
+                .news-item.news-item--top-card
+
+                  .tags.tags--pins
+                    ul.tags__list
+                      li.tags__item
+
+                        .pin
+                          .pin__button(href='#')
+                            |колонка
+                        
+                  h4.news-item__title.top-card__title
+                    |Успех «списка Собянина» на выборах
+
+                  p.news-item__date
+                    |11.10.2021
+              
+              .news-list
+                a.news-item.news-item--news-list(href='#')
+
+                  .pin
+                    .pin__button(href='#')
+                      |Колонка
+                      
+                  h4.news-item__title
+                    |Успех «списка Собянина» на выборах
+
+                  p.news-item__date
+                    |11.10.2021
+                            
+                a.news-item.news-item--news-list(href='#')
+
+                  .pin
+                    .pin__button(href='#')
+                      |экспертные комментарии
+
+                  h4.news-item__title
+                    |Снижение числа голосующих на дому москвичей в сравнении с 2020 годом
+                  
+                  p.news-item__date
+                    |11.10.2021
+
+                a.news-item.news-item--news-list(href='#')
+                  
+                  .pin
+                    .pin__button(href='#')
+                      |Колонка
+
+                  h4.news-item__title
+                    |Голосование «ногами» становится архаичным, но понять это сейчас могут далеко не все
+                  
+                  p.news-item__date
+                    |11.10.2021
+
+                a.news-item.news-item--news-list(href='#')
+
+                  .pin
+                    .pin__button(href='#')
+                      |экспертные комментарии
+
+                  h4.news-item__title
+                    |Ключевой темой думских выборов остается борьба с коронавирусом
+                  
+                  p.news-item__date
+                    |11.10.2021
+
+                a.news-item.news-item--news-list(href='#')
+                  
+                  .pin
+                    .pin__button(href='#')
+                      |Колонка
+
+                  h4.news-item__title
+                    |Гадкие утята
+                  
+                  p.news-item__date
+                    |11.10.2021
+
+                a.news-item.news-item--news-list(href='#')
+
+                  .pin
+                    .pin__button(href='#')
+                      |экспертные комментарии
+
+                  h4.news-item__title
+                    |Объясняем успех «списка Собянина» на выборах в Москве
+                  
+                  p.news-item__date
+                    |11.10.2021
+
+          section.news-block
+            .news-block__top
+              h2
+                |Мероприятия
+              .arrow-link.news-block__link
+                a.arrow-link__link(href='#')
+                  |перейти в категорию
+                  .arrow-link__arrow.arrow-link__arrow--back
+                  .arrow-link__arrow.arrow-link__arrow--front
+
+            .news-block__content
+              
+              .news-list
+                a.news-item.news-item--news-list(href='#')
+
+                  .pin
+                    .pin__button(href='#')
+                      |колонка
+                      
+                  h4.news-item__title
+                    |Успех «списка Собянина» на выборах
+
+                  p.news-item__date
+                    |11.10.2021
+                            
+                a.news-item.news-item--news-list(href='#')
+
+                  .tags.tags--pins
+                    ul.tags__list
+                      li.tags__item
+
+                        .pin
+                          .pin__button(href='#')
+                            |экспертные комментарии
+
+                      li.tags__item
+
+                        .pin
+                          .pin__button(href='#')
+                            |колонка
+
+                  h4.news-item__title
+                    |Снижение числа голосующих на дому москвичей в сравнении с 2020 годом
+                  
+                  p.news-item__date
+                    |11.10.2021
+
+          section.news-block
+            .news-block__top
+              h2
+                |книжная лавка
+              .arrow-link.news-block__link
+                a.arrow-link__link(href='#')
+                  |перейти в категорию
+                  .arrow-link__arrow.arrow-link__arrow--back
+                  .arrow-link__arrow.arrow-link__arrow--front
+
+            .news-block__content
+              
+              .news-list
+                a.news-item.news-item--news-list(href='#')
+
+                  .pin
+                    .pin__button(href='#')
+                      |колонка
+                      
+                  h4.news-item__title
+                    |Объясняем успех «списка Собянина» на выборах в Москве
+
+                  p.news-item__date
+                    |11.10.2021
 
       aside.page__aside
         |aside
