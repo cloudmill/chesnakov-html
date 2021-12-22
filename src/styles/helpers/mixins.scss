@@ -5,6 +5,15 @@
   right: $offset;
 }
 
+@mixin scrollbar-hidden() {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar{
+    display: none;
+  }
+}
+
 // ! arrow-link
 
 @mixin arrow-link-back {

@@ -1,0 +1,41 @@
+.page {
+  @media (min-width: $breakpoint-d) {
+    $col: calc(#{$col-d});
+
+    display: grid;
+    grid-template-columns: repeat(12, $col);
+    column-gap: $col-gap-d;
+  }
+
+  &__main {
+    grid-column: 1 / span 8;
+  }
+
+  &__aside {
+    grid-column: span 4 / -1;
+  }
+}
+
+.list {
+  margin: 0 (-$col-gap-m);
+  padding: 0 $col-gap-m;
+  display: flex;
+  
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  @include scrollbar-hidden();
+
+  &__item {
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+}
+
+.item {
+  padding: 5px;
+
+  border: 1px solid black;
+}

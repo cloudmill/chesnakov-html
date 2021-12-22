@@ -6,3 +6,12 @@ include ../components/top
 
 block content
   +top
+  .container
+    .page
+      .page__main
+        ul.list
+          - for (let i = 0; i < 10; i++)
+            li.list__item.item
+              |item
+      aside.page__aside
+        |aside
