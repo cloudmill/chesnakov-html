@@ -1,17 +1,30 @@
 extends ../layouts/master
 
-//- block grid-test
+block variables
+  - var page = 'main'
 
 include ../components/top
 
 block content
   +top
+
   .container
-    .page
+
+    .page.page-main__page
       .page__main
-        ul.list
-          - for (let i = 0; i < 10; i++)
-            li.list__item.item
-              |item
+
+        .tags
+          ul.tags__list
+            li.tags__item
+            
+              .tag
+                .tag__button.tag__button--active= data.themes[0]
+                
+            each theme in data.themes.slice(1)
+              li.tags__item
+
+                .tag
+                  .tag__button= theme
+
       aside.page__aside
         |aside

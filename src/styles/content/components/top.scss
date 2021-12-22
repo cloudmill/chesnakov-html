@@ -44,11 +44,9 @@
   }
 
   &__title {
-    font-family: $ff-2;
     font-size: 92px;
     line-height: 1;
     color: var(--color-white);
-    text-transform: uppercase;
 
     @media (min-width: $breakpoint-d) {
       font-size: 180px;
@@ -69,14 +67,10 @@
   // ! front
 
   &__front {
-    padding: 15px 0;
+    padding: 24px 0;
 
     @media (max-width: ($breakpoint-d - 1px)) {
       background-color: var(--color-white);
-    }
-
-    @media (min-width: $breakpoint-t) {
-      padding: 24px 0;
     }
 
     @media (min-width: $breakpoint-d) {

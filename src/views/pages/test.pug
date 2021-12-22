@@ -3,11 +3,24 @@ extends ../layouts/master
 block header
 block footer
 
-block grid-test
-
 block content
-  .arrow-link.bow
-    a.arrow-link__link(href='#')
-      |link
-      .arrow-link__arrow.arrow-link__arrow--back
-      .arrow-link__arrow.arrow-link__arrow--front
+  .container
+    
+    .page
+      .page__main
+      .page__aside
+        
+        .tags
+          .tags__list
+            - for (let i = 0; i < 10; i++)
+              .tags__item
+                
+                .tag
+                  .tag__button
+                    |tag tag
+              
+              .tags__item
+                
+                .tag
+                  .tag__button.tag__button--active
+                    |tag

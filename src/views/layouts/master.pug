@@ -17,7 +17,7 @@ html(lang='ru')
     title= data.title
     meta(name="viewport" content="width=device-width, initial-scale=1")
   
-  body
+  body(class = page ? `page-${page}` : false)
 
     block header
       +header
