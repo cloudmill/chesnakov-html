@@ -36,5 +36,22 @@
       border-color: var(--color-blue);
       color: var(--color-white);
     }
+
+    &--404 {
+      @media (max-width: ($breakpoint-d - 1px)) {
+        padding: 0 12px;
+        height: 44px;
+    
+        font-size: 10px;
+        line-height: (14 / 10);
+      }
+
+      @media (min-width: $breakpoint-d) {
+        padding: 0 25px;
+  
+        font-size: 14px;
+        line-height: (19 / 14);
+      }
+    }
   }
 }

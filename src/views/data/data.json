@@ -17,6 +17,10 @@
       "href": "main",
       "title": "Главная"
     },
+    {
+      "href": "404",
+      "title": "404"
+    },
 
     {
       "href": "test",

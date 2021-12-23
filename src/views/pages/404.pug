@@ -1,0 +1,29 @@
+extends ../layouts/master
+
+block variables
+  - var page = 404
+  - var headerTheme = 'dark'
+
+block content
+  .container.page-404__container
+    h1.page-404__title
+      |404
+    .page-404__content
+      .page-404__desc
+        |Страница не найдена
+      .page-404__text
+        |Но, вы можете вернуться на 
+        a.page-404__link(href="#") 
+          |главную 
+        |или посмотреть популярные категории.
+      ul.page-404__buttons
+        -
+          var items = [
+            'политическая экспертиза',
+            'книжная критика',
+            'мероприятия'
+          ]
+        each item in items
+          li.page-404__button
+            a.tag(href='#')
+              .tag__button.tag__button--404= item

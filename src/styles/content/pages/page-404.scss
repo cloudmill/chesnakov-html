@@ -1,0 +1,87 @@
+.page-404 {
+  &__container {
+    padding-top: 76px;
+    padding-bottom: 48px;
+    
+    @media (min-width: $breakpoint-d) {
+      padding-top: 216px;
+      padding-bottom: 184px;
+      display: grid;
+      grid-template-columns: repeat(#{$col-count-d}, calc(#{$col-d}));
+      column-gap: $col-gap-d;
+    }
+  }
+
+  &__title {
+    font-size: 200px;
+    line-height: 0.85;
+    color: var(--color-gray);
+
+    @media (min-width: $breakpoint-d) {
+      grid-column: 1 / span 4;
+
+      font-size: 400px;
+    }
+  }
+
+  &__content {
+    @media (max-width: ($breakpoint-d - 1px)) {
+      margin-top: 24px;
+    }
+
+    @media (min-width: $breakpoint-d) {
+      padding-top: 35px;
+      grid-column: span 8 / -1;
+    }
+  }
+
+  &__desc {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.4;
+
+    @media (min-width: $breakpoint-d) {
+      font-size: 28px;
+    }
+  }
+
+  &__text {
+    margin-top: 12px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.8;
+
+    @media (min-width: $breakpoint-d) {
+      margin-top: 16px;
+
+      font-size: 20px;
+      line-height: 1.49;
+    }
+  }
+
+  &__link {
+    color: var(--color-blue);
+  }
+
+  &__buttons {
+    margin-top: 16px;
+
+    @media (min-width: $breakpoint-d) {
+      margin-top: 116px;
+      display: flex;
+    }
+  }
+
+  &__button {
+    &:not(:first-child) {
+      @media (max-width: ($breakpoint-d - 1px)) {
+        margin-top: 8px;
+      }
+
+      @media (min-width: $breakpoint-d) {
+        margin-left: 10px;
+      }
+    }
+  }
+}
