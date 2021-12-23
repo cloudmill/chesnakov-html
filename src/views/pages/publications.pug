@@ -4,6 +4,8 @@ block variables
   - var page = 'publications'
   - var headerTheme = 'dark'
 
+//- block grid-test
+
 block content
 
   .container
@@ -50,15 +52,33 @@ block content
           
           section.news-block
             .news-block__top
-              h2
-                |политическая экспертиза
-              .arrow-link.news-block__link
-                a.arrow-link__link(href='#')
-                  |перейти в категорию
-                  .arrow-link__arrow.arrow-link__arrow--back
-                  .arrow-link__arrow.arrow-link__arrow--front
+              .choice
+                .choice__panel
+                  h2
+                    |политическая экспертиза
+                  .choice__button.choice__button--active
+                    +arrow-svg.choice__arrow-svg
+                .choice__drop
+                  .choice__drop-content
+                    .container
+                      .tags.tags--themes
+                        ul.tags__list.choice__list
+                          li.tags__item.choice__item
+                            a.choice__link.choice__link--active(href='#')
+                              |Все
+                          -
+                            var items = [
+                              'Колонки',
+                              'Интервью',
+                              'Экспертные комментарии',
+                              'Подскасты',
+                              'Видео',
+                            ]
+                          each item in items
+                            li.tags__item.choice__item
+                              a.choice__link(href='#')= item
             
-            .news-block__content
+            .news-block__content.news-block__content--margin--alt
 
               a.top-card.news-block__top-card(href='#')
                 

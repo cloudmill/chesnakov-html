@@ -7,21 +7,27 @@ block content
   
   .container
     
-    .breadcrumbs
-      ul.breadcrumbs__list
-        li.breadcrumbs__item
-          a.breadcrumbs__link(href='#')
-            +logo-icon-svg.breadcrumbs__logo
-        li.breadcrumbs__item
-          a.breadcrumbs__link(href='#')
-            |qwe
-            br
-            |qwe
-        - for (let i = 0; i < 30; i++)
-          li.breadcrumbs__item
-            a.breadcrumbs__link(href='#')
-              |link
-        li.breadcrumbs__item
-          .breadcrumbs__link
-            |link
-
+    .choice
+      .choice__panel
+        h2
+          |Lorem ipsum dolor
+        .choice__button.choice__button--active
+          +arrow-svg.choice__arrow-svg
+      .choice__drop
+        .choice__drop-content
+          .container
+            .tags.tags--themes
+              ul.tags__list.choice__list
+                li.tags__item.choice__item
+                  a.choice__link.choice__link--active(href='#')
+                    |Item
+                - for (let i = 0; i < 30; i++)
+                  li.tags__item.choice__item
+                    a.choice__link(href='#')
+                      |Item
+                  li.tags__item.choice__item
+                    a.choice__link(href='#')
+                      |Item item
+    
+    p
+      |Lorem ipsum dolor sit amet consectetur, adipisicing elit. In sed officia quibusdam praesentium, odit saepe nesciunt cumque harum itaque eaque? Odit vitae error nam facilis consectetur, natus esse optio quae?
