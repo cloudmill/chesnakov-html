@@ -215,19 +215,51 @@ block content
                     |11.10.2021
 
       aside.page__aside
-        .page__aside-content
+        .page__aside-content.page__aside-content--main
           
-          a.banner(href='#')
+          a.banner.banner--main(href='#')
             h3.banner__title
               |Подпишитесь на мой блог
             .banner__pin
               |@
             +logo-banner-svg.banner__logo
 
-          form.form
-            |form
+          form.form.form--main.form--margin--dafault
+            label.form__checkbox
+              input.form__checkbox-input(type="checkbox")
+              .form__checkbox-block
+                .form__mark.form__checkbox-mark
+                  +check-mark-svg
+                .form__checkbox-text
+                  |Политическая экспертиза
+            label.form__checkbox
+              input.form__checkbox-input(type="checkbox")
+              .form__checkbox-block
+                .form__mark.form__checkbox-mark
+                  +check-mark-svg
+                .form__checkbox-text
+                  |Политическая экспертиза
+            label.form__checkbox
+              input.form__checkbox-input(type="checkbox")
+              .form__checkbox-block
+                .form__mark.form__checkbox-mark
+                  +check-mark-svg
+                .form__checkbox-text
+                  |Политическая экспертиза
+            input.form__field(type="email" placeholder='E-mail')
+            label.form__agree
+              input.form__agree-input(type="checkbox")
+              .form__mark.form__agree-mark
+                +check-mark-svg
+              .form__agree-text
+                |Согласен на обработку персональных данных в соответствии с 
+                a.form__agree-link(href='#')
+                  |политикой конфиденциальности
+            .button
+              button.button__button.form__submit(type="submit")
+                |подписаться
 
-          .socials
+          .socials.socials--main.socials--margin--default
             h3
               |я в социальных сетях
             .socials__row

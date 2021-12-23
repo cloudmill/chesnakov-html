@@ -359,4 +359,290 @@
       height: 14px;
     }
   }
+
+  &--margin {
+    &--default {
+      margin-top: 48px;
+
+      @media (min-width: $breakpoint-d) {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  &--main {
+    @media (min-width: $breakpoint-t) and (max-width: ($breakpoint-d - 1px)) {
+      grid-area: 2 / 1 / span 1 / span 8;
+    }
+  }
+}
+
+.form {
+  @mixin checkbox-hidden {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    opacity: 0;
+  }
+
+  display: grid;
+
+  @media (max-width: ($breakpoint-d - 1px)) {
+    grid-template-rows: auto 14px auto 14px auto 20px auto 12px auto 10px;
+  }
+
+  @media (max-width: ($breakpoint-t - 1px)) {
+    grid-template-rows: auto 8px auto 8px auto 28px auto 12px auto 10px;
+  }
+
+  @media (min-width: $breakpoint-d) {
+    grid-template-columns: repeat(2, calc((100% - 13px) / 2));
+    column-gap: 13px;
+    row-gap: 8px;
+  }
+
+  & > * {
+    @media (max-width: ($breakpoint-d - 1px)) {
+      @for $i from 1 to 6 + 1 {
+        &:nth-child(#{$i}) {
+          grid-row-start: #{$i * 2 - 1};
+        }
+      }
+    }
+
+    @media (min-width: $breakpoint-d) {
+      @for $i from 1 to 3 + 1 {
+        &:nth-child(#{$i}) {
+          grid-area: #{$i} / 1 / span 1 / span 1;
+        }
+      }
+
+      @for $i from 4 to 6 + 1 {
+        &:nth-child(#{$i}) {
+          grid-area: #{$i - 3} / 2 / span 1 / span 1;
+        }
+      }
+    }
+  }
+
+  &__checkbox {
+    position: relative;
+
+    display: block;
+
+    &-input {
+      @include checkbox-hidden();
+
+      &:checked {
+        + .form__checkbox-block {
+          border-color: var(--color-blue);
+
+          .form__mark {
+            border-color: var(--color-blue);
+            background-color: var(--color-blue);
+          }
+        }
+      }
+    }
+
+    &-mark {
+      margin-right: 8px;
+    }
+
+    &-block {
+      padding: 0 8px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+
+      border: 1px solid var(--color-gray);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: border-color $transition;
+
+      @media (min-width: $breakpoint-d) {
+        padding: 0 12px;
+        height: 44px;
+      }
+    }
+
+    &-text {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: (16 / 12);
+
+      @media (min-width: $breakpoint-d) {
+        font-size: 14px;
+        line-height: (19 / 14);
+      }
+    }
+  }
+
+  &__mark {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid var(--color-gray);
+    border-radius: 2px;
+    transition: border-color $transition, background-color $transition;
+  }
+
+  &__field {
+    padding: 0 10px;
+    height: 40px;
+
+    border: 1px solid var(--color-gray);
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: (16 / 12);
+    transition: border-color $transition;
+
+    &:focus {
+      border-color: var(--color-blue);
+    }
+  }
+
+  &__agree {
+    position: relative;
+
+    display: flex;
+
+    cursor: pointer;
+
+    &-input {
+      @include checkbox-hidden();
+
+      &:checked {
+        + .form__mark {
+          border-color: var(--color-blue);
+          background-color: var(--color-blue);
+        }
+      }
+    }
+
+    &-text {
+      font-weight: 500;
+      font-size: 10px;
+      line-height: (14 / 10);
+    }
+
+    &-link {
+      color: var(--color-blue);
+    }
+
+    &-mark {
+      margin-right: 8px;
+    }
+  }
+
+  &__submit {
+    width: 100%;
+  }
+
+  &--margin {
+    &--dafault {
+      @media (max-width: ($breakpoint-t - 1px)) {
+        margin-top: 8px;
+      }
+
+      @media (min-width: $breakpoint-d) {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &--main {
+    @media (min-width: $breakpoint-t) and (max-width: ($breakpoint-d - 1px)) {
+      grid-area: 1 / span 4 / span 1 / -1;
+    }
+  }
+}
+
+.banner {
+  position: relative;
+
+  padding: 16px;
+  height: 135px;
+  display: flex;
+  align-items: flex-end;
+
+  background-image: url("assets/images/banner-photo.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  border-radius: 4px;
+
+  @media (min-width: $breakpoint-d) {
+    padding: 20px;
+    height: 175px;
+  }
+
+  &__title {
+    max-width: 90px;
+
+    color: var(--color-white);
+
+    @media (min-width: $breakpoint-d) {
+      max-width: 140px;
+    }
+  }
+
+  &__pin {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+
+    padding-top: 8px;
+    $size: 35px;
+    width: $size;
+    height: $size;
+    display: flex;
+    justify-content: center;
+
+    background-color: var(--color-white);
+    border-radius: 2px;
+    font-family: $ff-2;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 0.85;
+    color: #6a768d;
+    text-transform: uppercase;
+
+    @media (min-width: $breakpoint-d) {
+      top: 20px;
+      left: 20px;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+    @media (max-width: ($breakpoint-t - 1px)) {
+      display: none;
+    }
+
+    @media (min-width: $breakpoint-d) {
+      top: 20px;
+      right: 20px;
+    }
+  }
+
+  &--main {
+    @media (min-width: $breakpoint-t) and (max-width: ($breakpoint-d - 1px)) {
+      grid-area: 1 / 1 / span 1 / span 4;
+    }
+  }
 }
