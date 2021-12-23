@@ -1,4 +1,5 @@
 .header {
+  $component: &;
   $button-height: 36px;
 
   position: fixed;
@@ -180,6 +181,20 @@
       @media (min-width: $breakpoint-t) and (max-width: ($breakpoint-d - 1px)) {
         margin-left: 12px;
         display: flex;
+      }
+    }
+  }
+
+  &--theme {
+    &--dark {
+      #{$component}__logo-svg {
+        path {
+          fill: var(--color-black);
+        }
+      }
+
+      #{$component}__link:not(:hover) {
+        color: var(--color-black);
       }
     }
   }
