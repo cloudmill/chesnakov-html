@@ -7,11 +7,15 @@
   top: 0;
   left: 0;
   right: 0;
+  transform: translateY(0);
 
-  padding-top: 16px;
+  padding: 16px 0;
+
+  border-bottom: 1px solid transparent;
+  transition: transform $transition, background-color $transition, border-color $transition;
 
   @media (min-width: $breakpoint-t) {
-    padding-top: 20px;
+    padding: 20px 0;
   }
 
   &__row {
@@ -196,6 +200,25 @@
       #{$component}__link:not(:hover) {
         color: var(--color-black);
       }
+    }
+  }
+
+  &--hide {
+    transform: translateY(-100%);
+  }
+  
+  &--scroll {
+    background-color: var(--color-white);
+    border-bottom-color: var(--color-gray-light);
+
+    #{$component}__logo-svg {
+      path {
+        fill: var(--color-black);
+      }
+    }
+
+    #{$component}__link:not(:hover) {
+      color: var(--color-black);
     }
   }
 }
