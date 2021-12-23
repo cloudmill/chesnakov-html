@@ -1,0 +1,205 @@
+extends ../layouts/master
+
+block variables
+  - var page = 'publications'
+  - var headerTheme = 'dark'
+
+block content
+
+  .container
+
+    .breadcrumbs.breadcrumbs--margin--default
+      |breadcrumbs
+
+    .page.page--margin--page
+      .page__main
+
+        section.themes.page-publications__themes
+
+          h3.themes__title
+            |темы
+
+          .tags.tags--themes
+            ul.tags__list
+              li.tags__item
+              
+                .tag
+                  .tag__button.tag__button--active= data.themes[0]
+                  
+              each i in [1, 2]
+                each theme in data.themes.slice(1)
+                  li.tags__item
+
+                    .tag
+                      .tag__button= theme
+
+        .page-publications__content
+          
+          section.news-block
+            .news-block__top
+              h2
+                |политическая экспертиза
+              .arrow-link.news-block__link
+                a.arrow-link__link(href='#')
+                  |перейти в категорию
+                  .arrow-link__arrow.arrow-link__arrow--back
+                  .arrow-link__arrow.arrow-link__arrow--front
+            
+            .news-block__content
+
+              a.top-card.news-block__top-card(href='#')
+                
+                .top-card__image-block
+                  img.top-card__image(src="assets/images/card-photo.jpg")
+
+                .news-item.news-item--top-card
+
+                  .tags.tags--pins
+                    ul.tags__list
+                      li.tags__item
+
+                        .pin
+                          .pin__button(href='#')
+                            |колонка
+                        
+                  h4.news-item__title.top-card__title
+                    |Успех «списка Собянина» на выборах
+
+                  p.news-item__date
+                    |11.10.2021
+              
+              .news-list
+                a.news-item.news-item--news-list(href='#')
+
+                  .pin
+                    .pin__button(href='#')
+                      |Колонка
+                      
+                  h4.news-item__title
+                    |Успех «списка Собянина» на выборах
+
+                  p.news-item__date
+                    |11.10.2021
+                            
+                a.news-item.news-item--news-list(href='#')
+
+                  .pin
+                    .pin__button(href='#')
+                      |экспертные комментарии
+
+                  h4.news-item__title
+                    |Снижение числа голосующих на дому москвичей в сравнении с 2020 годом
+                  
+                  p.news-item__date
+                    |11.10.2021
+
+                a.news-item.news-item--news-list(href='#')
+                  
+                  .pin
+                    .pin__button(href='#')
+                      |Колонка
+
+                  h4.news-item__title
+                    |Голосование «ногами» становится архаичным, но понять это сейчас могут далеко не все
+                  
+                  p.news-item__date
+                    |11.10.2021
+
+                a.news-item.news-item--news-list(href='#')
+
+                  .pin
+                    .pin__button(href='#')
+                      |экспертные комментарии
+
+                  h4.news-item__title
+                    |Ключевой темой думских выборов остается борьба с коронавирусом
+                  
+                  p.news-item__date
+                    |11.10.2021
+
+                a.news-item.news-item--news-list(href='#')
+                  
+                  .pin
+                    .pin__button(href='#')
+                      |Колонка
+
+                  h4.news-item__title
+                    |Гадкие утята
+                  
+                  p.news-item__date
+                    |11.10.2021
+
+                a.news-item.news-item--news-list(href='#')
+
+                  .pin
+                    .pin__button(href='#')
+                      |экспертные комментарии
+
+                  h4.news-item__title
+                    |Объясняем успех «списка Собянина» на выборах в Москве
+                  
+                  p.news-item__date
+                    |11.10.2021
+
+      aside.page__aside
+        .page__aside-content.page__aside-content--main
+          
+          a.banner.banner--main(href='#')
+            h3.banner__title
+              |Подпишитесь на мой блог
+            .banner__pin
+              |@
+            +logo-banner-svg.banner__logo
+
+          form.form.form--main.form--margin--dafault
+            label.form__checkbox
+              input.form__checkbox-input(type="checkbox")
+              .form__checkbox-block
+                .form__mark.form__checkbox-mark
+                  +check-mark-svg
+                .form__checkbox-text
+                  |Политическая экспертиза
+            label.form__checkbox
+              input.form__checkbox-input(type="checkbox")
+              .form__checkbox-block
+                .form__mark.form__checkbox-mark
+                  +check-mark-svg
+                .form__checkbox-text
+                  |Политическая экспертиза
+            label.form__checkbox
+              input.form__checkbox-input(type="checkbox")
+              .form__checkbox-block
+                .form__mark.form__checkbox-mark
+                  +check-mark-svg
+                .form__checkbox-text
+                  |Политическая экспертиза
+            input.form__field(type="email" placeholder='E-mail')
+            label.form__agree
+              input.form__agree-input(type="checkbox")
+              .form__mark.form__agree-mark
+                +check-mark-svg
+              .form__agree-text
+                |Согласен на обработку персональных данных в соответствии с 
+                a.form__agree-link(href='#')
+                  |политикой конфиденциальности
+            .button
+              button.button__button.form__submit(type="submit")
+                |подписаться
+
+          .socials.socials--main.socials--margin--default
+            h3
+              |я в социальных сетях
+            .socials__row
+              a.socials__item(href='#')
+                +vk-svg.socials__vk
+                .socials__text
+                  |Вконтакте
+              a.socials__item(href='#')
+                +fb-svg.socials__fb
+                .socials__text
+                  |Facebook
+              a.socials__item(href='#')
+                +tg-svg.socials__tg
+                .socials__text
+                  |Telegram
+

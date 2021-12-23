@@ -1,0 +1,13 @@
+.page-publications {
+  &__themes {
+    @media (max-width: ($breakpoint-d - 1px)) {
+      display: none;
+    }
+  }
+
+  &__content {
+    @media (min-width: $breakpoint-d) {
+      margin-top: 60px;
+    }
+  }
+}

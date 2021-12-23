@@ -10,7 +10,15 @@
       margin: 24px 0 48px;
 
       @media (min-width: $breakpoint-d) {
-        margin-top: 80px 0;
+        margin-top: 80px;
+      }
+    }
+
+    &--page {
+      margin: 28px 0 48px;
+
+      @media (min-width: $breakpoint-d) {
+        margin: 40px 0 80px;
       }
     }
   }
