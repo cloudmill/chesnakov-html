@@ -19,7 +19,7 @@
     @media (min-width: $breakpoint-d) {
       grid-column: 1 / span 8;
     }
-    
+
     @media (min-width: $breakpoint-xxxd) {
       grid-column: 1 / span 7;
     }
@@ -39,6 +39,78 @@
         margin-left: auto;
         max-width: 507px;
       }
+    }
+  }
+}
+
+.banner {
+  position: relative;
+
+  padding: 16px;
+  height: 135px;
+  display: flex;
+  align-items: flex-end;
+
+  background-image: url("assets/images/banner-photo.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  border-radius: 4px;
+
+  @media (min-width: $breakpoint-d) {
+    padding: 20px;
+    height: 175px;
+  }
+
+  &__title {
+    max-width: 90px;
+
+    color: var(--color-white);
+
+    @media (min-width: $breakpoint-d) {
+      max-width: 140px;
+    }
+  }
+
+  &__pin {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+
+    padding-top: 8px;
+    $size: 35px;
+    width: $size;
+    height: $size;
+    display: flex;
+    justify-content: center;
+
+    background-color: var(--color-white);
+    border-radius: 2px;
+    font-family: $ff-2;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 0.85;
+    color: #6a768d;
+    text-transform: uppercase;
+
+    @media (min-width: $breakpoint-d) {
+      top: 20px;
+      left: 20px;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+    @media (max-width: ($breakpoint-t - 1px)) {
+      display: none;
+    }
+
+    @media (min-width: $breakpoint-d) {
+      top: 20px;
+      right: 20px;
     }
   }
 }
