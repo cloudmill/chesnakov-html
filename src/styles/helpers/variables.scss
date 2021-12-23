@@ -45,6 +45,6 @@ $z-index-grid-test: 1000;
 $z-index-header: 900;
 
 // transition
-$transition-duration: 0.25s;
-$transition-function: ease;
+$transition-duration: 0.2s;
+$transition-function: cubic-bezier(0.33, 1, 0.68, 1);
 $transition: $transition-duration $transition-function;

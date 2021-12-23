@@ -3,6 +3,8 @@ extends ../layouts/master
 block variables
   - var page = 'main'
 
+block grid-test
+
 include ../components/top
 
 block content
@@ -25,12 +27,11 @@ block content
                 .tag
                   .tag__button.tag__button--active= data.themes[0]
                   
-              each i in [1, 2]
-                each theme in data.themes.slice(1)
-                  li.tags__item
+              each theme in data.themes.slice(1)
+                li.tags__item
 
-                    .tag
-                      .tag__button= theme
+                  .tag
+                    .tag__button= theme
 
         .page-main__content
           
