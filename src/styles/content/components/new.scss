@@ -163,14 +163,18 @@
       padding: 16px $col-gap-t 16px 0;
       min-height: 149px;
 
-      &:nth-child(odd) {
-        &::before {
+      &:nth-child(even):not(:first-child) {
+        &::after {
           $offset: 8px;
 
           position: absolute;
           top: $offset;
           bottom: $offset;
-          right: 0;
+          left: -$col-gap-t;
+
+          @media (min-width: $breakpoint-d) {
+            left: -$col-gap-d;
+          }
 
           content: "";
           width: 1px;
@@ -203,7 +207,7 @@
     @media (min-width: $breakpoint-d) {
       padding: 20px $col-gap-d 20px 0;
       min-height: 187px;
-
+      
       &:nth-child(even) {
         &::before {
           width: $col-gap-d;
@@ -822,6 +826,10 @@
           }
         }
       }
+    }
+
+    &-wrapper {
+      display: flex;
     }
   }
 
