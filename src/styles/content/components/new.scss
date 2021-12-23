@@ -329,6 +329,8 @@
 }
 
 .socials {
+  $component: &;
+
   padding: $col-gap-m;
 
   background-color: var(--color-gray-light);
@@ -364,9 +366,30 @@
 
     background-color: var(--color-white);
     border-radius: 4px;
+    transition: background-color $transition;
 
     @media (min-width: $breakpoint-t) {
       height: 40px;
+    }
+
+    svg {
+      path {
+        transition: fill $transition;
+      }
+    }
+
+    &:hover {
+      background-color: var(--color-blue);
+
+      #{$component}__text {
+        color: var(--color-white);
+      }
+
+      svg {
+        path {
+          fill: var(--color-white);
+        }
+      }
     }
   }
 
@@ -376,6 +399,7 @@
     font-weight: 500;
     font-size: 10px;
     line-height: (14 / 10);
+    transition: color $transition;
 
     @media (min-width: $breakpoint-t) {
       font-size: 12px;
