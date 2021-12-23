@@ -8,18 +8,26 @@ window.addEventListener("DOMContentLoaded", () => {
 
     console.log(prevY, y);
 
-    if (y > prevY) {
-      // down
-      header.classList.add("header--hide");
-    } else {
-      // up
-      header.classList.remove("header--hide");
+    if (y >= 1) {
+      if (y > prevY) {
+        header.classList.add("header--hide");
+      } else {
+        header.classList.remove("header--hide");
+      }
     }
 
-    if (y >= 1 && !header.classList.contains("header--scroll")) {
-      header.classList.add("header--scroll");
-    } else if (y < 1 && header.classList.contains("header--scroll")) {
-      header.classList.remove("header--scroll");
+    if (y >= 1) {
+      if (!header.classList.contains("header--scroll")) {
+        header.classList.add("header--scroll");
+      }
+    } else {
+      if (header.classList.contains("header--scroll")) {
+        header.classList.remove("header--scroll");
+      }
+
+      if (header.classList.contains("header--hide")) {
+        header.classList.remove("header--hide");
+      }
     }
 
     prevY = y;
