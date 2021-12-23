@@ -10,4 +10,16 @@
       margin-top: 60px;
     }
   }
+
+  &__breadcrumbs {
+    margin-top: 68px;
+
+    @media (min-width: $breakpoint-t) {
+      margin-top: 72px;
+    }
+
+    @media (min-width: $breakpoint-d) {
+      margin-top: 144px;
+    } 
+  }
 }

@@ -4,8 +4,24 @@ block header
 block footer
 
 block content
+  
   .container
-    .pin
-      a.pin__button(href='#')
-        |Колонки
+    
+    .breadcrumbs
+      ul.breadcrumbs__list
+        li.breadcrumbs__item
+          a.breadcrumbs__link(href='#')
+            +logo-icon-svg.breadcrumbs__logo
+        li.breadcrumbs__item
+          a.breadcrumbs__link(href='#')
+            |qwe
+            br
+            |qwe
+        - for (let i = 0; i < 30; i++)
+          li.breadcrumbs__item
+            a.breadcrumbs__link(href='#')
+              |link
+        li.breadcrumbs__item
+          .breadcrumbs__link
+            |link
 

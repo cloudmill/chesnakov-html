@@ -8,8 +8,21 @@ block content
 
   .container
 
-    .breadcrumbs.breadcrumbs--margin--default
-      |breadcrumbs
+    .page-publications__breadcrumbs
+      .breadcrumbs
+        ul.breadcrumbs__list
+          li.breadcrumbs__item
+            a.breadcrumbs__link(href='#')
+              +logo-icon-svg.breadcrumbs__logo
+          li.breadcrumbs__item
+            a.breadcrumbs__link(href='#')
+              |Политическая экспертиза
+          li.breadcrumbs__item
+            a.breadcrumbs__link(href='#')
+              |Колонки
+          li.breadcrumbs__item
+            .breadcrumbs__link
+              |Риски для российской системы власти после пандемии коронавируса
 
     .page.page--margin--page
       .page__main

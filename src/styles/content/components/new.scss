@@ -648,19 +648,101 @@
 }
 
 .breadcrumbs {
-  color: blue;
+  @media (max-width: ($breakpoint-t - 1px)) {
+    margin: 0 (-$col-gap-m);
+    display: flex;
+    overflow-x: auto;
+    @include scrollbar-hidden();
+    -webkit-overflow-scrolling: touch;
+  }
 
-  &--margin {
-    &--default {
-      margin-top: 68px;
+  @media (min-width: $breakpoint-t) {
+    --breadcrumbs-column-gap: 21px;
+    --breadcrumbs-row-gap: 8px;
 
-      @media (min-width: $breakpoint-t) {
-        margin-top: 72px;
+    overflow-x: hidden;
+  }
+
+  @media (min-width: $breakpoint-d) {
+    --breadcrumbs-column-gap: 40px;
+    --breadcrumbs-row-gap: 12px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: ($breakpoint-t - 1px)) {
+      padding: 0 $col-gap-m;
+    }
+
+    @media (min-width: $breakpoint-t) {
+      margin-top: calc(-1 * var(--breadcrumbs-row-gap));
+      margin-left: calc(-1 * var(--breadcrumbs-column-gap));
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &:not(:first-child) {
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: calc(-1 * (var(--breadcrumbs-column-gap) / 2));
+        transform: translate(-50%, -50%);
+
+        content: '>';
+
+        font-size: 7.5px;
+        line-height: (10 / 7.5);
+        color: var(--color-gray-dark);
+        text-transform: uppercase;
+
+        @media (min-width: $breakpoint-d) {
+          font-size: 12px;
+          line-height: (16 / 12);
+        }
       }
+    }
 
-      @media (min-width: $breakpoint-d) {
-        margin-top: 144px;;
+    @media (max-width: ($breakpoint-t - 1px)) {
+      &:not(:first-child) {
+        margin-left: 21px;
       }
+    }
+
+    @media (min-width: $breakpoint-t) {
+      margin-top: var(--breadcrumbs-row-gap);
+      margin-left: var(--breadcrumbs-column-gap);
+    }
+  }
+
+  &__link {
+    display: flex;
+
+    font-size: 8px;
+    line-height: (11 / 8);
+    text-transform: uppercase;
+
+    @media (min-width: $breakpoint-d) {
+      font-size: 12px;
+      line-height: (16 / 12);
+    }
+  }
+
+  &__logo {
+    width: 9px;
+    height: 10px;
+
+    @media (min-width: $breakpoint-d) {
+      width: 14px;
+      height: 15px;
+    }
+
+    path {
+      fill: var(--color-gray-dark);
     }
   }
 }
