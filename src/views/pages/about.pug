@@ -60,4 +60,27 @@ mixin slider
     |slider
 
 mixin top
-  |top
+  .about-top 
+    h1.about-top__title
+      |Алексей чеснаков
+    img.about-top__photo(src='assets/images/chesnakov-photo-2.jpg')
+    .about-top__text
+      |Более 30 лет занимаюсь аналитикой политических процессов и событий. Являюсь одним из самых известных и цитируемых российских экспертов в сфере политики.
+    .about-top__contacts
+      h3
+        |контакты
+      .socials__row
+        a.socials__item(href='#')
+          +vk-svg.socials__vk
+          .socials__text
+            |Вконтакте
+        a.socials__item(href='#')
+          +fb-svg.socials__fb
+          .socials__text
+            |Facebook
+        a.socials__item(href='#')
+          +tg-svg.socials__tg
+          .socials__text
+            |Telegram
+      .about-top__email-wrapper
+        a.about-top__email-link(href=`mailto:${data.email}`)= data.email
