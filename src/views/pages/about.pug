@@ -7,14 +7,13 @@ block variables
 block content
   section.page-about__section-top
     .container
-      |top
+      +top
   section.page-about__section-features
     .container
       +features
   section.page-about__section-slider
     .container
-      .slider
-        |slider
+      +slider
   section.page-about__section-bottom
     .container
       +card
@@ -55,3 +54,10 @@ mixin card
       +quote-svg
     .card__logo
       +logo-circle-svg
+
+mixin slider
+  .slider
+    |slider
+
+mixin top
+  |top
