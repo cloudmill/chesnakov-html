@@ -22,13 +22,4 @@
       margin-top: 144px;
     } 
   }
-
-  &__title {
-    font-size: 38px;
-    line-height: 0.85;
-
-    @media (min-width: $breakpoint-d) {
-      font-size: 80px;
-    }
-  }
 }

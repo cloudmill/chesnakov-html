@@ -25,6 +25,14 @@
       "href": "publications",
       "title": "Публикации"
     },
+    {
+      "href": "publications-detail",
+      "title": "Публикации детальная"
+    },
+    {
+      "href": "about",
+      "title": "Обо мне"
+    },
 
     {
       "href": "test",

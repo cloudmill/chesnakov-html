@@ -1,0 +1,53 @@
+.page-about {
+  &__section {
+    &-top {
+      margin-bottom: 16px;
+
+      background-color: var(--color-gray-background);
+
+      @media (min-width: $breakpoint-d) {
+        margin-bottom: 80px;
+      }
+    }
+
+    &-features {
+      margin-bottom: 48px;
+
+      @media (min-width: $breakpoint-d) {
+        margin-bottom: 80px;
+      }
+
+      @media (min-width: $breakpoint-xxd) {
+        margin-bottom: 100px;
+      }
+    }
+
+    &-slider {
+      margin-bottom: 48px;
+
+      @media (min-width: $breakpoint-d) {
+        margin-bottom: 90px;
+      }
+
+      @media (min-width: $breakpoint-xxd) {
+        margin-bottom: 100px;
+      }
+    }
+
+    &-bottom {
+      margin-bottom: 48px;
+
+      @media (min-width: $breakpoint-d) {
+        margin-bottom: 80px;
+      }
+
+      @media (min-width: $breakpoint-xxd) {
+        margin-bottom: 100px;
+      }
+
+      @media (min-width: $breakpoint-xxxd) {
+        margin-bottom: 80px;
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+extends ../layouts/master
+
+block variables
+  - var pageName = 'publications-detail'
+  - var headerTheme = 'dark'
+
+//- block grid-test
+
+block content
+  .container
+    .page.page-publications-detail__page
+      .page__main
+        .wow
+      .page__aside.page-publications-detail__aside
+        .page__aside-content.page__aside-content--main
+          a.banner.banner--main(href='#')
+            h3.banner__title
+              |Подпишитесь на мой блог
+            .banner__pin
+              |@
+            +logo-banner-svg.banner__logo
+          form.form.form--main.form--margin--dafault
+            label.form__checkbox
+              input.form__checkbox-input(type="checkbox")
+              .form__checkbox-block
+                .form__mark.form__checkbox-mark
+                  +check-mark-svg
+                .form__checkbox-text
+                  |Политическая экспертиза
+            label.form__checkbox
+              input.form__checkbox-input(type="checkbox")
+              .form__checkbox-block
+                .form__mark.form__checkbox-mark
+                  +check-mark-svg
+                .form__checkbox-text
+                  |Политическая экспертиза
+            label.form__checkbox
+              input.form__checkbox-input(type="checkbox")
+              .form__checkbox-block
+                .form__mark.form__checkbox-mark
+                  +check-mark-svg
+                .form__checkbox-text
+                  |Политическая экспертиза
+            input.form__field(type="email" placeholder='E-mail')
+            label.form__agree
+              input.form__agree-input(type="checkbox")
+              .form__mark.form__agree-mark
+                +check-mark-svg
+              .form__agree-text
+                |Согласен на обработку персональных данных в соответствии с 
+                a.form__agree-link(href='#')
+                  |политикой конфиденциальности
+            .button
+              button.button__button.form__submit(type="submit")
+                |подписаться
+          .socials.socials--main.socials--margin--default
+            h3
+              |я в социальных сетях
+            .socials__row
+              a.socials__item(href='#')
+                +vk-svg.socials__vk
+                .socials__text
+                  |Вконтакте
+              a.socials__item(href='#')
+                +fb-svg.socials__fb
+                .socials__text
+                  |Facebook
+              a.socials__item(href='#')
+                +tg-svg.socials__tg
+                .socials__text
+                  |Telegram

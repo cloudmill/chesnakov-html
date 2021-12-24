@@ -1,0 +1,39 @@
+.page-publications-detail {
+  &__breadcrumbs {
+    margin-top: 76px;
+
+    @media (min-width: $breakpoint-t) {
+      margin-top: 72px;
+    }
+
+    @media (min-width: $breakpoint-d) {
+      margin-top: 144px;
+    }
+  }
+
+  &__aside {
+    @media (min-width: $breakpoint-d) {
+      position: relative;
+
+      padding: 200px 0 80px;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -$col-gap-d;
+
+        content: '';
+        width: 1px;
+
+        background-color: var(--color-gray);
+      }
+    }
+  }
+
+  &__page {
+    @media (max-width: ($breakpoint-d - 1px)) {
+      margin-bottom: 48px;
+    }
+  }
+}

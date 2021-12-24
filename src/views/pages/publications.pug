@@ -1,7 +1,7 @@
 extends ../layouts/master
 
 block variables
-  - var page = 'publications'
+  - var pageName = 'publications'
   - var headerTheme = 'dark'
 
 block grid-test
@@ -54,7 +54,7 @@ block content
               .choice
                 .choice__panel-wrapper
                   .choice__panel
-                    h1.page-publications__title
+                    h1
                       |политическая экспертиза
                     .choice__button.choice__button--active
                       +arrow-svg.choice__arrow-svg

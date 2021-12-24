@@ -1,0 +1,40 @@
+extends ../layouts/master
+
+block variables
+  - var pageName = 'about'
+  - var headerTheme = 'dark'
+
+block content
+  section.page-about__section-top
+    .container
+      |top
+  section.page-about__section-features
+    .container
+      +features
+  section.page-about__section-slider
+    .container
+      .slider
+        |slider
+  section.page-about__section-bottom
+    .container
+      .card
+        |card
+
+mixin features
+  .features
+    .features__item
+      .features__text
+        |С 2000 по 2008 год работал в Администрации президента России
+      img.features__image(src='assets/images/feature-1.svg')
+    .features__item
+      .features__text
+        |Руководитель центра политической конъюнктуры
+      img.features__image(src='assets/images/feature-2.png')
+    .features__item
+      .features__text
+        |Профессор и преподаватель в НИУ ВШЭ
+      img.features__image(src='assets/images/feature-3.svg')
+    .features__item
+      .features__text
+        |Кандидат политических наук
+      img.features__image(src='assets/images/feature-4.svg')
