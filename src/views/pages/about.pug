@@ -17,8 +17,7 @@ block content
         |slider
   section.page-about__section-bottom
     .container
-      .card
-        |card
+      +card
 
 mixin features
   .features
@@ -38,3 +37,21 @@ mixin features
       .features__text
         |Кандидат политических наук
       img.features__image(src='assets/images/feature-4.svg')
+
+mixin card
+  .card
+    .card__text
+      |На сайте я публикую аналитические разборы и статьи на последние актуальные политические события в стране. Анонсирую свои выступления на мероприятиях и пишу рецензии на художественную и профессиональную литературу.
+    h3.card__title
+      |читать мои публикации
+    .card__list
+      a.card__item(href='#')
+        |политическая экспертиза
+      a.card__item(href='#')
+        |мероприятия
+      a.card__item(href='#')
+        |книжная критика
+    .card__quote
+      +quote-svg
+    .card__logo
+      +logo-circle-svg
