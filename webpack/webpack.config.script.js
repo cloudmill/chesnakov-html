@@ -138,6 +138,13 @@ module.exports = () => {
         chunkFilename: "vendors.css",
       }),
 
+      new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        "window.$": "jquery",
+        "window.jQuery": "jquery",
+      }),
+
       new WebpackNotifierPlugin({
         title: "Bundler",
       }),

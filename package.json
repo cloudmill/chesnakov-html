@@ -45,7 +45,9 @@
     "webpack-notifier": "^1.13.0"
   },
   "dependencies": {
+    "jquery": "^3.6.0",
     "normalize.css": "^8.0.1",
+    "parsleyjs": "^2.9.2",
     "reset-css": "^5.0.1",
     "swiper": "^7.3.2"
   }
