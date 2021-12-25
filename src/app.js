@@ -6,3 +6,4 @@ import "./scripts/typescript-test.ts";
 import "./scripts/choice";
 import "./scripts/header";
 import "./scripts/scroll-behavior";
+import "./scripts/parsley";
