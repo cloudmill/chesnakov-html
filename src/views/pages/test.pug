@@ -4,35 +4,50 @@ block header
 block footer
 
 block content
-  .about-top
+  .slider(data-slider)
+    -
+      var years = [
+        1984,
+        1985,
+        1986,
+        1987,
+        1989,
+        1990,
+        1991,
+        2012,
+        2014,
+        2016,
+        2020,
+        2021,
+      ]
     .container
-      img.about-top__photo(src='assets/images/chesnakov-photo-2.jpg')
-      h1.about-top__title
-        |Алексей чеснаков
-      .about-top__bottom
-        .about-top__left
-          .about-top__text
-            |Более 30 лет занимаюсь аналитикой политических процессов и событий. Являюсь одним из самых известных и цитируемых российских экспертов в сфере политики.
-        .about-top__right
-          .about-top__contacts
-            h3.about-top__sub-title
-              |контакты
-            ul.about-top__list
-              li.about-top__item
-                a.about-top__link(href='#')
-                  +vk-svg.about-top__link-svg.about-top__link-svg--vk
-                  .about-top__link-text
-                    |Вконтакте
-              li.about-top__item
-                a.about-top__link(href='#')
-                  +fb-svg.about-top__link-svg.about-top__link-svg--fb
-                  .about-top__link-text
-                    |Facebook
-              li.about-top__item
-                a.about-top__link(href='#')
-                  +tg-svg.about-top__link-svg.about-top__link-svg--tg
-                  .about-top__link-text
-                    |Telegram
-            .about-top__email
-              a.about-top__email-link(href=`mailto:${data.email}`)
-                |#{data.email}
+      .slider__top
+        .slider__years(data-slider-years)
+          .swiper-wrapper.slider__years-wrapper
+            each year in [...years].reverse().slice(1).reverse()
+              .swiper-slide.slider__years-slide(data-slider-year)
+                .slider__year
+                  .slider__year-text
+                    |#{year}
+            .swiper-slide.slider__years-slide(data-slider-year)
+              .slider__year.slider__year--last
+                .slider__year-text
+                  |#{[...years].pop()}
+      .slider__bottom
+        .slider__slides(data-slider-slides)
+          .swiper-wrapper.slider__slides-wrapper
+            each year in years
+              .swiper-slide.slider__slides-slide
+                .slider__slide
+                  .slider__photo
+                    img.slider__img(src='assets/images/slider.jpg')
+                  .slider__content
+                    .slider__content-year
+                      |#{year}
+                    .slider__controls
+                      .slider__control(data-slider-prev)
+                        |#{'<'}
+                      .slider__control(data-slider-next)
+                        |#{'>'}
+                    .slider__text
+                      |Директор Центра политической конъюнктуры России (ЦПК). Руководитель Центра социальной и политической информации Института социально-политических исследований (ИСПИ) РАН.
