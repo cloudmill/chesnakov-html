@@ -3,8 +3,6 @@
     &-top {
       margin-bottom: 16px;
 
-      background-color: var(--color-gray-background);
-
       @media (min-width: $breakpoint-d) {
         margin-bottom: 80px;
       }

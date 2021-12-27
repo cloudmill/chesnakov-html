@@ -4,26 +4,35 @@ block header
 block footer
 
 block content
-  
-  .container
-
-    .pagination
-      a.pagination__next(href='#')
-        +pagination-next-svg.pagination__next-svg.pagination__next-svg--default
-        +pagination-next--large-svg.pagination__next-svg.pagination__next-svg--large
-      .pagination__pages
-        .pagination__left
-          .pagination__left-item.pagination__page-wrapper
-            a.pagination__page.pagination__page--active(href="#")
-              |1
-          .pagination__left-item.pagination__page-wrapper
-            a.pagination__page(href="#")
-              |2
-          .pagination__left-item.pagination__page-wrapper
-            a.pagination__page(href="#")
-              |3
-        .pagination__between
-          |...
-        .pagination__right
-          a.pagination__page(href="#")
-            |12
+  .about-top
+    .container
+      img.about-top__photo(src='assets/images/chesnakov-photo-2.jpg')
+      h1.about-top__title
+        |Алексей чеснаков
+      .about-top__bottom
+        .about-top__left
+          .about-top__text
+            |Более 30 лет занимаюсь аналитикой политических процессов и событий. Являюсь одним из самых известных и цитируемых российских экспертов в сфере политики.
+        .about-top__right
+          .about-top__contacts
+            h3.about-top__sub-title
+              |контакты
+            ul.about-top__list
+              li.about-top__item
+                a.about-top__link(href='#')
+                  +vk-svg.about-top__link-svg.about-top__link-svg--vk
+                  .about-top__link-text
+                    |Вконтакте
+              li.about-top__item
+                a.about-top__link(href='#')
+                  +fb-svg.about-top__link-svg.about-top__link-svg--fb
+                  .about-top__link-text
+                    |Facebook
+              li.about-top__item
+                a.about-top__link(href='#')
+                  +tg-svg.about-top__link-svg.about-top__link-svg--tg
+                  .about-top__link-text
+                    |Telegram
+            .about-top__email
+              a.about-top__email-link(href=`mailto:${data.email}`)
+                |#{data.email}

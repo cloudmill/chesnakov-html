@@ -6,14 +6,16 @@ block variables
 
 block content
   section.page-about__section-top
-    .container
-      +top
+    +top
+
   section.page-about__section-features
     .container
       +features
+
   section.page-about__section-slider
     .container
       +slider
+
   section.page-about__section-bottom
     .container
       +card
@@ -60,27 +62,35 @@ mixin slider
     |slider
 
 mixin top
-  .about-top 
-    h1.about-top__title
-      |Алексей чеснаков
-    img.about-top__photo(src='assets/images/chesnakov-photo-2.jpg')
-    .about-top__text
-      |Более 30 лет занимаюсь аналитикой политических процессов и событий. Являюсь одним из самых известных и цитируемых российских экспертов в сфере политики.
-    .about-top__contacts
-      h3
-        |контакты
-      .socials__row
-        a.socials__item(href='#')
-          +vk-svg.socials__vk
-          .socials__text
-            |Вконтакте
-        a.socials__item(href='#')
-          +fb-svg.socials__fb
-          .socials__text
-            |Facebook
-        a.socials__item(href='#')
-          +tg-svg.socials__tg
-          .socials__text
-            |Telegram
-      .about-top__email-wrapper
-        a.about-top__email-link(href=`mailto:${data.email}`)= data.email
+  .about-top
+    .container
+      img.about-top__photo(src='assets/images/chesnakov-photo-2.jpg')
+      h1.about-top__title
+        |Алексей чеснаков
+      .about-top__bottom
+        .about-top__left
+          .about-top__text
+            |Более 30 лет занимаюсь аналитикой политических процессов и событий. Являюсь одним из самых известных и цитируемых российских экспертов в сфере политики.
+        .about-top__right
+          .about-top__contacts
+            h3.about-top__sub-title
+              |контакты
+            ul.about-top__list
+              li.about-top__item
+                a.about-top__link(href='#')
+                  +vk-svg.about-top__link-svg.about-top__link-svg--vk
+                  .about-top__link-text
+                    |Вконтакте
+              li.about-top__item
+                a.about-top__link(href='#')
+                  +fb-svg.about-top__link-svg.about-top__link-svg--fb
+                  .about-top__link-text
+                    |Facebook
+              li.about-top__item
+                a.about-top__link(href='#')
+                  +tg-svg.about-top__link-svg.about-top__link-svg--tg
+                  .about-top__link-text
+                    |Telegram
+            .about-top__email
+              a.about-top__email-link(href=`mailto:${data.email}`)
+                |#{data.email}

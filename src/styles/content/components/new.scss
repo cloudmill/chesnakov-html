@@ -1416,7 +1416,11 @@
 }
 
 .about-top {
+  position: relative;
+
   padding: 72px 0 40px;
+
+  background-color: var(--color-gray-background);
 
   @media (min-width: $breakpoint-t) {
     padding-top: 80px;
@@ -1435,26 +1439,284 @@
   }
 
   &__title {
-    font-size: 64px;
-    line-height: 1;
+    font-size: 62px;
     color: var(--color-white);
     text-align: center;
+    
+    @media (max-width: ($breakpoint-t - 1px)) {
+      line-height: 1;
+    }
 
     @media (min-width: $breakpoint-t) {
-      font-size: 164px;
-      line-height: 0.85;
+      font-size: 158px;
     }
 
     @media (min-width: $breakpoint-d) {
-      font-size: 288px;
+      font-size: 260px;
+    }
+
+    @media (min-width: $breakpoint-xd) {
+      font-size: 278px;
     }
 
     @media (min-width: $breakpoint-xxd) {
-      font-size: 360px;
+      font-size: 348px;
     }
 
     @media (min-width: $breakpoint-xxxd) {
-      font-size: 412px;
+      font-size: 396px;
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+
+    @media (min-width: $breakpoint-t) {
+      font-size: 16px;
+    }
+
+    @media (min-width: $breakpoint-d) {
+      font-size: 22px;
+    }
+
+    @media (min-width: $breakpoint-xxd) {
+      font-size: 24px;
+    }
+  }
+
+  &__contacts {
+    @media (min-width: $breakpoint-t) and (max-width: ($breakpoint-d - 1px)) {
+      margin-left: auto;
+      max-width: 288px;
+    }
+
+    @media (min-width: $breakpoint-d) {
+      max-width: 467px;
+    }
+  }
+
+  &__sub-title {
+
+  }
+
+  &__list {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, calc((100% - 6px * 2) / 3));
+    column-gap: 6px;
+
+    @media (min-width: $breakpoint-d) {
+      margin-top: 40px;
+      grid-template-columns: repeat(3, calc((100% - 10px * 2) / 3));
+      column-gap: 10px;
+    }
+  }
+  &__item {
+    display: flex;
+  }
+
+  &__link {
+    $element: &;
+
+    width: 100%;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--color-white);
+    border-radius: 4px;
+    transition: background-color $transition;
+
+    @media (min-width: $breakpoint-d) {
+      height: 40px;
+    }
+
+    &:hover {
+      background-color: var(--color-blue);
+
+      #{$element}-svg {
+        path {
+          fill: var(--color-white);
+        }
+      }
+
+      #{$element}-text {
+        color: var(--color-white);
+      }
+    }
+
+    &-svg {
+      path {
+        transition: fill $transition;
+      }
+
+      &--vk {
+        @media (max-width: ($breakpoint-d - 1px)) {
+          width: 16px;
+          height: 10px;
+        }
+      }
+
+      &--fb {
+        @media (max-width: ($breakpoint-d - 1px)) {
+          width: 14px;
+          height: 14px;
+        }
+      }
+
+      &--tg {
+        @media (max-width: ($breakpoint-d - 1px)) {
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+
+    &-text {
+      margin-left: 4px;
+
+      font-weight: 500;
+      font-size: 10px;
+      line-height: (14 / 10);
+      transition: color $transition;
+
+      @media (min-width: $breakpoint-d) {
+        margin-left: 8px;
+        padding-bottom: 2px;
+
+        font-size: 14px;
+        line-height: (19 / 14);
+      }
+    }
+  }
+
+  &__email {
+    margin-top: 12px;
+    display: flex;
+
+    @media (min-width: $breakpoint-d) {
+      margin-top: 20px;
+    }
+
+    &-link {
+      font-weight: 500;
+      font-size: 10px;
+      line-height: (14 / 10);
+      text-decoration-line: underline;
+      text-transform: uppercase;
+      transition: color $transition;
+
+      &:hover {
+        color: var(--color-blue);
+      }
+
+      @media (min-width: $breakpoint-d) {
+        font-size: 16px;  
+      }
+
+      @media (min-width: $breakpoint-xd) {
+        font-size: 18px;  
+      }
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    top: 114px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    max-width: 146px;
+
+    border-radius: 4px;
+
+    @media (min-width: $breakpoint-t) {
+      top: 189px;
+
+      max-width: 207px;
+    }
+
+    @media (min-width: $breakpoint-d) {
+      top: 308px;
+      
+      max-width: 387px;
+    }
+
+    @media (min-width: $breakpoint-xd) {
+      max-width: 402px;
+    }
+
+    @media (min-width: $breakpoint-xxd) {
+      top: 355px;
+      
+      max-width: 500px;
+    }
+
+    @media (min-width: $breakpoint-xxxd) {
+      top: 391px;
+      
+      max-width: 580px;
+    }
+  }
+
+  &__bottom {
+    margin-top: 158px;
+
+    @media (min-width: $breakpoint-t) {
+      margin-top: 231px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media (min-width: $breakpoint-d) {
+      margin-top: 44px;
+    }
+
+    @media (min-width: $breakpoint-xxd) {
+      margin-top: 49px;
+    }
+
+    @media (min-width: $breakpoint-xxxd) {
+      margin-top: 60px;
+    }
+  }
+
+  &__left,
+  &__right {
+    @media (min-width: $breakpoint-t) {
+      width: calc((100% - #{$col-gap-t}) / 2);
+    }
+
+    @media (min-width: $breakpoint-d) {
+      width: calc((100% - #{$col-gap-d} * 2) / 3);
+    }
+  }
+
+  &__left {
+    
+  }
+  &__right {
+    @media (max-width: ($breakpoint-t - 1px)) {
+      margin-top: 24px;
+    }
+
+    @media (min-width: $breakpoint-t) and (max-width: ($breakpoint-d - 1px)) {
+      margin-left: $col-gap-t;
+    }
+    
+    @media (min-width: $breakpoint-d) {
+      padding-top: 184px;
+    }
+
+    @media (min-width: $breakpoint-xxd) {
+      padding-top: 275px;
+    }
+
+    @media (min-width: $breakpoint-xxxd) {
+      padding-top: 338px;
     }
   }
 }
