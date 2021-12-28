@@ -107,36 +107,49 @@ mixin slider
         2020,
         2021,
       ]
-    .container
-      .slider__top
-        .slider__years(data-slider-years)
-          .swiper-wrapper.slider__years-wrapper
-            each year in [...years].reverse().slice(1).reverse()
-              .swiper-slide.slider__years-slide(data-slider-year)
-                .slider__year
+    .slider__top
+      .slider__years-wrapper
+        .container
+          ul.slider__years
+            li.slider__years-item
+              .slider__year.slider__year--active(data-slider-year)
+                .slider__year-text
+                  |#{[...years].shift()}
+            each year in years.slice(1, years.length - 1)
+              li.slider__years-item
+                .slider__year(data-slider-year)
                   .slider__year-text
                     |#{year}
-            .swiper-slide.slider__years-slide(data-slider-year)
-              .slider__year.slider__year--last
+            li.slider__years-item
+              .slider__year.slider__year--last(data-slider-year)
                 .slider__year-text
                   |#{[...years].pop()}
+    .container
       .slider__bottom
-        .slider__slides(data-slider-slides)
-          .swiper-wrapper.slider__slides-wrapper
-            each year in years
-              .swiper-slide.slider__slides-slide
-                .slider__slide
-                  .slider__photo
-                    img.slider__img(src='assets/images/slider.jpg')
-                  .slider__content
-                    .slider__content-year
-                      |#{year}
-                    .slider__controls
-                      .slider__control.slider__control--prev(data-slider-prev)
-                        +control-arrow-small-svg.slider__arrow.slider__arrow--small
-                        +control-arrow-large-svg.slider__arrow.slider__arrow--large
-                      .slider__control.slider__control--next(data-slider-next)
-                        +control-arrow-small-svg.slider__arrow.slider__arrow--small
-                        +control-arrow-large-svg.slider__arrow.slider__arrow--large
-                    .slider__text
-                      |Директор Центра политической конъюнктуры России (ЦПК). Руководитель Центра социальной и политической информации Института социально-политических исследований (ИСПИ) РАН.
+        .slider__photo
+          .slider__image
+            .slider__image-item.slider__image-item--active
+              img.slider__img(src="assets/images/slider.jpg" style=`opacity: ${Math.random()}`)
+            each i, j in years.slice(1)
+              .slider__image-item
+                img.slider__img(src="assets/images/slider.jpg" style=`opacity: ${Math.random()}`)
+        .slider__content
+          .slider__texts
+            .slider__text.slider__text--in.slider__text--active
+              |Директор Центра политической конъюнктуры России (ЦПК). Руководитель Центра социальной и политической информации Института социально-политических исследований (ИСПИ) РАН.
+            each i in years.slice(1)
+              .slider__text
+                |Директор Центра политической конъюнктуры России (ЦПК). Руководитель Центра социальной и политической информации Института социально-политических исследований (ИСПИ) РАН.
+          .slider__texts
+            .slider__text.slider__text--in.slider__text--active
+              |#{[...years].shift()}
+            each year in years.slice(1)
+              .slider__text
+                |#{year}
+          .slider__controls
+            .slider__control.slider__control--prev(data-slider-prev)
+              +control-arrow-small-svg.slider__arrow.slider__arrow--small
+              +control-arrow-large-svg.slider__arrow.slider__arrow--large
+            .slider__control.slider__control--next(data-slider-next)
+              +control-arrow-small-svg.slider__arrow.slider__arrow--small
+              +control-arrow-large-svg.slider__arrow.slider__arrow--large
