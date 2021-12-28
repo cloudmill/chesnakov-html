@@ -4,52 +4,11 @@ block header
 block footer
 
 block content
-  .slider(data-slider)
-    -
-      var years = [
-        1984,
-        1985,
-        1986,
-        1987,
-        1989,
-        1990,
-        1991,
-        2012,
-        2014,
-        2016,
-        2020,
-        2021,
-      ]
-    .container
-      .slider__top
-        .slider__years(data-slider-years)
-          .swiper-wrapper.slider__years-wrapper
-            each year in [...years].reverse().slice(1).reverse()
-              .swiper-slide.slider__years-slide(data-slider-year)
-                .slider__year
-                  .slider__year-text
-                    |#{year}
-            .swiper-slide.slider__years-slide(data-slider-year)
-              .slider__year.slider__year--last
-                .slider__year-text
-                  |#{[...years].pop()}
-      .slider__bottom
-        .slider__slides(data-slider-slides)
-          .swiper-wrapper.slider__slides-wrapper
-            each year in years
-              .swiper-slide.slider__slides-slide
-                .slider__slide
-                  .slider__photo
-                    img.slider__img(src='assets/images/slider.jpg')
-                  .slider__content
-                    .slider__content-year
-                      |#{year}
-                    .slider__controls
-                      .slider__control.slider__control--prev(data-slider-prev)
-                        +control-arrow-small-svg.slider__arrow.slider__arrow--small
-                        +control-arrow-large-svg.slider__arrow.slider__arrow--large
-                      .slider__control.slider__control--next(data-slider-next)
-                        +control-arrow-small-svg.slider__arrow.slider__arrow--small
-                        +control-arrow-large-svg.slider__arrow.slider__arrow--large
-                    .slider__text
-                      |Директор Центра политической конъюнктуры России (ЦПК). Руководитель Центра социальной и политической информации Института социально-политических исследований (ИСПИ) РАН.
+  .container
+    .n-page
+      .n-page__main
+        .n-page__main-container
+          |main
+      .n-page__aside
+        .n-page__aside-container
+          |aside

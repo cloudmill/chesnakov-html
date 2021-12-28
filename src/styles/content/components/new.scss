@@ -2042,3 +2042,36 @@
     }
   }
 }
+
+.n-page {
+  @media (min-width: $breakpoint-d) {
+    display: grid;
+    grid-template-columns: repeat(12, calc(#{$col-d}));
+    column-gap: $col-gap-d;
+  }
+
+  &__main {
+    @media (min-width: $breakpoint-d) {
+      grid-column: 1 / span 8;
+    }
+
+    &-container {
+      @media (min-width: $breakpoint-xxxd) {
+        max-width: calc((100% - #{$col-gap-d} * 7) / 8 * 7 + #{$col-gap-d} * 6);
+      }
+    }
+  }
+
+  &__aside {
+    @media (min-width: $breakpoint-d) {
+      grid-column: span 4 / -1;
+    }
+
+    &-container {
+      @media (min-width: $breakpoint-d) {
+        margin-left: auto;
+        max-width: 507px;
+      }
+    }
+  }
+}
