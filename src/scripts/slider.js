@@ -1,5 +1,7 @@
 import Swiper from "swiper";
 
+const DURATION = 500;
+
 window.addEventListener("DOMContentLoaded", () => {
   const slider = document.querySelector("[data-slider]");
 
@@ -11,6 +13,11 @@ window.addEventListener("DOMContentLoaded", () => {
     const yearsSwiper = new Swiper(years, {
       spaceBetween: 24,
       allowTouchMove: false,
+      breakpoints: {
+        1280: {
+          spaceBetween: 52,
+        },
+      },
     });
 
     // slides
@@ -32,8 +39,8 @@ window.addEventListener("DOMContentLoaded", () => {
     // events
     year.forEach((year, index) => {
       year.addEventListener("click", () => {
-        yearsSwiper.slideTo(index);
-        slidesSwiper.slideTo(index);
+        yearsSwiper.slideTo(index, DURATION);
+        slidesSwiper.slideTo(index, DURATION);
       });
     });
 
@@ -42,13 +49,13 @@ window.addEventListener("DOMContentLoaded", () => {
       const next = e.target.closest("[data-slider-next]");
 
       if (prev) {
-        yearsSwiper.slidePrev();
-        slidesSwiper.slidePrev();
+        yearsSwiper.slidePrev(DURATION);
+        slidesSwiper.slidePrev(DURATION);
       }
 
       if (next) {
-        yearsSwiper.slideNext();
-        slidesSwiper.slideNext();
+        yearsSwiper.slideNext(DURATION);
+        slidesSwiper.slideNext(DURATION);
       }
     });
   }

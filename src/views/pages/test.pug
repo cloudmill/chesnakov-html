@@ -45,9 +45,11 @@ block content
                     .slider__content-year
                       |#{year}
                     .slider__controls
-                      .slider__control(data-slider-prev)
-                        |#{'<'}
-                      .slider__control(data-slider-next)
-                        |#{'>'}
+                      .slider__control.slider__control--prev(data-slider-prev)
+                        +control-arrow-small-svg.slider__arrow.slider__arrow--small
+                        +control-arrow-large-svg.slider__arrow.slider__arrow--large
+                      .slider__control.slider__control--next(data-slider-next)
+                        +control-arrow-small-svg.slider__arrow.slider__arrow--small
+                        +control-arrow-large-svg.slider__arrow.slider__arrow--large
                     .slider__text
                       |Директор Центра политической конъюнктуры России (ЦПК). Руководитель Центра социальной и политической информации Института социально-политических исследований (ИСПИ) РАН.
