@@ -1,5 +1,3 @@
-import Swiper from "swiper";
-
 const DURATION = 1000;
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -18,7 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let curIndex = 0;
 
     function updateSlider(newIndex) {
-      if (newIndex !== curIndex) {
+      if (enabled && newIndex !== curIndex) {
         // update enabled
         enabled = false;
 
@@ -44,13 +42,22 @@ window.addEventListener("DOMContentLoaded", () => {
         const newImage = allImage[newIndex];
         const newImg = newImage.querySelector(".slider__img");
 
-        curImage.classList.remove("slider__image-item--active");
-        curImage.style.justifySelf = 'start'
-        curImg.style.objectPosition = 'left center'
+        curImage.style.left = 0
+        curImage.style.right = 'auto'
 
-        newImage.classList.add("slider__image-item--active");
-        newImage.style.justifySelf = 'end'
-        newImg.style.objectPosition = 'right center'
+        curImg.style.left = 0
+        curImg.style.right = 'auto'
+        
+        newImage.style.right = 0
+        newImage.style.left = 'auto'
+
+        newImg.style.right = 0
+        newImg.style.left = 'auto'
+        
+        setTimeout(() => {
+          curImage.classList.remove("slider__image-item--active");
+          newImage.classList.add("slider__image-item--active");
+        })
 
         // update text
         const allTexts = document.querySelectorAll(".slider__texts");

@@ -6,30 +6,69 @@ block footer
 block burger
 
 block content
-  .container
-    .choice
-      .choice__panel-wrapper
-        .choice__panel
-          h1
-            |политическая экспертиза
-          .choice__button
-            +arrow-svg.choice__arrow-svg
-      .choice__drop
-        .choice__drop-content
-          .container
-            .tags.tags--themes
-              ul.tags__list.choice__list
-                li.tags__item.choice__item
-                  a.choice__link.choice__link--active(href='#')
-                    |Все
-                -
-                  var items = [
-                    'Колонки',
-                    'Интервью',
-                    'Экспертные комментарии',
-                    'Подскасты',
-                    'Видео',
-                  ]
-                each item in items
-                  li.tags__item.choice__item
-                    a.choice__link(href='#')= item
+  .slider(data-slider)
+    -
+      var years = [
+        1984,
+        1985,
+        1986,
+        1987,
+        1989,
+        1990,
+        1991,
+        2012,
+        2014,
+        2016,
+        2020,
+        2021,
+      ]
+    .slider__top
+      .slider__years-wrapper
+        .container
+          ul.slider__years
+            li.slider__years-item
+              .slider__year.slider__year--active(data-slider-year)
+                .slider__year-text
+                  |#{[...years].shift()}
+            each year in years.slice(1, years.length - 1)
+              li.slider__years-item
+                .slider__year(data-slider-year)
+                  .slider__year-text
+                    |#{year}
+            li.slider__years-item
+              .slider__year.slider__year--last(data-slider-year)
+                .slider__year-text
+                  |#{[...years].pop()}
+    .container
+      .slider__bottom
+        .slider__photo
+          .slider__image
+            .slider__image-item.slider__image-item--active
+              img.slider__img(src="assets/images/slider.jpg" style=`opacity: ${Math.random()}`)
+            each i, j in years.slice(1)
+              .slider__image-item
+                img.slider__img(src="assets/images/slider.jpg" style=`opacity: ${Math.random()}`)
+        .slider__content
+          .slider__texts.slider__articles
+            .slider__text.slider__text--in.slider__text--active
+              .slider__article
+                |Директор Центра политической конъюнктуры России (ЦПК). Руководитель Центра социальной и политической информации Института социально-политических исследований (ИСПИ) РАН.
+            each i in years.slice(1)
+              .slider__text
+                .slider__article
+                  |Директор Центра политической конъюнктуры России (ЦПК). Руководитель Центра социальной и политической информации Института социально-политических исследований (ИСПИ) РАН.
+          .slider__texts.slider__dates
+            .slider__text.slider__text--in.slider__text--active
+              .slider__date
+                |#{[...years].shift()}
+            each year in years.slice(1)
+              .slider__text
+                .slider__date
+                  |#{year}
+          .slider__controls
+            .slider__control.slider__control--prev(data-slider-prev)
+              +control-arrow-small-svg.slider__arrow.slider__arrow--small
+              +control-arrow-large-svg.slider__arrow.slider__arrow--large
+            .slider__control.slider__control--next(data-slider-next)
+              +control-arrow-small-svg.slider__arrow.slider__arrow--small
+              +control-arrow-large-svg.slider__arrow.slider__arrow--large
