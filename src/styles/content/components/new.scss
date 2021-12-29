@@ -832,22 +832,33 @@
     --choice-button-size: 56px;
   }
 
+  &--open {
+    #{$component}__button {
+      background-color: var(--color-blue);
+    }
+
+    #{$component}__arrow-svg {
+      transform: rotate(180deg);
+
+      path {
+        stroke: var(--color-white);
+      }
+    }
+  }
+
   &__panel {
     display: flex;
 
     cursor: pointer;
 
-    &:hover,
-    &--active {
+    &:hover {
       #{$component}__button {
         background-color: var(--color-blue);
+      }
 
-        #{$component}__arrow-svg {
-          transform: rotate(180deg);
-
-          path {
-            stroke: var(--color-white);
-          }
+      #{$component}__arrow-svg {
+        path {
+          stroke: var(--color-white);
         }
       }
     }
