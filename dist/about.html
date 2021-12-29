@@ -1,4 +1,5 @@
 <!doctype html>
+<!doctype html>
 <html lang="ru">
 
 	<head>
@@ -54,7 +55,7 @@
 								<circle cx="18" cy="18" r="18" fill="#3670FF"></circle>
 								<path d="M9.4082 12.2727H26.5899M9.4082 12.2727L17.9991 18.8844L22.2945 15.5785L26.5899 12.2727M9.4082 12.2727V18V23.7272H26.5899V12.2727" stroke="white" stroke-width="1.5"></path>
 							</svg></a>
-						<div class="header__mobile-button"><svg width="36" height="36" viewbox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" data-menu-button="open">
+						<div class="header__mobile-button" data-burger-open="data-burger-open"><svg width="36" height="36" viewbox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" data-menu-button="open">
 								<mask id="path-1-inside-1_132_3538" fill="white">
 									<path d="M36 18C36 27.9411 27.9411 36 18 36C8.05887 36 0 27.9411 0 18C0 8.05887 8.05887 0 18 0C27.9411 0 36 8.05887 36 18Z"></path>
 								</mask>
@@ -196,18 +197,18 @@
 						<div class="slider__bottom">
 							<div class="slider__photo">
 								<div class="slider__image">
-									<div class="slider__image-item slider__image-item--active"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.4342289528001413" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.549206291967842" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.48987109905494264" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.07047735339856254" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.9802993040469685" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.1956449574419501" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.7796508145811101" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.9692667786209714" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.9194577731384916" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.8560297230224145" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.27402847557815413" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.9164647420972827" /></div>
+									<div class="slider__image-item slider__image-item--active"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.6111735007197516" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.6296010124065239" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.9449856042389859" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.45944227527287484" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.3905491715119369" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.04254723922609971" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.8759152335781579" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.5474057677150106" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.45298279818902487" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.732704194391044" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.7755242655630972" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.9225310763295271" /></div>
 								</div>
 							</div>
 							<div class="slider__content">
@@ -325,6 +326,44 @@
 					<div class="grid-test__col"></div>
 					<div class="grid-test__col"></div>
 					<div class="grid-test__col"></div>
+				</div>
+			</div>
+		</div>
+		<div class="burger" data-burger>
+			<div class="burger__shadow"></div>
+			<div class="container">
+				<div class="burger__container">
+					<div class="burger__close close-button" data-burger-close><svg class="close-button__svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
+							<rect x="2.2229" y="1.51472" width="23" height="1" transform="rotate(45 2.2229 1.51472)" fill="#3670FF" stroke="#1D212C"></rect>
+							<rect y="0.707107" width="23" height="1" transform="matrix(-0.707107 0.707107 0.707107 0.707107 17.2795 1.01472)" fill="#3670FF" stroke="#1D212C"></rect>
+						</svg></div>
+					<div class="burger__scroll">
+						<div class="burger__content">
+							<div class="container">
+								<div class="burger__block">
+									<ul class="burger__list">
+										<li class="burger__item burger__link-wrapper"><a class="burger__link" href="#">Политическая экспертиза</a></li>
+										<li class="burger__item burger__link-wrapper"><a class="burger__link" href="#">Мероприятия</a></li>
+										<li class="burger__item burger__link-wrapper"><a class="burger__link" href="#">Книжная критика</a></li>
+									</ul>
+								</div>
+								<div class="burger__block burger__link-wrapper"><a class="burger__link" href="#">обо мне</a></div>
+								<div class="burger__block">
+									<ul class="burger__list">
+										<li class="burger__item burger__link-wrapper"><a class="burger__link" href="#">вконтакте</a></li>
+										<li class="burger__item burger__link-wrapper"><a class="burger__link" href="#">facebook</a></li>
+										<li class="burger__item burger__link-wrapper"><a class="burger__link" href="#">telegram</a></li>
+									</ul>
+								</div>
+								<div class="burger__block burger__link-wrapper"><a class="burger__link" href="mailto:info@chesnakov.ru">info@chesnakov.ru</a></div>
+								<div class="burger__block">
+									<div class="button">
+										<div class="button__button burger__button">задать вопрос</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

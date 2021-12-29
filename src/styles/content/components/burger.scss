@@ -8,6 +8,10 @@
 
   @include inset();
 
+  @media (min-width: $breakpoint-d) {
+    display: none;
+  }
+
   &__shadow {
     position: absolute;
 
