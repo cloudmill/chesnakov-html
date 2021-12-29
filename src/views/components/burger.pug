@@ -1,0 +1,37 @@
+doctype html
+
+mixin burger
+  .burger(data-burger)
+    .burger__shadow
+    .container
+      .burger__container
+        .burger__close.close-button(data-burger-close)
+          +cross-svg.close-button__svg
+        .burger__scroll
+          .burger__content
+            .container
+              .burger__block
+                ul.burger__list
+                  -
+                    var items = [...data.nav]
+                    items.pop()
+                  each item in items
+                    li.burger__item.burger__link-wrapper
+                      a.burger__link(href='#')
+                        |#{item}
+              .burger__block.burger__link-wrapper
+                a.burger__link(href='#')
+                  |#{[...data.nav].pop()}
+              .burger__block
+                ul.burger__list
+                  each item in data.socials
+                    li.burger__item.burger__link-wrapper
+                      a.burger__link(href='#')
+                        |#{item}
+              .burger__block.burger__link-wrapper
+                a.burger__link(href=`mailto:${data.email}`)
+                  |#{data.email}
+              .burger__block
+                .button
+                  .button__button.burger__button
+                    |задать вопрос

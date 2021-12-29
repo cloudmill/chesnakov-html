@@ -1,0 +1,161 @@
+.burger {
+  $component: &;
+
+  position: fixed;
+  z-index: $z-index-burger;
+
+  pointer-events: none;
+
+  @include inset();
+
+  &__shadow {
+    position: absolute;
+
+    background-color: black;
+    opacity: 0;
+    transition: opacity $transition;
+
+    @include inset();
+  }
+
+  &__container {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateX(100%);
+
+    width: calc(#{$col-with-gap-m} * 3);
+    pointer-events: all;
+
+    background-color: var(--color-white);
+    transition: transform $transition;
+
+    @media (min-width: $breakpoint-t) {
+      width: calc(#{$col-with-gap-t} * 3);
+    }
+  }
+
+  &__close {
+    position: absolute;
+    z-index: 2;
+    top: $col-gap-m;
+    right: $col-gap-m;
+
+    @media (min-width: $breakpoint-t) {
+      top: $col-gap-t;
+      right: $col-gap-t;
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    z-index: 1;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    @include inset();
+    @include scrollbar-hidden();
+  }
+
+  &__content {
+    padding: 76px 0;
+  }
+
+  &__block {
+    &:not(:first-child) {
+      margin-top: 24px;
+    }
+
+    &:last-child {
+      margin-top: 28px;
+
+      @media (min-width: $breakpoint-t) {
+        margin-top: 32px;
+      }
+    }
+  }
+
+  &__button {
+    @media (max-width: ($breakpoint-t - 1px)) {
+      width: 100%;
+    }
+
+    @media (min-width: $breakpoint-t) {
+      padding: 0 24px !important;
+      height: 36px !important;
+    }
+  }
+
+  &__link {
+    font-size: 10px;
+    line-height: (14 / 10);
+    text-transform: uppercase;
+    transition: color $transition;
+
+    &:hover {
+      color: var(--color-blue);
+    }
+
+    &-wrapper {
+      display: flex;
+    }
+  }
+
+  &__list {
+
+  }
+  &__item {
+    &:not(:first-child) {
+      margin-top: 8px;
+    }
+  }
+
+  &--open {
+    #{$component}__shadow {
+      opacity: 0.3;
+    }
+
+    #{$component}__container {
+      transform: translateX(0);
+    }
+  }
+}
+
+.close-button {
+  $component: &;
+
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--color-gray);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color $transition;
+
+  &:hover {
+    background-color: var(--color-blue);
+
+    #{$component}__svg {
+      rect {
+        stroke: var(--color-white);
+        fill: var(--color-white);
+      }
+    }
+  }
+
+  &__svg {
+    rect {
+      transition: stroke $transition, fill $transition;
+    }
+  }
+}
+
+.way {
+  min-height: 300vh;
+}

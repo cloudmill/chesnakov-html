@@ -31,5 +31,5 @@ mixin header
               |задать вопрос
           a.header__mobile-button(href=`mailto:${data.email}`)
             +email-button-svg
-          .header__mobile-button
+          .header__mobile-button(data-burger-open)
             +menu-button-svg(data-menu-button='open')
