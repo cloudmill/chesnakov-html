@@ -16,14 +16,16 @@
       position: relative;
 
       padding: 200px 0 80px;
+    }
 
+    @media (min-width: $breakpoint-xxd) {
       &::before {
         position: absolute;
         top: 0;
         bottom: 0;
         left: -$col-gap-d;
 
-        content: '';
+        content: "";
         width: 1px;
 
         background-color: var(--color-gray);
@@ -34,6 +36,329 @@
   &__page {
     @media (max-width: ($breakpoint-d - 1px)) {
       margin-bottom: 48px;
+      padding-top: 72px;
+    }
+
+    @media (max-width: ($breakpoint-t - 1px)) {
+      padding-top: 76px;
+    }
+  }
+
+  &__main {
+    @media (min-width: $breakpoint-d) {
+      padding-top: 144px;
+      padding-bottom: 80px;
+    }
+  }
+
+  &__title {
+    margin-top: 28px;
+
+    @media (min-width: $breakpoint-d) {
+      margin-top: 40px;
+    }
+  }
+
+  &__themes {
+    margin-top: 48px;
+
+    @media (min-width: $breakpoint-d) {
+      margin-top: 80px;
+    }
+  }
+
+  &__socials {
+    margin-top: 48px;
+
+    @media (min-width: $breakpoint-d) {
+      margin-top: 80px;
+    }
+  }
+}
+
+.table {
+  margin-top: 12px;
+
+  @media (min-width: $breakpoint-t) {
+    margin-top: 24px;
+    display: grid;
+    column-gap: $col-gap-t;
+    grid-template-columns: repeat(8, calc((100% - 7 * #{$col-gap-t}) / 8));
+  }
+
+  @media (min-width: $breakpoint-d) {
+    margin-top: 40px;
+    column-gap: $col-gap-d;
+    grid-template-columns: repeat(8, calc((100% - 7 * #{$col-gap-d}) / 8));
+  }
+
+  @media (min-width: $breakpoint-xxxd) {
+    grid-template-columns: repeat(7, calc((100% - 6 * #{$col-gap-d}) / 7));
+  }
+
+  &__place {
+    @media (max-width: $breakpoint-t) {
+      &:not(:first-child) {
+        margin-top: 12px;
+      }
+    }
+
+    @media (min-width: $breakpoint-t) {
+      &:nth-child(1) {
+        grid-area: 1 / 1 / span 1 / span 1;
+      }
+
+      &:nth-child(2) {
+        grid-area: 1 / 2 / span 1 / span 2;
+      }
+
+      &:nth-child(3) {
+        grid-area: 1 / 4 / span 1 / span 2;
+      }
+
+      &:nth-child(4) {
+        grid-area: 1 / 6 / span 1 / span 3;
+      }
+    }
+
+    @media (min-width: $breakpoint-xxxd) {
+      &:nth-child(4) {
+        grid-area: 1 / 6 / span 1 / span 2;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 12px;
+    line-height: (16 / 12);
+    text-transform: uppercase;
+
+    @media (min-width: $breakpoint-d) {
+      font-size: 16px;
+      line-height: (22 / 16);
+    }
+  }
+
+  &__list {
+    margin-top: 4px;
+
+    @media (min-width: $breakpoint-d) {
+      margin-top: 11px;
+    }
+
+    &-list {
+      margin-top: -4px;
+      margin-left: -4px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &-item {
+      margin-top: 4px;
+      margin-left: 4px;
+      padding: 0 8px;
+      height: 21px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border: 1px solid var(--color-gray);
+      border-radius: 4px;
+      font-size: 10px;
+      line-height: (14 / 10);
+      color: var(--color-gray-dark);
+      white-space: nowrap;
+      text-transform: uppercase;
+      transition: border-color $transition, background-color $transition,
+        color $transition;
+
+      @media (min-width: $breakpoint-d) {
+        height: 26px;
+
+        font-size: 14px;
+        line-height: (19 / 14);
+      }
+
+      &:hover {
+        background-color: var(--color-blue);
+        border-color: var(--color-blue);
+        color: var(--color-white);
+      }
+    }
+  }
+}
+
+.content {
+  margin-top: 20px;
+
+  @media (min-width: $breakpoint-t) {
+    margin-top: 24px;
+  }
+
+  @media (min-width: $breakpoint-d) {
+    margin-top: 40px;
+  }
+
+  h2 {
+    margin-bottom: 16px;
+
+    font-family: $ff-1;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.4;
+    text-transform: none;
+
+    @media (min-width: $breakpoint-d) {
+      margin-bottom: 32px;
+
+      font-size: 28px;
+    }
+  }
+
+  p {
+    margin: 12px 0;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.8;
+
+    @media (min-width: $breakpoint-d) {
+      margin: 20px 0;
+
+      font-size: 16px;
+    }
+  }
+
+  ul {
+    margin-top: 16px;
+    margin-bottom: 40px;
+
+    @media (min-width: $breakpoint-d) {
+      margin-top: 32px;
+      margin-bottom: 60px;
+    }
+
+    li {
+      position: relative;
+
+      padding-left: 25px;
+
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.8;
+
+      @media (min-width: $breakpoint-d) {
+        font-size: 16px;
+      }
+
+      &::before {
+        position: absolute;
+        top: 5px;
+        left: 0;
+
+        content: "●";
+
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 1.8;
+        color: var(--color-blue);
+
+        @media (min-width: $breakpoint-d) {
+          font-size: 12px;
+        }
+      }
+
+      &:not(:first-child) {
+        margin-top: 12px;
+
+        @media (min-width: $breakpoint-d) {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  blockquote {
+    position: relative;
+
+    margin-top: 54px;
+    margin-bottom: 40px;
+    padding-bottom: 16px;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--color-blue);
+
+    &::before {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      content: '';
+      height: 1px;
+
+      background-color: var(--color-gray);
+    }
+
+    @media (min-width: $breakpoint-t) {
+      margin-top: 40px;
+      padding-bottom: 20px;
+    }
+
+    @media (min-width: $breakpoint-d) {
+      margin-top: 60px;
+      margin-bottom: 60px;
+      padding-bottom: 32px;
+
+      font-size: 18px;
+    }
+  }
+}
+
+.back {
+  margin-top: 48px;
+  display: flex;
+
+  @media (min-width: $breakpoint-d) {
+    margin-top: 80px;
+  }
+
+  &__link {
+    width: 100%;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border: 1px solid var(--color-gray);
+    border-radius: 4px;
+    transition: border-color $transition, background-color $transition;
+    
+    @media (min-width: $breakpoint-d) {
+      height: 68px;
+    }
+
+    &:hover {
+      background-color: var(--color-blue);
+      border-color: var(--color-blue);
+
+      .back__text {
+        color: var(--color-white);
+      }
+    }
+  }
+
+  &__text {
+    font-size: 10px;
+    line-height: (14 / 10);
+    text-transform: uppercase;
+    transition: color $transition;
+
+    @media (min-width: $breakpoint-d) {
+      font-size: 14px;
+      line-height: (19 / 14);
     }
   }
 }
