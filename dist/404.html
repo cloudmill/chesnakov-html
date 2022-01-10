@@ -1,5 +1,7 @@
 <!doctype html>
 <!doctype html>
+<!doctype html>
+<!doctype html>
 <html lang="ru">
 
 	<head>
@@ -50,12 +52,12 @@
 							<li class="header__list-item"><a class="header__link" href="#">telegram</a></li>
 						</ul><a class="header__link header__email" href="mailto:info@chesnakov.ru">info@chesnakov.ru</a>
 						<div class="button header__question-button">
-							<div class="button__button header__button">задать вопрос</div>
+							<div class="button__button header__button" data-modal-open>задать вопрос</div>
 						</div><a class="header__mobile-button" href="mailto:info@chesnakov.ru"><svg width="36" height="36" viewbox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<circle cx="18" cy="18" r="18" fill="#3670FF"></circle>
 								<path d="M9.4082 12.2727H26.5899M9.4082 12.2727L17.9991 18.8844L22.2945 15.5785L26.5899 12.2727M9.4082 12.2727V18V23.7272H26.5899V12.2727" stroke="white" stroke-width="1.5"></path>
 							</svg></a>
-						<div class="header__mobile-button" data-burger-open="data-burger-open"><svg width="36" height="36" viewbox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" data-menu-button="open">
+						<div class="header__mobile-button" data-burger-open><svg width="36" height="36" viewbox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" data-menu-button="open">
 								<mask id="path-1-inside-1_132_3538" fill="white">
 									<path d="M36 18C36 27.9411 27.9411 36 18 36C8.05887 36 0 27.9411 0 18C0 8.05887 8.05887 0 18 0C27.9411 0 36 8.05887 36 18Z"></path>
 								</mask>
@@ -117,7 +119,9 @@
 					</div>
 					<div class="footer__grid-item u-display-flex"><a class="footer__link" href="mailto:info@chesnakov.ru">info@chesnakov.ru</a></div>
 					<div class="footer__grid-item">
-						<div class="button"><a class="button__button footer__button" href="#"><span>задать вопрос</span></a></div>
+						<div class="button">
+							<div class="button__button footer__button" data-modal-open><span>задать вопрос</span></div>
+						</div>
 					</div>
 					<div class="footer__grid-item"><small class="footer__copyright footer__link footer__link--small">© 2021 Официальный сайт Алексея Чеснокова</small></div>
 					<div class="footer__grid-item u-display-flex"><a class="footer__link footer__link--small" href="#">Политика конфиденциальности</a></div>
@@ -156,12 +160,40 @@
 								<div class="burger__block burger__link-wrapper"><a class="burger__link" href="mailto:info@chesnakov.ru">info@chesnakov.ru</a></div>
 								<div class="burger__block">
 									<div class="button">
-										<div class="button__button burger__button">задать вопрос</div>
+										<div class="button__button burger__button" data-modal-open>задать вопрос</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal">
+			<div class="modal__shadow"></div>
+			<div class="modal__popup">
+				<div class="modal__close close-button" data-modal-close><svg class="close-button__svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
+						<rect x="2.2229" y="1.51472" width="23" height="1" transform="rotate(45 2.2229 1.51472)" fill="#3670FF" stroke="#1D212C"></rect>
+						<rect y="0.707107" width="23" height="1" transform="matrix(-0.707107 0.707107 0.707107 0.707107 17.2795 1.01472)" fill="#3670FF" stroke="#1D212C"></rect>
+					</svg></div>
+				<div class="modal__request">
+					<div class="modal__request-content">
+						<h2 class="modal__title">Задать вопрос</h2>
+						<form class="modal__form">
+							<div class="modal__field"><input class="modal__input" required placeholder="имя" name="name"></div>
+							<div class="modal__field"><input class="modal__input" type="email" required placeholder="e-mail" name="email"></div>
+							<div class="modal__field modal__field--textarea"><textarea class="modal__input modal__input--textarea" required placeholder="сообщение" name="message"></textarea></div><label class="modal__check"><input class="modal__check-input" type="checkbox" required name="agreement">
+								<div class="modal__check-mark"><svg class="modal__check-svg" xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewbox="0 0 12 8" fill="none">
+										<path d="M1.19116 3.8L4.7085 7L11.3035 1" stroke="white"></path>
+									</svg></div>
+								<div class="modal__check-text">Согласен на обработку персональных данных в соответствии c <a class="modal__check-link" href="#">политикой конфиденциальности</a></div>
+							</label>
+							<div class="button"><button class="button__button modal__button" type="submit" data-modal-response>подписаться</button></div>
+						</form>
+					</div>
+				</div>
+				<div class="modal__response">
+					<div class="modal__response-text">Спасибо. Я получил ваш вопрос и отвечу на него как только смогу.</div>
 				</div>
 			</div>
 		</div>
