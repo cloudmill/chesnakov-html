@@ -1045,6 +1045,12 @@
         opacity: 0.5;
       }
     }
+
+    &--back {
+      .pagination__next-svg {
+        transform: rotate(180deg);
+      }
+    }
   }
 
   &__page {
