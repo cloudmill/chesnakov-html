@@ -936,6 +936,16 @@
     &--active {
       color: var(--color-blue);
     }
+
+    &--rubrics {
+      font-size: 18px;
+      line-height: 1.4;
+
+      @media (min-width: $breakpoint-d) {
+        font-size: 22px;
+        line-height: 1.3;
+      }
+    }
   }
 
   &__button {
