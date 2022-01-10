@@ -1,0 +1,21 @@
+.fform {
+  .parsley-errors-list {
+    display: none;
+  }
+
+  [type=email].parsley-error {
+    border-color: red;
+  }
+
+  &__check {
+    display: block;
+
+    &.parsley-error {
+      border: 1px solid red;
+    }
+  }
+
+  textarea.parsley-error {
+    border-color: red;
+  }
+}

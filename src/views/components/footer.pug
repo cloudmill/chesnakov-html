@@ -1,3 +1,5 @@
+doctype html
+
 mixin footer  
   footer.footer
     .container
@@ -27,7 +29,7 @@ mixin footer
             |#{data.email}
         .footer__grid-item
           .button
-            a.button__button.footer__button(href='#')
+            .button__button.footer__button(data-modal-open)
               span
                 |задать вопрос
         .footer__grid-item

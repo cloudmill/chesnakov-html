@@ -1,3 +1,5 @@
+doctype html
+
 mixin header
   header.header(class = headerTheme ? `header--theme--${headerTheme}` : null)
     .container
@@ -27,7 +29,7 @@ mixin header
           a.header__link.header__email(href=`mailto:${data.email}`)
             |#{data.email}
           .button.header__question-button
-            .button__button.header__button
+            .button__button.header__button(data-modal-open)
               |задать вопрос
           a.header__mobile-button(href=`mailto:${data.email}`)
             +email-button-svg

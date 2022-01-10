@@ -37,7 +37,7 @@ window.addEventListener("DOMContentLoaded", () => {
       if (isOpen) {
         const scroll = e.target.closest('.burger__scroll')
 
-        if (!scroll) {
+        if (!scroll && !$('.modal').hasClass('modal--active')) {
           burger.classList.remove('burger--open')
 
           setTimeout(() => {
