@@ -199,18 +199,18 @@
 						<div class="slider__bottom">
 							<div class="slider__photo">
 								<div class="slider__image">
-									<div class="slider__image-item slider__image-item--active"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.3371796979592059" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.8692970349775628" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.20838948968309712" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.7128235537832965" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.30917308294590296" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.32423849886864375" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.11921095970352824" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.8174774184658606" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.530320677909575" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.5547945315520584" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.32279710257497607" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.08785221485734107" /></div>
+									<div class="slider__image-item slider__image-item--active"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.4901288059010265" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.5326099698435238" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.5366012437716283" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.3811988088158109" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.6075553238629725" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.03132652589555751" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.1397302971611909" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.3899448253562807" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.23662632541819373" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.6768182450964284" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.45479356019755857" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.6729326794949222" /></div>
 								</div>
 							</div>
 							<div class="slider__content">
@@ -430,9 +430,15 @@
 					<div class="modal__request-content">
 						<h2 class="modal__title">Задать вопрос</h2>
 						<form class="modal__form">
-							<div class="modal__field"><input class="modal__input" required placeholder="имя" name="name"></div>
-							<div class="modal__field"><input class="modal__input" type="email" required placeholder="e-mail" name="email"></div>
-							<div class="modal__field modal__field--textarea"><textarea class="modal__input modal__input--textarea" required placeholder="сообщение" name="message"></textarea></div><label class="modal__check"><input class="modal__check-input" type="checkbox" required name="agreement">
+							<div class="modal__field"><input class="modal__input" required placeholder="имя" name="name">
+								<div class="modal__error">Поле заполнено неверно</div>
+							</div>
+							<div class="modal__field"><input class="modal__input" type="email" required placeholder="e-mail" name="email">
+								<div class="modal__error">Поле заполнено неверно</div>
+							</div>
+							<div class="modal__field modal__field--textarea"><textarea class="modal__input modal__input--textarea" required placeholder="сообщение" name="message"></textarea>
+								<div class="modal__error">Поле заполнено неверно</div>
+							</div><label class="modal__check"><input class="modal__check-input" type="checkbox" required name="agreement">
 								<div class="modal__check-mark"><svg class="modal__check-svg" xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewbox="0 0 12 8" fill="none">
 										<path d="M1.19116 3.8L4.7085 7L11.3035 1" stroke="white"></path>
 									</svg></div>

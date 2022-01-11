@@ -90,9 +90,15 @@
 					<div class="modal__request-content">
 						<h2 class="modal__title">Задать вопрос</h2>
 						<form class="modal__form">
-							<div class="modal__field"><input class="modal__input" required placeholder="имя" name="name"></div>
-							<div class="modal__field"><input class="modal__input" type="email" required placeholder="e-mail" name="email"></div>
-							<div class="modal__field modal__field--textarea"><textarea class="modal__input modal__input--textarea" required placeholder="сообщение" name="message"></textarea></div><label class="modal__check"><input class="modal__check-input" type="checkbox" required name="agreement">
+							<div class="modal__field"><input class="modal__input" required placeholder="имя" name="name">
+								<div class="modal__error">Поле заполнено неверно</div>
+							</div>
+							<div class="modal__field"><input class="modal__input" type="email" required placeholder="e-mail" name="email">
+								<div class="modal__error">Поле заполнено неверно</div>
+							</div>
+							<div class="modal__field modal__field--textarea"><textarea class="modal__input modal__input--textarea" required placeholder="сообщение" name="message"></textarea>
+								<div class="modal__error">Поле заполнено неверно</div>
+							</div><label class="modal__check"><input class="modal__check-input" type="checkbox" required name="agreement">
 								<div class="modal__check-mark"><svg class="modal__check-svg" xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewbox="0 0 12 8" fill="none">
 										<path d="M1.19116 3.8L4.7085 7L11.3035 1" stroke="white"></path>
 									</svg></div>
