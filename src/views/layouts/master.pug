@@ -48,10 +48,16 @@ html(lang='ru')
             form.modal__form
               .modal__field
                 input.modal__input(type='text' required placeholder='имя' name='name')
+                .modal__error
+                  |Поле заполнено неверно
               .modal__field
                 input.modal__input(type='email' required placeholder='e-mail' name='email')
+                .modal__error
+                  |Поле заполнено неверно
               .modal__field.modal__field--textarea
                 textarea.modal__input.modal__input--textarea(required placeholder='сообщение' name='message')
+                .modal__error
+                  |Поле заполнено неверно
               label.modal__check
                 input.modal__check-input(type='checkbox' required name='agreement')
                 .modal__check-mark
