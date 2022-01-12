@@ -45,7 +45,7 @@ html(lang='ru')
           .modal__request-content
             h2.modal__title
               |Задать вопрос
-            form.modal__form
+            form.modal__form(data-url='url' data-success-status='mail_sent' data-success-action='modal-response-open')
               .modal__field
                 input.modal__input(type='text' required placeholder='имя' name='name')
                 .modal__error

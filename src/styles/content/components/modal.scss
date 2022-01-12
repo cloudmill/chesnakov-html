@@ -175,13 +175,17 @@
       height: 100px;
       resize: none;
     }
-
+    
     &.parsley-error {
       border-color: red;
-
+      
       & ~ .modal__error {
         display: block;
       }
+    }
+
+    &:focus {
+      border-color: var(--color-blue);
     }
   }
 

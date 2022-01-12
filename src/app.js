@@ -7,3 +7,4 @@ import "./scripts/parsley";
 import "./scripts/slider";
 import "./scripts/burger";
 import "./scripts/modal";
+import "./scripts/form";

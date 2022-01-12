@@ -1,3 +1,5 @@
+import { onSignal } from "./signal";
+
 $(() => {
   $(window).on("click", (e) => {
     if (
@@ -27,11 +29,7 @@ $(() => {
     }
   });
 
-  $("[data-modal-response]").on("click", (e) => {
-    setTimeout(() => {
-      if (!$(".modal form .parsley-error").length) {
-        $(".modal").addClass("modal--response");
-      }
-    })
+  onSignal("modal-response-open", () => {
+    $(".modal").addClass("modal--response");
   });
 });
