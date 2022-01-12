@@ -15,7 +15,12 @@
 	</head>
 
 	<body>
-		<main></main>
+		<main>
+			<form data-url="wow" data-success-status="mail_sent" data-success-event="wowow">
+				<div><input required name="name"></div>
+				<div><input type="email" required name="email"></div><button>submit</button>
+			</form>
+		</main>
 		<div class="grid-test">
 			<div class="container grid-test__container">
 				<div class="grid-test__row">
@@ -34,6 +39,44 @@
 				</div>
 			</div>
 		</div>
+		<div class="burger" data-burger>
+			<div class="burger__shadow"></div>
+			<div class="container">
+				<div class="burger__container">
+					<div class="burger__close close-button" data-burger-close><svg class="close-button__svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
+							<rect x="2.2229" y="1.51472" width="23" height="1" transform="rotate(45 2.2229 1.51472)" fill="#3670FF" stroke="#1D212C"></rect>
+							<rect y="0.707107" width="23" height="1" transform="matrix(-0.707107 0.707107 0.707107 0.707107 17.2795 1.01472)" fill="#3670FF" stroke="#1D212C"></rect>
+						</svg></div>
+					<div class="burger__scroll">
+						<div class="burger__content">
+							<div class="container">
+								<div class="burger__block">
+									<ul class="burger__list">
+										<li class="burger__item burger__link-wrapper"><a class="burger__link" href="#">Политическая экспертиза</a></li>
+										<li class="burger__item burger__link-wrapper"><a class="burger__link" href="#">Мероприятия</a></li>
+										<li class="burger__item burger__link-wrapper"><a class="burger__link" href="#">Книжная критика</a></li>
+									</ul>
+								</div>
+								<div class="burger__block burger__link-wrapper"><a class="burger__link" href="#">обо мне</a></div>
+								<div class="burger__block">
+									<ul class="burger__list">
+										<li class="burger__item burger__link-wrapper"><a class="burger__link" href="#">вконтакте</a></li>
+										<li class="burger__item burger__link-wrapper"><a class="burger__link" href="#">facebook</a></li>
+										<li class="burger__item burger__link-wrapper"><a class="burger__link" href="#">telegram</a></li>
+									</ul>
+								</div>
+								<div class="burger__block burger__link-wrapper"><a class="burger__link" href="mailto:info@chesnakov.ru">info@chesnakov.ru</a></div>
+								<div class="burger__block">
+									<div class="button">
+										<div class="button__button burger__button" data-modal-open>задать вопрос</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="modal">
 			<div class="modal__shadow"></div>
 			<div class="modal__popup">
@@ -44,7 +87,7 @@
 				<div class="modal__request">
 					<div class="modal__request-content">
 						<h2 class="modal__title">Задать вопрос</h2>
-						<form class="modal__form">
+						<form class="modal__form" data-url="url" data-success-status="mail_sent" data-success-action="modal-response-open">
 							<div class="modal__field"><input class="modal__input" required placeholder="имя" name="name">
 								<div class="modal__error">Поле заполнено неверно</div>
 							</div>
