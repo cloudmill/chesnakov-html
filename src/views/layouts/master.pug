@@ -6,6 +6,7 @@ include ../components/header
 include ../components/footer
 
 include ../components/burger
+include ../components/modal
 
 include ../components/grid-test
 
@@ -30,47 +31,13 @@ html(lang='ru')
     block footer
       +footer
 
-    block grid-test
-      +grid-test
-
     block burger
       +burger
 
-    .modal
-      .modal__shadow
-      .modal__popup
-        .modal__close.close-button(data-modal-close)
-          +cross-svg.close-button__svg
-        .modal__request
-          .modal__request-content
-            h2.modal__title
-              |Задать вопрос
-            form.modal__form(data-url='url' data-success-status='mail_sent' data-success-action='modal-response-open')
-              .modal__field
-                input.modal__input(type='text' required placeholder='имя' name='name')
-                .modal__error
-                  |Поле заполнено неверно
-              .modal__field
-                input.modal__input(type='email' required placeholder='e-mail' name='email')
-                .modal__error
-                  |Поле заполнено неверно
-              .modal__field.modal__field--textarea
-                textarea.modal__input.modal__input--textarea(required placeholder='сообщение' name='message')
-                .modal__error
-                  |Поле заполнено неверно
-              label.modal__check
-                input.modal__check-input(type='checkbox' required name='agreement')
-                .modal__check-mark
-                  +check-mark-svg.modal__check-svg
-                .modal__check-text
-                  |Согласен на обработку персональных данных в соответствии c 
-                  a.modal__check-link(href='#')
-                    |политикой конфиденциальности
-              .button
-                button.button__button.modal__button(type='submit' data-modal-response)
-                  |подписаться
-        .modal__response
-          .modal__response-text
-            |Спасибо. Я получил ваш вопрос и отвечу на него как только смогу.
+    block modal
+      +modal
 
+    block grid-test
+      +grid-test
+    
     block scripts

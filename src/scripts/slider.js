@@ -1,18 +1,17 @@
 const DURATION = 1000;
+const ACTIVE_YEAR_CLASS = "slider__year--active";
 
 window.addEventListener("DOMContentLoaded", () => {
   const slider = document.querySelector("[data-slider]");
 
   if (slider) {
-    // years
-    const ACTIVE_YEAR_CLASS = "slider__year--active";
-
     const years = document.querySelectorAll("[data-slider-year]");
+    const prev = document.querySelector("[data-slider-prev]");
+    const next = document.querySelector("[data-slider-next]");
+    const allTexts = document.querySelectorAll(".slider__texts");
+
     let activeYear = document.querySelector(`.${ACTIVE_YEAR_CLASS}`);
-
-    // slider
     let enabled = true;
-
     let curIndex = 0;
 
     function updateSlider(newIndex) {
@@ -27,10 +26,9 @@ window.addEventListener("DOMContentLoaded", () => {
         // update year
         activeYear.classList.remove(ACTIVE_YEAR_CLASS);
 
-        const allYear = document.querySelectorAll(".slider__year");
-        const newYear = allYear[newIndex];
-
+        const newYear = years[newIndex];
         newYear.classList.add("slider__year--active");
+
         activeYear = newYear;
 
         // update image
@@ -42,26 +40,24 @@ window.addEventListener("DOMContentLoaded", () => {
         const newImage = allImage[newIndex];
         const newImg = newImage.querySelector(".slider__img");
 
-        curImage.style.left = 0
-        curImage.style.right = 'auto'
+        curImage.style.left = 0;
+        curImage.style.right = "auto";
 
-        curImg.style.left = 0
-        curImg.style.right = 'auto'
-        
-        newImage.style.right = 0
-        newImage.style.left = 'auto'
+        curImg.style.left = 0;
+        curImg.style.right = "auto";
 
-        newImg.style.right = 0
-        newImg.style.left = 'auto'
-        
+        newImage.style.right = 0;
+        newImage.style.left = "auto";
+
+        newImg.style.right = 0;
+        newImg.style.left = "auto";
+
         setTimeout(() => {
           curImage.classList.remove("slider__image-item--active");
           newImage.classList.add("slider__image-item--active");
-        })
+        });
 
         // update text
-        const allTexts = document.querySelectorAll(".slider__texts");
-
         allTexts.forEach((texts) => {
           const curText = texts.querySelector(".slider__text--active");
 
@@ -86,20 +82,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // events
     years.forEach((year, index) => {
-      year.addEventListener("click", () => {
-        if (enabled) {
-          activeYear.classList.remove(ACTIVE_YEAR_CLASS);
-
-          year.classList.add("slider__year--active");
-          activeYear = year;
-
-          updateSlider(index);
-        }
-      });
+      year.addEventListener("click", () => enabled && updateSlider(index));
     });
-
-    const prev = document.querySelector("[data-slider-prev]");
-    const next = document.querySelector("[data-slider-next]");
 
     prev.addEventListener("click", () => {
       let newIndex = curIndex - 1;
@@ -114,10 +98,8 @@ window.addEventListener("DOMContentLoaded", () => {
     next.addEventListener("click", () => {
       let newIndex = curIndex + 1;
 
-      const allYear = document.querySelectorAll(".slider__year");
-
-      if (newIndex >= allYear.length) {
-        newIndex = allYear.length - 1;
+      if (newIndex >= years.length) {
+        newIndex = years.length - 1;
       }
 
       updateSlider(newIndex);
