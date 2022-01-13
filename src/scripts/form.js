@@ -17,7 +17,7 @@ $(() => {
     });
 
     try {
-      successAction && sendSignal(successAction); // dev
+      // successAction && sendSignal(successAction); // dev
 
       $.post(url, params, (data) => {
         if (data.status === successStatus) {
