@@ -8,23 +8,23 @@ $(() => {
   }
 
   if (modal.length) {
-    const modalForm = $(".modal__form");
-
     $(window).on("click", (e) => {
       const popupClick = !!$(e.target).closest(".modal__popup").length;
-
       const openClick = !!$(e.target).closest("[data-modal-open]").length;
       const closeClick = !!$(e.target).closest("[data-modal-close]").length;
 
       const isActive = modal.hasClass("modal--active");
-      const isResponse = modal.hasClass("modal--response");
+      const isQuestion = modal.hasClass("modal--question");
+      const isSubscribe = modal.hasClass("modal--subscribe");
 
       console.log("modal", {
         popupClick,
         openClick,
         closeClick,
+
         isActive,
-        isResponse,
+        isQuestion,
+        isSubscribe,
       });
 
       if (isActive) {
@@ -33,8 +33,19 @@ $(() => {
 
           window.removeEventListener("wheel", handleWheel, { passive: false });
 
-          if (isResponse) {
-            modal.removeClass("modal--response");
+          if (isQuestion) {
+            modal.removeClass("modal--question");
+
+            const modalForm = $("[data-success-action=question-success]");
+
+            modalForm.parsley().reset();
+            modalForm[0].reset();
+          }
+
+          if (isSubscribe) {
+            modal.removeClass("modal--subscribe");
+
+            const modalForm = $("[data-success-action=subscribe-success]");
 
             modalForm.parsley().reset();
             modalForm[0].reset();
@@ -49,8 +60,10 @@ $(() => {
       }
     });
 
-    onSignal("modal-response-open", () => {
-      modal.addClass("modal--response");
-    });
+    ["question", "subscribe"].forEach((action) =>
+      onSignal(`${action}-success`, () => {
+        modal.addClass(["modal--active", `modal--${action}`]);
+      })
+    );
   }
 });

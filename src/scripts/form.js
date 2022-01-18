@@ -8,16 +8,22 @@ $(() => {
     const successStatus = $(this).data("success-status");
     const successAction = $(this).data("success-action");
     const params = $(this).serialize();
+    const isTest = $(this)[0].hasAttribute("data-form-test");
 
     console.log("form", this, {
       url,
       successStatus,
       successAction,
       params,
+      isTest,
     });
 
     try {
-      // successAction && sendSignal(successAction); // dev
+      if (isTest) {
+        setTimeout(() => {
+          successAction && sendSignal(successAction);
+        }, 1000);
+      }
 
       $.post(url, params, (data) => {
         if (data.status === successStatus) {

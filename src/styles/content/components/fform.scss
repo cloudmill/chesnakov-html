@@ -1,21 +1,70 @@
 .fform {
-  .parsley-errors-list {
-    display: none;
+  @media (min-width: $breakpoint-d) {
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  [type=email].parsley-error {
-    border-color: red;
-  }
-
-  &__check {
-    display: block;
-
-    &.parsley-error {
-      border: 1px solid red;
+  &__bottom {
+    @media (max-width: ($breakpoint-d - 1px)) {
+      margin-top: 28px;
     }
   }
 
-  textarea.parsley-error {
-    border-color: red;
+  &__input {
+    height: 40px !important;
+
+    @media (min-width: $breakpoint-t) {
+      height: 44px !important;
+    }
+  }
+
+  &__email {
+    margin: 0 !important;
+  }
+
+  &__agreement {
+    margin: 0 !important;
+    margin-top: 12px !important;
+
+    @media (min-width: $breakpoint-d) {
+      margin-top: 8px !important;
+      height: 44px;
+    }
+
+    &-text {
+      @media (min-width: $breakpoint-d) {
+        font-size: 7px !important;
+      }
+
+      @media (min-width: $breakpoint-xd) {
+        font-size: 8px !important;
+      }
+
+      @media (min-width: $breakpoint-xxd) {
+        font-size: 10px !important;
+      }
+    }
+  }
+
+  &__submit {
+    margin: 0;
+    margin-top: 10px;
+
+    @media (min-width: $breakpoint-d) {
+      margin-top: 8px;
+    }
+  }
+
+  &__checkboxes {
+    @media (min-width: $breakpoint-d) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  .parsley-errors-list {
+    display: none;
   }
 }

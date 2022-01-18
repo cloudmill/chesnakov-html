@@ -538,6 +538,14 @@
         padding: 0 12px;
         height: 44px;
       }
+
+      &:hover {
+        border-color: var(--color-blue);
+
+        .form__checkbox-mark {
+          border-color: var(--color-blue);
+        }
+      }
     }
 
     &-text {
@@ -641,7 +649,7 @@
   position: relative;
 
   padding: 16px;
-  height: 135px;
+  height: 136px;
   display: flex;
   align-items: flex-end;
 
@@ -1764,7 +1772,6 @@
   overflow: hidden;
 
   &__top {
-
   }
 
   &__bottom {
@@ -1915,7 +1922,7 @@
         left: 0;
         bottom: 0;
 
-        content: '';
+        content: "";
         width: calc(100% / 7 * 5 + #{$col-gap-d});
         height: 1px;
 
@@ -2093,7 +2100,7 @@
 
   &__texts {
     display: grid;
-    grid-template-areas: 'place';
+    grid-template-areas: "place";
     overflow: hidden;
   }
   &__text {
@@ -2126,7 +2133,7 @@
     }
 
     grid-area: place;
-    
+
     opacity: 0;
 
     &--active {
@@ -2139,7 +2146,8 @@
     }
 
     &--in {
-      animation: in #{$duration / 2} $transition-function #{$duration / 2} forwards;
+      animation: in #{$duration / 2} $transition-function #{$duration / 2}
+        forwards;
     }
 
     &--pre-in {

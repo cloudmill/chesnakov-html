@@ -3,231 +3,457 @@ extends ../layouts/master
 block header
 block footer
 
+//- block grid-test
+
 block content
   .container
-    a.banner.banner--main(href='#')
-      h3.banner__title
-        |Подпишитесь на мой блог
-      .banner__pin
-        |@
-      +logo-banner-svg.banner__logo
-  .container
-    .choice
-      .choice__panel-wrapper
-        .choice__panel
+    .ppage
+      .ppage__main.ppage__main--border
+        .ppage__main-container
+          .breadcrumbs
+            ul.breadcrumbs__list
+              li.breadcrumbs__item
+                a.breadcrumbs__link(href='#')
+                  +logo-icon-svg.breadcrumbs__logo
+              - for (let i = 0; i < 10; i++)
+                li.breadcrumbs__item
+                  a.breadcrumbs__link(href='#')
+                    |Политическая экспертиза
+                li.breadcrumbs__item
+                  a.breadcrumbs__link(href='#')
+                    |Колонки
+                li.breadcrumbs__item
+                  .breadcrumbs__link
+                    |Риски для российской системы власти после пандемии коронавируса
+          h3
+            |темы
+          .tags.tags--themes
+            ul.tags__list
+              li.tags__item
+                .tag
+                  .tag__button.tag__button--active= data.themes[0]
+              - for (let i = 0; i < 3; i++)
+                each theme in data.themes.slice(1)
+                  li.tags__item
+                    .tag
+                      .tag__button= theme
           h1
-            |политическая экспертиза
-          .choice__button
-            +arrow-svg.choice__arrow-svg
-      .choice__drop
-        .choice__drop-content
-          .container
-            .tags.tags--themes.tags--rubrics
-              ul.tags__list.choice__list
-                li.tags__item.choice__item
-                  a.choice__link.choice__link--rubrics.choice__link--active(href='#')
-                    |Все
-                -
-                  var items = [
-                    'Колонки',
-                    'Интервью',
-                    'Экспертные комментарии',
-                    'Подскасты',
-                    'Видео',
-                  ]
-                - for (let i = 0; i < 3; i++)
-                  each item in items
-                    li.tags__item.choice__item
-                      a.choice__link.choice__link--rubrics(href='#')= item
-            .tags.tags--themes
-              ul.tags__list.choice__list
-                li.tags__item.choice__item
-                  a.choice__link.choice__link--active(href='#')
-                    |Все
-                -
-                  var items = [
-                    'Колонки',
-                    'Интервью',
-                    'Экспертные комментарии',
-                    'Подскасты',
-                    'Видео',
-                  ]
-                - for (let i = 0; i < 3; i++)
-                  each item in items
-                    li.tags__item.choice__item
-                      a.choice__link(href='#')= item
-  .container
-    .tags.tags--themes
-      ul.tags__list
-        li.tags__item
-        
-          .tag
-            .tag__button.tag__button--active= data.themes[0]
-        
-        - for (let i = 0; i < 3; i++)
-          each theme in data.themes.slice(1)
-            li.tags__item
-
-              .tag
-                .tag__button= theme
-  .container
-    .breadcrumbs
-      ul.breadcrumbs__list
-        li.breadcrumbs__item
-          a.breadcrumbs__link(href='#')
-            +logo-icon-svg.breadcrumbs__logo
-        - for (let i = 0; i < 10; i++)
-          li.breadcrumbs__item
-            a.breadcrumbs__link(href='#')
-              |Политическая экспертиза
-          li.breadcrumbs__item
-            a.breadcrumbs__link(href='#')
-              |Колонки
-          li.breadcrumbs__item
-            .breadcrumbs__link
-              |Риски для российской системы власти после пандемии коронавируса
-  .container
-    .socials
-      h3
-        |я в социальных сетях
-      .socials__row
-        a.socials__item(href='#')
-          +vk-svg.socials__vk
-          .socials__text
-            |Вконтакте
-        a.socials__item(href='#')
-          +fb-svg.socials__fb
-          .socials__text
-            |Facebook
-        a.socials__item(href='#')
-          +tg-svg.socials__tg
-          .socials__text
-            |Telegram
-  .container
-    h1
-      |hello world
-    h2
-      |hello world
-    h3
-      |hello world
-  .container
-    .pagination
-      a.pagination__next.pagination__next--back(href='#')
-        +pagination-next-svg.pagination__next-svg.pagination__next-svg--default
-        +pagination-next--large-svg.pagination__next-svg.pagination__next-svg--large
-      .pagination__pages
-        .pagination__left
-          .pagination__left-item.pagination__page-wrapper
-            a.pagination__page.pagination__page--active(href="#")
-              |1
-          .pagination__left-item.pagination__page-wrapper
-            a.pagination__page(href="#")
-              |2
-          .pagination__left-item.pagination__page-wrapper
-            a.pagination__page(href="#")
-              |3
-        .pagination__between
-          |...
-        .pagination__right
-          a.pagination__page(href="#")
-            |12
-  .container
-    a.top-card(href='#')
-      .top-card__image-block
-        img.top-card__image(src="assets/images/card-photo.jpg")
-      .news-item.news-item--top-card
-        .tags.tags--pins
-          ul.tags__list
-            li.tags__item
+            |ГОСДУМА
+          a.top-card(href='#')
+            .top-card__image-block
+              img.top-card__image(src="assets/images/card-photo.jpg")
+            .news-item.news-item--top-card
+              .tags.tags--pins
+                ul.tags__list
+                  li.tags__item
+                    .pin
+                      .pin__button(href='#')
+                        |колонка
+              h4.news-item__title
+                |Успех «списка Собянина» на выборах
+              p.news-item__date
+                |11.10.2021
+          .news-list
+            a.news-item.news-item--news-list(href='#')
               .pin
                 .pin__button(href='#')
-                  |колонка
-        h4.news-item__title
-          |Успех «списка Собянина» на выборах
-        p.news-item__date
-          |11.10.2021
-  .container
-    .news-list
-      a.news-item.news-item--news-list(href='#')
-        .pin
-          .pin__button(href='#')
-            |Колонка
-        h4.news-item__title
-          |Успех «списка Собянина» на выборах
-        p.news-item__date
-          |11.10.2021
-      a.news-item.news-item--news-list(href='#')
-        .pin
-          .pin__button(href='#')
-            |экспертные комментарии
-        h4.news-item__title
-          |Снижение числа голосующих на дому москвичей в сравнении с 2020 годом
-        p.news-item__date
-          |11.10.2021
-      a.news-item.news-item--news-list(href='#')
-        .pin
-          .pin__button(href='#')
-            |Колонка
-        h4.news-item__title
-          |Голосование «ногами» становится архаичным, но понять это сейчас могут далеко не все
-        p.news-item__date
-          |11.10.2021
-      a.news-item.news-item--news-list(href='#')
-        .pin
-          .pin__button(href='#')
-            |экспертные комментарии
-        h4.news-item__title
-          |Ключевой темой думских выборов остается борьба с коронавирусом
-        p.news-item__date
-          |11.10.2021
-      a.news-item.news-item--news-list(href='#')
-        .pin
-          .pin__button(href='#')
-            |Колонка
-        h4.news-item__title
-          |Гадкие утята
-        p.news-item__date
-          |11.10.2021
-      a.news-item.news-item--news-list(href='#')
-        .pin
-          .pin__button(href='#')
-            |экспертные комментарии
-        h4.news-item__title
-          |Объясняем успех «списка Собянина» на выборах в Москве
-        p.news-item__date
-          |11.10.2021
-  .container
-    form.form.form--main.form--margin--dafault
-      label.form__checkbox
-        input.form__checkbox-input(type="checkbox")
-        .form__checkbox-block
-          .form__mark.form__checkbox-mark
-            +check-mark-svg
-          .form__checkbox-text
-            |Политическая экспертиза
-      label.form__checkbox
-        input.form__checkbox-input(type="checkbox")
-        .form__checkbox-block
-          .form__mark.form__checkbox-mark
-            +check-mark-svg
-          .form__checkbox-text
-            |Политическая экспертиза
-      label.form__checkbox
-        input.form__checkbox-input(type="checkbox")
-        .form__checkbox-block
-          .form__mark.form__checkbox-mark
-            +check-mark-svg
-          .form__checkbox-text
-            |Политическая экспертиза
-      input.form__field(type="email" placeholder='E-mail')
-      label.form__agree
-        input.form__agree-input(type="checkbox")
-        .form__mark.form__agree-mark
-          +check-mark-svg
-        .form__agree-text
-          |Согласен на обработку персональных данных в соответствии с 
-          a.form__agree-link(href='#')
-            |политикой конфиденциальности
-      .button
-        button.button__button.form__submit(type="submit")
-          |подписаться
+                  |Колонка
+              h4.news-item__title
+                |Успех «списка Собянина» на выборах
+              p.news-item__date
+                |11.10.2021
+            a.news-item.news-item--news-list(href='#')
+              .pin
+                .pin__button(href='#')
+                  |экспертные комментарии
+              h4.news-item__title
+                |Снижение числа голосующих на дому москвичей в сравнении с 2020 годом
+              p.news-item__date
+                |11.10.2021
+            a.news-item.news-item--news-list(href='#')
+              .pin
+                .pin__button(href='#')
+                  |Колонка
+              h4.news-item__title
+                |Голосование «ногами» становится архаичным, но понять это сейчас могут далеко не все
+              p.news-item__date
+                |11.10.2021
+            a.news-item.news-item--news-list(href='#')
+              .pin
+                .pin__button(href='#')
+                  |экспертные комментарии
+              h4.news-item__title
+                |Ключевой темой думских выборов остается борьба с коронавирусом
+              p.news-item__date
+                |11.10.2021
+            a.news-item.news-item--news-list(href='#')
+              .pin
+                .pin__button(href='#')
+                  |Колонка
+              h4.news-item__title
+                |Гадкие утята
+              p.news-item__date
+                |11.10.2021
+            a.news-item.news-item--news-list(href='#')
+              .pin
+                .pin__button(href='#')
+                  |экспертные комментарии
+              h4.news-item__title
+                |Объясняем успех «списка Собянина» на выборах в Москве
+              p.news-item__date
+                |11.10.2021
+          .pagination
+            a.pagination__next.pagination__next--back(href='#')
+              +pagination-next-svg.pagination__next-svg.pagination__next-svg--default
+              +pagination-next--large-svg.pagination__next-svg.pagination__next-svg--large
+            .pagination__pages
+              .pagination__left
+                .pagination__left-item.pagination__page-wrapper
+                  a.pagination__page.pagination__page--active(href="#")
+                    |1
+                .pagination__left-item.pagination__page-wrapper
+                  a.pagination__page(href="#")
+                    |2
+                .pagination__left-item.pagination__page-wrapper
+                  a.pagination__page(href="#")
+                    |3
+              .pagination__between
+                |...
+              .pagination__right
+                a.pagination__page(href="#")
+                  |12
+      .ppage__aside
+        .ppage__aside-container
+          .aside
+            .aside__banner
+              a.banner.banner--main(href='#')
+                h3.banner__title
+                  |Подпишитесь на мой блог
+                .banner__pin
+                  |@
+                +logo-banner-svg.banner__logo
+            .aside__form
+              form.fform(data-url='url' data-success-status='mail_sent' data-success-action='subscribe-success' data-form-test)
+                fieldset.fform__top.fform__checkboxes.checkboxes
+                  - var items = ['Политическая экспертиза', 'Мероприятия', 'Книжная критика']
+                  each item in items
+                    .checkboxes__item
+                      label.form__checkbox
+                        input.form__checkbox-input(type='checkbox' name='subscribe' value=item required data-parsley-errors-container=".checkboxes")
+                        .form__checkbox-block
+                          .form__mark.form__checkbox-mark
+                            +check-mark-svg
+                          .form__checkbox-text= item
+                .fform__bottom
+                  .modal__field.fform__email
+                    input.modal__input.fform__input(type='email' required placeholder='e-mail' name='email')
+                    .modal__error
+                      |Поле заполнено неверно
+                  label.fform__agreement.modal__check
+                    input.modal__check-input(type='checkbox' required name='agreement')
+                    .modal__check-mark
+                      +check-mark-svg.modal__check-svg
+                    .modal__check-text.fform__agreement-text
+                      |Согласен на обработку персональных данных в соответствии c 
+                      a.modal__check-link(href='#')
+                        |политикой конфиденциальности
+                  .fform__submit.button
+                    button.button__button.modal__button(type='submit' data-modal-response)
+                      |подписаться
+            .aside__socials
+              .socials
+                h3
+                  |я в социальных сетях
+                .socials__row
+                  a.socials__item(href='#')
+                    +vk-svg.socials__vk
+                    .socials__text
+                      |Вконтакте
+                  a.socials__item(href='#')
+                    +fb-svg.socials__fb
+                    .socials__text
+                      |Facebook
+                  a.socials__item(href='#')
+                    +tg-svg.socials__tg
+                    .socials__text
+                      |Telegram
+          //- 
+            a.banner.banner--main(href='#')
+              h3.banner__title
+                |Подпишитесь на мой блог
+              .banner__pin
+                |@
+              +logo-banner-svg.banner__logo
+            
+            form.modal__form(data-url='url' data-success-status='mail_sent' data-success-action='subscribe-success' data-form-test)
+              fieldset.checkboxes
+                - var items = ['Политическая экспертиза', 'Мероприятия', 'Книжная критика']
+                each item in items
+                  .checkboxes__item
+                    label.form__checkbox
+                      input.form__checkbox-input(type='checkbox' name='subscribe' value=item required data-parsley-errors-container=".checkboxes")
+                      .form__checkbox-block
+                        .form__mark.form__checkbox-mark
+                          +check-mark-svg
+                        .form__checkbox-text= item
+              .modal__field
+                input.modal__input(type='email' required placeholder='e-mail' name='email')
+                .modal__error
+                  |Поле заполнено неверно
+              label.modal__check
+                input.modal__check-input(type='checkbox' required name='agreement')
+                .modal__check-mark
+                  +check-mark-svg.modal__check-svg
+                .modal__check-text
+                  |Согласен на обработку персональных данных в соответствии c 
+                  a.modal__check-link(href='#')
+                    |политикой конфиденциальности
+              .button
+                button.button__button.modal__button(type='submit' data-modal-response)
+                  |подписаться
+            
+            .socials
+              h3
+                |я в социальных сетях
+              .socials__row
+                a.socials__item(href='#')
+                  +vk-svg.socials__vk
+                  .socials__text
+                    |Вконтакте
+                a.socials__item(href='#')
+                  +fb-svg.socials__fb
+                  .socials__text
+                    |Facebook
+                a.socials__item(href='#')
+                  +tg-svg.socials__tg
+                  .socials__text
+                    |Telegram
+      
+    //- 
+      .container
+        a.banner.banner--main(href='#')
+          h3.banner__title
+            |Подпишитесь на мой блог
+          .banner__pin
+            |@
+          +logo-banner-svg.banner__logo
+      .container
+        .choice
+          .choice__panel-wrapper
+            .choice__panel
+              h1
+                |политическая экспертиза
+              .choice__button
+                +arrow-svg.choice__arrow-svg
+          .choice__drop
+            .choice__drop-content
+              .container
+                .tags.tags--themes.tags--rubrics
+                  ul.tags__list.choice__list
+                    li.tags__item.choice__item
+                      a.choice__link.choice__link--rubrics.choice__link--active(href='#')
+                        |Все
+                    -
+                      var items = [
+                        'Колонки',
+                        'Интервью',
+                        'Экспертные комментарии',
+                        'Подскасты',
+                        'Видео',
+                      ]
+                    - for (let i = 0; i < 3; i++)
+                      each item in items
+                        li.tags__item.choice__item
+                          a.choice__link.choice__link--rubrics(href='#')= item
+                .tags.tags--themes
+                  ul.tags__list.choice__list
+                    li.tags__item.choice__item
+                      a.choice__link.choice__link--active(href='#')
+                        |Все
+                    -
+                      var items = [
+                        'Колонки',
+                        'Интервью',
+                        'Экспертные комментарии',
+                        'Подскасты',
+                        'Видео',
+                      ]
+                    - for (let i = 0; i < 3; i++)
+                      each item in items
+                        li.tags__item.choice__item
+                          a.choice__link(href='#')= item
+      .container
+        .tags.tags--themes
+          ul.tags__list
+            li.tags__item
+            
+              .tag
+                .tag__button.tag__button--active= data.themes[0]
+            
+            - for (let i = 0; i < 3; i++)
+              each theme in data.themes.slice(1)
+                li.tags__item
+
+                  .tag
+                    .tag__button= theme
+      .container
+        .breadcrumbs
+          ul.breadcrumbs__list
+            li.breadcrumbs__item
+              a.breadcrumbs__link(href='#')
+                +logo-icon-svg.breadcrumbs__logo
+            - for (let i = 0; i < 10; i++)
+              li.breadcrumbs__item
+                a.breadcrumbs__link(href='#')
+                  |Политическая экспертиза
+              li.breadcrumbs__item
+                a.breadcrumbs__link(href='#')
+                  |Колонки
+              li.breadcrumbs__item
+                .breadcrumbs__link
+                  |Риски для российской системы власти после пандемии коронавируса
+      .container
+        .socials
+          h3
+            |я в социальных сетях
+          .socials__row
+            a.socials__item(href='#')
+              +vk-svg.socials__vk
+              .socials__text
+                |Вконтакте
+            a.socials__item(href='#')
+              +fb-svg.socials__fb
+              .socials__text
+                |Facebook
+            a.socials__item(href='#')
+              +tg-svg.socials__tg
+              .socials__text
+                |Telegram
+      .container
+        h1
+          |hello world
+        h2
+          |hello world
+        h3
+          |hello world
+      .container
+        .pagination
+          a.pagination__next.pagination__next--back(href='#')
+            +pagination-next-svg.pagination__next-svg.pagination__next-svg--default
+            +pagination-next--large-svg.pagination__next-svg.pagination__next-svg--large
+          .pagination__pages
+            .pagination__left
+              .pagination__left-item.pagination__page-wrapper
+                a.pagination__page.pagination__page--active(href="#")
+                  |1
+              .pagination__left-item.pagination__page-wrapper
+                a.pagination__page(href="#")
+                  |2
+              .pagination__left-item.pagination__page-wrapper
+                a.pagination__page(href="#")
+                  |3
+            .pagination__between
+              |...
+            .pagination__right
+              a.pagination__page(href="#")
+                |12
+      .container
+        a.top-card(href='#')
+          .top-card__image-block
+            img.top-card__image(src="assets/images/card-photo.jpg")
+          .news-item.news-item--top-card
+            .tags.tags--pins
+              ul.tags__list
+                li.tags__item
+                  .pin
+                    .pin__button(href='#')
+                      |колонка
+            h4.news-item__title
+              |Успех «списка Собянина» на выборах
+            p.news-item__date
+              |11.10.2021
+      .container
+        .news-list
+          a.news-item.news-item--news-list(href='#')
+            .pin
+              .pin__button(href='#')
+                |Колонка
+            h4.news-item__title
+              |Успех «списка Собянина» на выборах
+            p.news-item__date
+              |11.10.2021
+          a.news-item.news-item--news-list(href='#')
+            .pin
+              .pin__button(href='#')
+                |экспертные комментарии
+            h4.news-item__title
+              |Снижение числа голосующих на дому москвичей в сравнении с 2020 годом
+            p.news-item__date
+              |11.10.2021
+          a.news-item.news-item--news-list(href='#')
+            .pin
+              .pin__button(href='#')
+                |Колонка
+            h4.news-item__title
+              |Голосование «ногами» становится архаичным, но понять это сейчас могут далеко не все
+            p.news-item__date
+              |11.10.2021
+          a.news-item.news-item--news-list(href='#')
+            .pin
+              .pin__button(href='#')
+                |экспертные комментарии
+            h4.news-item__title
+              |Ключевой темой думских выборов остается борьба с коронавирусом
+            p.news-item__date
+              |11.10.2021
+          a.news-item.news-item--news-list(href='#')
+            .pin
+              .pin__button(href='#')
+                |Колонка
+            h4.news-item__title
+              |Гадкие утята
+            p.news-item__date
+              |11.10.2021
+          a.news-item.news-item--news-list(href='#')
+            .pin
+              .pin__button(href='#')
+                |экспертные комментарии
+            h4.news-item__title
+              |Объясняем успех «списка Собянина» на выборах в Москве
+            p.news-item__date
+              |11.10.2021
+      .container
+        form.form.form--main.form--margin--dafault
+          label.form__checkbox
+            input.form__checkbox-input(type="checkbox")
+            .form__checkbox-block
+              .form__mark.form__checkbox-mark
+                +check-mark-svg
+              .form__checkbox-text
+                |Политическая экспертиза
+          label.form__checkbox
+            input.form__checkbox-input(type="checkbox")
+            .form__checkbox-block
+              .form__mark.form__checkbox-mark
+                +check-mark-svg
+              .form__checkbox-text
+                |Политическая экспертиза
+          label.form__checkbox
+            input.form__checkbox-input(type="checkbox")
+            .form__checkbox-block
+              .form__mark.form__checkbox-mark
+                +check-mark-svg
+              .form__checkbox-text
+                |Политическая экспертиза
+          input.form__field(type="email" placeholder='E-mail')
+          label.form__agree
+            input.form__agree-input(type="checkbox")
+            .form__mark.form__agree-mark
+              +check-mark-svg
+            .form__agree-text
+              |Согласен на обработку персональных данных в соответствии с 
+              a.form__agree-link(href='#')
+                |политикой конфиденциальности
+          .button
+            button.button__button.form__submit(type="submit")
+              |подписаться

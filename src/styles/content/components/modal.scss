@@ -16,21 +16,32 @@
     }
   }
 
-  &--response {
+  &--question,
+  &--subscribe {
     .modal__request {
       display: none;
     }
+  }
 
-    .modal__response {
-      @keyframes modal-response {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
+  @keyframes modal-response {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
+  &--question {
+    .modal__response--question {
+      display: flex;
+
+      animation: modal-response $transition;
+    }
+  }
+
+  &--subscribe {
+    .modal__response--subscribe {
       display: flex;
 
       animation: modal-response $transition;

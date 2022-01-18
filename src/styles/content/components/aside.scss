@@ -1,0 +1,42 @@
+.aside {
+  @media (min-width: $breakpoint-t) and (max-width: ($breakpoint-d - 1px)) {
+    display: grid;
+    column-gap: 20px;
+    row-gap: 48px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__banner {
+    @media (min-width: $breakpoint-t) {
+      grid-area: 1 / 1 / span 1 / span 1;
+    }
+  }
+
+  &__form {
+    @media (max-width: ($breakpoint-t - 1px)) {
+      margin-top: 8px;
+    }
+
+    @media (min-width: $breakpoint-t) {
+      grid-area: 1 / 2 / span 1 / span 1;
+    }
+
+    @media (min-width: $breakpoint-d) {
+      margin-top: 20px;
+    }
+  }
+
+  &__socials {
+    @media (max-width: ($breakpoint-t - 1px)) {
+      margin-top: 48px;
+    }
+
+    @media (min-width: $breakpoint-t) {
+      grid-area: 2 / 1 / span 1 / span 2;
+    }
+
+    @media (min-width: $breakpoint-d) {
+      margin-top: 40px;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.ppage {
+  @media (min-width: $breakpoint-d) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 40px;
+  }
+
+  &__main {
+    @media (min-width: $breakpoint-d) {
+      grid-column: 1 / span 8;
+    }
+
+    &--border {
+      @media (min-width: $breakpoint-d) {
+        border-right: 1px solid var(--color-gray);
+      }
+
+      .ppage__main-container {
+        @media (min-width: $breakpoint-d) {
+          padding-right: 40px;
+        }
+      }
+    }
+
+    &-container {
+      @media (min-width: $breakpoint-d) {
+        max-width: 1053px;
+      }
+    }
+  }
+
+  &__aside {
+    @media (min-width: $breakpoint-d) {
+      grid-column: span 4 / -1;
+    }
+
+    &-container {
+      @media (min-width: $breakpoint-d) {
+        margin-left: auto;
+        max-width: 507px;
+      }
+    }
+  }
+}

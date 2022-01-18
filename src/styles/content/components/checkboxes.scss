@@ -1,0 +1,25 @@
+.checkboxes {
+  &__item {
+    &:not(:first-child) {
+      margin-top: 8px;
+
+      @media (min-width: $breakpoint-t) {
+        margin-top: 14px;
+      }
+
+      @media (min-width: $breakpoint-d) {
+        margin-top: 8px;
+      }
+    }
+  }
+
+  &--error {
+    .form__checkbox-block {
+      border-color: var(--color-red);
+    }
+
+    .form__checkbox-mark {
+      border-color: var(--color-red);
+    }
+  }
+}
