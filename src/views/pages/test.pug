@@ -177,58 +177,6 @@ block content
                     +tg-svg.socials__tg
                     .socials__text
                       |Telegram
-          //- 
-            a.banner.banner--main(href='#')
-              h3.banner__title
-                |Подпишитесь на мой блог
-              .banner__pin
-                |@
-              +logo-banner-svg.banner__logo
-            
-            form.modal__form(data-url='url' data-success-status='mail_sent' data-success-action='subscribe-success' data-form-test)
-              fieldset.checkboxes
-                - var items = ['Политическая экспертиза', 'Мероприятия', 'Книжная критика']
-                each item in items
-                  .checkboxes__item
-                    label.form__checkbox
-                      input.form__checkbox-input(type='checkbox' name='subscribe' value=item required data-parsley-errors-container=".checkboxes")
-                      .form__checkbox-block
-                        .form__mark.form__checkbox-mark
-                          +check-mark-svg
-                        .form__checkbox-text= item
-              .modal__field
-                input.modal__input(type='email' required placeholder='e-mail' name='email')
-                .modal__error
-                  |Поле заполнено неверно
-              label.modal__check
-                input.modal__check-input(type='checkbox' required name='agreement')
-                .modal__check-mark
-                  +check-mark-svg.modal__check-svg
-                .modal__check-text
-                  |Согласен на обработку персональных данных в соответствии c 
-                  a.modal__check-link(href='#')
-                    |политикой конфиденциальности
-              .button
-                button.button__button.modal__button(type='submit' data-modal-response)
-                  |подписаться
-            
-            .socials
-              h3
-                |я в социальных сетях
-              .socials__row
-                a.socials__item(href='#')
-                  +vk-svg.socials__vk
-                  .socials__text
-                    |Вконтакте
-                a.socials__item(href='#')
-                  +fb-svg.socials__fb
-                  .socials__text
-                    |Facebook
-                a.socials__item(href='#')
-                  +tg-svg.socials__tg
-                  .socials__text
-                    |Telegram
-      
     //- 
       .container
         a.banner.banner--main(href='#')

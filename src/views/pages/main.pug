@@ -216,56 +216,57 @@ block content
                     |11.10.2021
 
       aside.page__aside
-        .page__aside-content.page__aside-content--main
-          
-          a.banner.banner--main(href='#')
-            h3.banner__title
-              |Подпишитесь на мой блог
-            .banner__pin
-              |@
-            +logo-banner-svg.banner__logo
-
-          form.modal__form(data-url='url' data-success-status='mail_sent' data-success-action='subscribe-success')
-            .checkboxes
-              fieldset.checkboxes__fieldset
-                - var items = ['Политическая экспертиза', 'Мероприятия', 'Книжная критика']
-                each item in items
-                  .checkboxes__item
-                    label.form__checkbox
-                      input.form__checkbox-input(type='checkbox' name='subscribe' value=item required)
-                      .form__checkbox-block
-                        .form__mark.form__checkbox-mark
-                          +check-mark-svg
-                        .form__checkbox-text= item
-            .modal__field
-              input.modal__input(type='email' required placeholder='e-mail' name='email')
-              .modal__error
-                |Поле заполнено неверно
-            label.modal__check
-              input.modal__check-input(type='checkbox' required name='agreement')
-              .modal__check-mark
-                +check-mark-svg.modal__check-svg
-              .modal__check-text
-                |Согласен на обработку персональных данных в соответствии c 
-                a.modal__check-link(href='#')
-                  |политикой конфиденциальности
-            .button
-              button.button__button.modal__button(type='submit' data-modal-response)
-                |подписаться
-          
-          .socials.socials--main.socials--margin--default
-            h3
-              |я в социальных сетях
-            .socials__row
-              a.socials__item(href='#')
-                +vk-svg.socials__vk
-                .socials__text
-                  |Вконтакте
-              a.socials__item(href='#')
-                +fb-svg.socials__fb
-                .socials__text
-                  |Facebook
-              a.socials__item(href='#')
-                +tg-svg.socials__tg
-                .socials__text
-                  |Telegram
+        .page__aside-content
+          .aside
+            .aside__banner
+              a.banner.banner--main(href='#')
+                h3.banner__title
+                  |Подпишитесь на мой блог
+                .banner__pin
+                  |@
+                +logo-banner-svg.banner__logo
+            .aside__form
+              form.fform(data-url='url' data-success-status='mail_sent' data-success-action='subscribe-success' data-form-test)
+                fieldset.fform__top.fform__checkboxes.checkboxes
+                  - var items = ['Политическая экспертиза', 'Мероприятия', 'Книжная критика']
+                  each item in items
+                    .checkboxes__item
+                      label.form__checkbox
+                        input.form__checkbox-input(type='checkbox' name='subscribe' value=item required data-parsley-errors-container=".checkboxes")
+                        .form__checkbox-block
+                          .form__mark.form__checkbox-mark
+                            +check-mark-svg
+                          .form__checkbox-text= item
+                .fform__bottom
+                  .modal__field.fform__email
+                    input.modal__input.fform__input(type='email' required placeholder='e-mail' name='email')
+                    .modal__error
+                      |Поле заполнено неверно
+                  label.fform__agreement.modal__check
+                    input.modal__check-input(type='checkbox' required name='agreement')
+                    .modal__check-mark
+                      +check-mark-svg.modal__check-svg
+                    .modal__check-text.fform__agreement-text
+                      |Согласен на обработку персональных данных в соответствии c 
+                      a.modal__check-link(href='#')
+                        |политикой конфиденциальности
+                  .fform__submit.button
+                    button.button__button.modal__button(type='submit' data-modal-response)
+                      |подписаться
+            .aside__socials
+              .socials
+                h3
+                  |я в социальных сетях
+                .socials__row
+                  a.socials__item(href='#')
+                    +vk-svg.socials__vk
+                    .socials__text
+                      |Вконтакте
+                  a.socials__item(href='#')
+                    +fb-svg.socials__fb
+                    .socials__text
+                      |Facebook
+                  a.socials__item(href='#')
+                    +tg-svg.socials__tg
+                    .socials__text
+                      |Telegram

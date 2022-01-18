@@ -33,6 +33,10 @@
       "href": "about",
       "title": "Обо мне"
     },
+    {
+      "href": "template",
+      "title": "Шаблон"
+    },
 
     {
       "href": "test",

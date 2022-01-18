@@ -1,0 +1,62 @@
+.page-template {
+  &__main {
+    padding: 76px 0 48px;
+
+    @media (min-width: $breakpoint-t) {
+      padding-top: 72px;
+    }
+
+    @media (min-width: $breakpoint-d) {
+      padding: 144px 0 80px;
+    }
+  }
+
+  &__themes {
+    &-title {
+      margin: 28px 0 8px;
+
+      @media (min-width: $breakpoint-d) {
+        margin: 40px 0 20px;
+      }
+    }
+  }
+
+  &__theme {
+    &-title {
+      margin: 28px 0 16px;
+
+      @media (min-width: $breakpoint-d) {
+        margin: 64px 0 40px;
+      }
+    }
+  }
+
+  &__list {
+    margin-top: 16px;
+
+    @media (min-width: $breakpoint-d) {
+      margin-top: 20px;
+    }
+  }
+
+  &__pagination {
+    margin-top: 28px;
+
+    @media (min-width: $breakpoint-d) {
+      margin-top: 60px;
+    }
+  }
+
+  &__aside {
+    &-container {
+      margin-bottom: 48px;
+
+      @media (min-width: $breakpoint-d) {
+        position: sticky;
+        top: 200px;
+  
+        margin-bottom: 80px;
+      }
+    }
+  }
+}
