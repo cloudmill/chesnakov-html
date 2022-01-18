@@ -35,20 +35,9 @@ $(() => {
 
           if (isQuestion) {
             modal.removeClass("modal--question");
-
-            const modalForm = $("[data-success-action=question-success]");
-
-            modalForm.parsley().reset();
-            modalForm[0].reset();
           }
-
           if (isSubscribe) {
             modal.removeClass("modal--subscribe");
-
-            const modalForm = $("[data-success-action=subscribe-success]");
-
-            modalForm.parsley().reset();
-            modalForm[0].reset();
           }
         }
       } else {
@@ -62,6 +51,11 @@ $(() => {
 
     ["question", "subscribe"].forEach((action) =>
       onSignal(`${action}-success`, () => {
+        const modalForm = $(`[data-success-action=${action}-success]`);
+
+        modalForm.parsley().reset();
+        modalForm[0].reset();
+
         modal.addClass(["modal--active", `modal--${action}`]);
       })
     );
