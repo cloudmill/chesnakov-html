@@ -200,18 +200,18 @@
 						<div class="slider__bottom">
 							<div class="slider__photo">
 								<div class="slider__image">
-									<div class="slider__image-item slider__image-item--active"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.7367178311540814" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.6714108095731728" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.9092360733696154" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.5833636328849665" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.4488283467702887" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.018722163272639758" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.9147988092680204" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.15064153467163632" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.4305908245067207" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.5156782626438243" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.7149516778284333" /></div>
-									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.9084590503856818" /></div>
+									<div class="slider__image-item slider__image-item--active"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.694122314849491" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.5892298950785739" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.9210575580068165" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.2757784405348245" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.7536420141077509" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.7439685128688311" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.05759888149058523" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.6421328879241546" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.44138203288118105" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.19827579258505068" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.5999436209269564" /></div>
+									<div class="slider__image-item"><img class="slider__img" src="assets/images/slider.jpg" style="opacity: 0.5508536278853151" /></div>
 								</div>
 							</div>
 							<div class="slider__content">
@@ -412,7 +412,7 @@
 				<div class="modal__request">
 					<div class="modal__request-content">
 						<h2 class="modal__title">Задать вопрос</h2>
-						<form class="modal__form" data-url="url" data-success-status="mail_sent" data-success-action="modal-response-open">
+						<form class="modal__form" data-url="url" data-success-status="mail_sent" data-success-action="question-success" data-form-test>
 							<div class="modal__field"><input class="modal__input" required placeholder="имя" name="name">
 								<div class="modal__error">Поле заполнено неверно</div>
 							</div>
@@ -431,8 +431,11 @@
 						</form>
 					</div>
 				</div>
-				<div class="modal__response">
+				<div class="modal__response modal__response--question">
 					<div class="modal__response-text">Спасибо. Я получил ваш вопрос и отвечу на него как только смогу.</div>
+				</div>
+				<div class="modal__response modal__response--subscribe">
+					<div class="modal__response-text">Спасибо. Подписка на блог успешно оформлена.</div>
 				</div>
 			</div>
 		</div>
