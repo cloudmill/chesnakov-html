@@ -3,8 +3,10 @@ mixin top
     .top__background
       +logo-icon-svg.top__logo
       .container.top__background-container
-        h1.top__title
-          |политолог
+        h1.word
+          .word__block
+            each letter in 'политолог'.split('')
+              .word__letter.top__title= letter
     .top__front
       .container
         .top__front-content

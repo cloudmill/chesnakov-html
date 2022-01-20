@@ -60,8 +60,13 @@ mixin top
   .about-top
     .container
       img.about-top__photo(src='assets/images/chesnakov-photo-2.jpg')
-      h1.about-top__title
-        |Алексей чеснаков
+      h1.word.about-top__title-block
+        .word__block
+          each letter in 'Алексей'.split('')
+            .word__letter.about-top__title= letter
+          .word__letter.about-top__title &nbsp;
+          each letter in 'чеснаков'.split('')
+            .word__letter.about-top__title= letter
       .about-top__bottom
         .about-top__left
           .about-top__text
