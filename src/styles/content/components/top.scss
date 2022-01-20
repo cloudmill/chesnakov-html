@@ -3,14 +3,32 @@
 
   // ! background
 
+  &__bg {
+    @keyframes top-bg {
+      from {
+        transform: scale(1.1);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+
+    position: absolute;
+    @include inset();
+
+    width: 100%;
+    height: 100%;
+    object-position: center top;
+    object-fit: cover;
+
+    animation: top-bg 1500ms $transition-function;
+  }
+
   &__background {
     position: relative;
     height: 220px;
 
-    background-image: url("assets/images/chesnakov-photo.jpg");
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: cover;
+    overflow: hidden;
 
     @media (min-width: $breakpoint-t) {
       height: 274px;

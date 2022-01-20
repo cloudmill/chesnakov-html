@@ -2,14 +2,16 @@ window.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".header");
 
   if (header) {
-    if (scrollY >= 1) {
-      header.classList.add("header--scroll");
-    }
+    setTimeout(() => {
+      if (scrollY >= 1) {
+        header.classList.add("header--scroll");
+      }
+    }, 500);
 
     let prevY = scrollY;
 
     let scrollCount = 0;
-    const SCROLL_COUNT_BREAKPOINT = 2
+    const SCROLL_COUNT_BREAKPOINT = 2;
 
     window.addEventListener("scroll", () => {
       if (scrollCount >= SCROLL_COUNT_BREAKPOINT) {
