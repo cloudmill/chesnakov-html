@@ -6,6 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
       if (scrollY >= 1) {
         header.classList.add("header--scroll");
       }
+      header.classList.remove("header--hide");
     }, 500);
 
     let prevY = scrollY;
