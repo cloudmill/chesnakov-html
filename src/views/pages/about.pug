@@ -21,30 +21,30 @@ block content
 
 mixin features
   .features
-    .features__item
+    .features__item(data-aos='fade-up')
       .features__text
         |С 2000 по 2008 год работал в Администрации президента России
       img.features__image(src='assets/images/feature-1.svg')
-    .features__item
+    .features__item(data-aos='fade-up')
       .features__text
         |Руководитель центра политической конъюнктуры
       img.features__image(src='assets/images/feature-2.png')
-    .features__item
+    .features__item(data-aos='fade-up')
       .features__text
         |Профессор и преподаватель в НИУ ВШЭ
       img.features__image(src='assets/images/feature-3.svg')
-    .features__item
+    .features__item(data-aos='fade-up')
       .features__text
         |Кандидат политических наук
       img.features__image(src='assets/images/feature-4.svg')
 
 mixin card
-  .card
+  .card(data-aos='fade-up')
     .card__text
       |На сайте я публикую аналитические разборы и статьи на последние актуальные политические события в стране. Анонсирую свои выступления на мероприятиях и пишу рецензии на художественную и профессиональную литературу.
-    h3.card__title
+    h3.card__title(data-aos='fade-up')
       |читать мои публикации
-    .card__list
+    .card__list(data-aos='fade-up')
       a.card__item(href='#')
         |политическая экспертиза
       a.card__item(href='#')
@@ -59,7 +59,8 @@ mixin card
 mixin top
   .about-top
     .container
-      img.about-top__photo(src='assets/images/chesnakov-photo-2.jpg')
+      .about-top__photo
+        img(src='assets/images/chesnakov-photo-2.jpg')(data-aos='fade-up')
       h1.word.about-top__title-block
         .word__block
           each letter in 'Алексей'.split('')
@@ -67,7 +68,7 @@ mixin top
           .word__letter.about-top__title &nbsp;
           each letter in 'чеснаков'.split('')
             .word__letter.about-top__title= letter
-      .about-top__bottom
+      .about-top__bottom(data-aos='fade-up')
         .about-top__left
           .about-top__text
             |Более 30 лет занимаюсь аналитикой политических процессов и событий. Являюсь одним из самых известных и цитируемых российских экспертов в сфере политики.
@@ -112,7 +113,7 @@ mixin slider
         2020,
         2021,
       ]
-    .slider__top
+    .slider__top(data-aos='fade-up')
       .slider__years-wrapper
         .container
           ul.slider__years
@@ -131,14 +132,14 @@ mixin slider
                   |#{[...years].pop()}
     .container
       .slider__bottom
-        .slider__photo
+        .slider__photo(data-aos='fade-up')
           .slider__image
             .slider__image-item.slider__image-item--active
               img.slider__img(src="assets/images/slider.jpg" style=`opacity: ${Math.random()}`)
             each i, j in years.slice(1)
               .slider__image-item
                 img.slider__img(src="assets/images/slider.jpg" style=`opacity: ${Math.random()}`)
-        .slider__content
+        .slider__content(data-aos='fade-up')
           .slider__texts.slider__articles
             .slider__text.slider__text--in.slider__text--active
               .slider__article

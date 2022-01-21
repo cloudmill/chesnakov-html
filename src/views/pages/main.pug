@@ -15,7 +15,7 @@ block content
     .page.page--margin--default
       .page__main
 
-        section.themes
+        section.themes(data-aos='fade-up')
 
           h3.themes__title
             |темы
@@ -36,9 +36,9 @@ block content
         .page-main__content
           
           section.news-block
-            p.label.news-block__label
+            p.label.news-block__label(data-aos='fade-up')
               |Последние публикации
-            .news-block__top
+            .news-block__top(data-aos='fade-up')
               h2
                 |политическая экспертиза
               .arrow-link.news-block__link
@@ -49,7 +49,7 @@ block content
             
             .news-block__content
 
-              a.top-card.news-block__top-card(href='#')
+              a.top-card.news-block__top-card(href='#')(data-aos='fade-up')
                 
                 .top-card__image-block
                   img.top-card__image(src="assets/images/card-photo.jpg")
@@ -70,7 +70,7 @@ block content
                   p.news-item__date
                     |11.10.2021
               
-              .news-list
+              .news-list(data-aos='fade-up')
                 a.news-item.news-item--news-list(href='#')
 
                   .pin
@@ -144,7 +144,7 @@ block content
                     |11.10.2021
 
           section.news-block
-            .news-block__top
+            .news-block__top(data-aos='fade-up')
               h2
                 |Мероприятия
               .arrow-link.news-block__link
@@ -155,7 +155,7 @@ block content
 
             .news-block__content
               
-              .news-list
+              .news-list(data-aos='fade-up')
                 a.news-item.news-item--news-list(href='#')
 
                   .pin
@@ -191,7 +191,7 @@ block content
                     |11.10.2021
 
           section.news-block
-            .news-block__top
+            .news-block__top(data-aos='fade-up')
               h2
                 |книжная лавка
               .arrow-link.news-block__link
@@ -202,7 +202,7 @@ block content
 
             .news-block__content
               
-              .news-list
+              .news-list(data-aos='fade-up')
                 a.news-item.news-item--news-list(href='#')
 
                   .pin
@@ -218,14 +218,14 @@ block content
       aside.page__aside
         .page__aside-content
           .aside
-            .aside__banner
+            .aside__banner(data-aos='fade-up')
               a.banner.banner--main(href='#')
                 h3.banner__title
                   |Подпишитесь на мой блог
                 .banner__pin
                   |@
                 +logo-banner-svg.banner__logo
-            .aside__form
+            .aside__form(data-aos='fade-up')
               form.fform(data-url='url' data-success-status='mail_sent' data-success-action='subscribe-success' data-form-test)
                 fieldset.fform__top.fform__checkboxes.checkboxes
                   - var items = ['Политическая экспертиза', 'Мероприятия', 'Книжная критика']
@@ -253,7 +253,7 @@ block content
                   .fform__submit.button
                     button.button__button.modal__button(type='submit' data-modal-response)
                       |подписаться
-            .aside__socials
+            .aside__socials(data-aos='fade-up')
               .socials
                 h3
                   |я в социальных сетях

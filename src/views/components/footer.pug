@@ -4,41 +4,41 @@ mixin footer
   footer.footer
     .container
       .footer__grid
-        .footer__grid-item
+        .footer__grid-item(data-aos='fade-up')
           nav.footer__nav
             ul.footer__list
               each item in data.nav.slice(0, 3)
                 li.footer__list-item
                   a.footer__link(href='#')
                     |#{item}
-        .footer__grid-item
+        .footer__grid-item(data-aos='fade-up')
           nav.footer__nav
             ul.footer__list
               each item in data.nav.slice(3)
                 li.footer__list-item
                   a.footer__link(href='#')
                     |#{item}
-        .footer__grid-item
+        .footer__grid-item(data-aos='fade-up')
           ul.footer__list
             each item in data.socials
               li.footer__list-item
                 a.footer__link(href='#')
                   |#{item}
-        .footer__grid-item.u-display-flex
+        .footer__grid-item.u-display-flex(data-aos='fade-up')
           a.footer__link(href=`mailto:${data.email}`)
             |#{data.email}
-        .footer__grid-item
+        .footer__grid-item(data-aos='fade-up')
           .button
             .button__button.footer__button(data-modal-open)
               span
                 |задать вопрос
-        .footer__grid-item
+        .footer__grid-item(data-aos='fade-up')
           small.footer__copyright.footer__link.footer__link--small
             |© 2021 Официальный сайт Алексея Чеснокова
-        .footer__grid-item.u-display-flex
+        .footer__grid-item.u-display-flex(data-aos='fade-up')
           a.footer__link.footer__link--small(href='#')
             |Политика конфиденциальности
-        .footer__grid-item
+        .footer__grid-item(data-aos='fade-up')
           .footer__company.footer__link.footer__link--small
             |сделано в&nbsp;
             a.footer__company-link(href='#')

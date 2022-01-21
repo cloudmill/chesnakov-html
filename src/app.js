@@ -12,3 +12,4 @@ import "./scripts/form";
 import "./scripts/checkboxes";
 import "./scripts/no-transition";
 import "./scripts/word";
+import "./scripts/aos";

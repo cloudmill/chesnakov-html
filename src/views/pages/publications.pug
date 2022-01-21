@@ -10,7 +10,7 @@ block content
 
   .container
 
-    .page-publications__breadcrumbs
+    .page-publications__breadcrumbs(data-aos='fade-up')
       .breadcrumbs
         ul.breadcrumbs__list
           li.breadcrumbs__item
@@ -29,7 +29,7 @@ block content
     .page.page--margin--page
       .page__main
 
-        section.themes.page-publications__themes
+        section.themes.page-publications__themes(data-aos='fade-up')
 
           h3.themes__title
             |темы
@@ -50,7 +50,7 @@ block content
         .page-publications__content
           
           section.news-block
-            .choice
+            .choice(data-aos='fade-up')
               .choice__panel-wrapper
                 .choice__panel
                   h1
@@ -77,7 +77,7 @@ block content
                           li.tags__item.choice__item
                             a.choice__link.choice__link--rubrics(href='#')= item
                     
-            .tags.tags--themes.tags--rubrics
+            .tags.tags--themes.tags--rubrics(data-aos='fade-up')
               ul.tags__list.choice__list
                 li.tags__item.choice__item
                   a.choice__link.choice__link--active(href='#')
@@ -96,7 +96,7 @@ block content
   
             .news-block__content.news-block__content--margin--alt
 
-              a.top-card.news-block__top-card(href='#')
+              a.top-card.news-block__top-card(href='#')(data-aos='fade-up')
                 
                 .top-card__image-block
                   img.top-card__image(src="assets/images/card-photo.jpg")
@@ -117,7 +117,7 @@ block content
                   p.news-item__date
                     |11.10.2021
               
-              .news-list
+              .news-list(data-aos='fade-up')
                 a.news-item.news-item--news-list(href='#')
 
                   .pin
@@ -190,7 +190,7 @@ block content
                   p.news-item__date
                     |11.10.2021
 
-            .news-block__pagination.pagination
+            .news-block__pagination.pagination(data-aos='fade-up')
               a.pagination__next.pagination__next--back(href='#')
                 +pagination-next-svg.pagination__next-svg.pagination__next-svg--default
                 +pagination-next--large-svg.pagination__next-svg.pagination__next-svg--large
@@ -212,64 +212,58 @@ block content
                     |12
           
       aside.page__aside
-        .page__aside-content.page__aside-content--main
+        .page__aside-content
           
-          a.banner.banner--main(href='#')
-            h3.banner__title
-              |Подпишитесь на мой блог
-            .banner__pin
-              |@
-            +logo-banner-svg.banner__logo
-
-          form.form.form--main.form--margin--dafault
-            label.form__checkbox
-              input.form__checkbox-input(type="checkbox")
-              .form__checkbox-block
-                .form__mark.form__checkbox-mark
-                  +check-mark-svg
-                .form__checkbox-text
-                  |Политическая экспертиза
-            label.form__checkbox
-              input.form__checkbox-input(type="checkbox")
-              .form__checkbox-block
-                .form__mark.form__checkbox-mark
-                  +check-mark-svg
-                .form__checkbox-text
-                  |Политическая экспертиза
-            label.form__checkbox
-              input.form__checkbox-input(type="checkbox")
-              .form__checkbox-block
-                .form__mark.form__checkbox-mark
-                  +check-mark-svg
-                .form__checkbox-text
-                  |Политическая экспертиза
-            input.form__field(type="email" placeholder='E-mail')
-            label.form__agree
-              input.form__agree-input(type="checkbox")
-              .form__mark.form__agree-mark
-                +check-mark-svg
-              .form__agree-text
-                |Согласен на обработку персональных данных в соответствии с 
-                a.form__agree-link(href='#')
-                  |политикой конфиденциальности
-            .button
-              button.button__button.form__submit(type="submit")
-                |подписаться
-
-          .socials.socials--main.socials--margin--default
-            h3
-              |я в социальных сетях
-            .socials__row
-              a.socials__item(href='#')
-                +vk-svg.socials__vk
-                .socials__text
-                  |Вконтакте
-              a.socials__item(href='#')
-                +fb-svg.socials__fb
-                .socials__text
-                  |Facebook
-              a.socials__item(href='#')
-                +tg-svg.socials__tg
-                .socials__text
-                  |Telegram
-
+          .aside
+            .aside__banner(data-aos='fade-up')
+              a.banner.banner--main(href='#')
+                h3.banner__title
+                  |Подпишитесь на мой блог
+                .banner__pin
+                  |@
+                +logo-banner-svg.banner__logo
+            .aside__form(data-aos='fade-up')
+              form.fform(data-url='url' data-success-status='mail_sent' data-success-action='subscribe-success' data-form-test)
+                fieldset.fform__top.fform__checkboxes.checkboxes
+                  - var items = ['Политическая экспертиза', 'Мероприятия', 'Книжная критика']
+                  each item, index in items
+                    .checkboxes__item
+                      label.form__checkbox
+                        input.form__checkbox-input(type='checkbox' name=`subscribe-${index + 1}` value=item)
+                        .form__checkbox-block
+                          .form__mark.form__checkbox-mark
+                            +check-mark-svg
+                          .form__checkbox-text= item
+                .fform__bottom
+                  .modal__field.fform__email
+                    input.modal__input.fform__input(type='email' required placeholder='e-mail' name='email')
+                    .modal__error
+                      |Поле заполнено неверно
+                  label.fform__agreement.modal__check
+                    input.modal__check-input(type='checkbox' required name='agreement')
+                    .modal__check-mark
+                      +check-mark-svg.modal__check-svg
+                    .modal__check-text.fform__agreement-text
+                      |Согласен на обработку персональных данных в соответствии c 
+                      a.modal__check-link(href='#')
+                        |политикой конфиденциальности
+                  .fform__submit.button
+                    button.button__button.modal__button(type='submit' data-modal-response)
+                      |подписаться
+            .aside__socials(data-aos='fade-up')
+              .socials
+                h3
+                  |я в социальных сетях
+                .socials__row
+                  a.socials__item(href='#')
+                    +vk-svg.socials__vk
+                    .socials__text
+                      |Вконтакте
+                  a.socials__item(href='#')
+                    +fb-svg.socials__fb
+                    .socials__text
+                      |Facebook
+                  a.socials__item(href='#')
+                    +tg-svg.socials__tg
+                    .socials__text
+                      |Telegram

@@ -10,7 +10,7 @@ block content
   .container
     .page.page-publications-detail__page
       .page__main.page-publications-detail__main
-        .breadcrumbs
+        .breadcrumbs(data-aos='fade-up')
           ul.breadcrumbs__list
             li.breadcrumbs__item
               a.breadcrumbs__link(href='#')
@@ -24,9 +24,9 @@ block content
             li.breadcrumbs__item
               .breadcrumbs__link
                 |Риски для российской системы власти после пандемии коронавируса
-        h1.page-publications-detail__title
+        h1.page-publications-detail__title(data-aos='fade-up')
           |Риски для российской системы власти после пандемии коронавируса
-        .table
+        .table(data-aos='fade-up')
           .table__place
             .table__title
               |11.10.2021
@@ -56,7 +56,7 @@ block content
                 a.table__list-item(href='#')
                   |Интервью
         .content-wrapper
-          .content
+          .content(data-aos='fade-up')
             h2
               |После пандемии системе власти сложно будет выдержать следующий удар: природного катаклизма, крупной технологической аварии или рукотворной чрезвычайной ситуации.
             .content-container
@@ -93,7 +93,7 @@ block content
                 |Сохраняющаяся неясность со сроками завершения ревизии законодательства способна негативно повлиять на властную вертикаль. Годы уйдут только на то, чтобы адаптировать корпус действующих норм к изменённому Основному закону. Потребуется также имплементация в правовые акты резонансных инициатив, провозглашённых, но по тем или иным причинам не включённых президентом и рабочей группой в обновлённый текст Конституции и отложенных на какое-то время. Это сохраняет необходимое пространство для манёвра власти, но вызывает в общественном мнении сомнения относительно продуманности её намерений. Неопределённость по поводу ряда решений стратегического характера чревата возникновением опасного вакуума в экстремальных ситуациях, когда правила игры должны быть максимально понятны, а действия игроков прогнозируемы.
               p
                 |Риски электоральные. В среднесрочной перспективе увеличивается вероятность получения нежелательных для власти результатов на выборах в Государственную думу (сентябрь 2021 г.), а в краткосрочной – также в ряде регионов в единый день голосования (13 сентября 2020 г.).
-          .back
+          .back(data-aos='fade-up')
             a.back__link(href='#')
               .back__icon
                 +pagination-next-svg.back__svg
@@ -101,7 +101,7 @@ block content
               .back__text
                 |вернуться
         .content-wrapper.content-wrapper--desktop
-          .page-publications-detail__themes
+          .page-publications-detail__themes(data-aos='fade-up')
             h3.themes__title
               |темы
             .tags.tags--themes
@@ -113,7 +113,7 @@ block content
                   li.tags__item
                     .tag
                       .tag__button= theme
-          .page-publications-detail__socials
+          .page-publications-detail__socials(data-aos='fade-up')
             .socials.socials--publications
               h3
                 |поделиться
@@ -134,7 +134,7 @@ block content
                   +tw-svg.socials__tg
                   .socials__text
                     |Twitter
-          .page-publications-detail__themes
+          .page-publications-detail__themes(data-aos='fade-up')
             h3.themes__title
               |темы, которые могут быть вам интересны
             .tags.tags--themes
@@ -147,60 +147,57 @@ block content
                     .tag
                       .tag__button= theme
       .page__aside.page-publications-detail__aside
-        .page__aside-content.page__aside-content--main
-          a.banner.banner--main(href='#')
-            h3.banner__title
-              |Подпишитесь на мой блог
-            .banner__pin
-              |@
-            +logo-banner-svg.banner__logo
-          form.form.form--main.form--margin--dafault
-            label.form__checkbox
-              input.form__checkbox-input(type="checkbox")
-              .form__checkbox-block
-                .form__mark.form__checkbox-mark
-                  +check-mark-svg
-                .form__checkbox-text
-                  |Политическая экспертиза
-            label.form__checkbox
-              input.form__checkbox-input(type="checkbox")
-              .form__checkbox-block
-                .form__mark.form__checkbox-mark
-                  +check-mark-svg
-                .form__checkbox-text
-                  |Политическая экспертиза
-            label.form__checkbox
-              input.form__checkbox-input(type="checkbox")
-              .form__checkbox-block
-                .form__mark.form__checkbox-mark
-                  +check-mark-svg
-                .form__checkbox-text
-                  |Политическая экспертиза
-            input.form__field(type="email" placeholder='E-mail')
-            label.form__agree
-              input.form__agree-input(type="checkbox")
-              .form__mark.form__agree-mark
-                +check-mark-svg
-              .form__agree-text
-                |Согласен на обработку персональных данных в соответствии с 
-                a.form__agree-link(href='#')
-                  |политикой конфиденциальности
-            .button
-              button.button__button.form__submit(type="submit")
-                |подписаться
-          .socials.socials--main.socials--margin--default
-            h3
-              |я в социальных сетях
-            .socials__row
-              a.socials__item(href='#')
-                +vk-svg.socials__vk
-                .socials__text
-                  |Вконтакте
-              a.socials__item(href='#')
-                +fb-svg.socials__fb
-                .socials__text
-                  |Facebook
-              a.socials__item(href='#')
-                +tg-svg.socials__tg
-                .socials__text
-                  |Telegram
+        .page__aside-content
+          .aside
+            .aside__banner(data-aos='fade-up')
+              a.banner.banner--main(href='#')
+                h3.banner__title
+                  |Подпишитесь на мой блог
+                .banner__pin
+                  |@
+                +logo-banner-svg.banner__logo
+            .aside__form(data-aos='fade-up')
+              form.fform(data-url='url' data-success-status='mail_sent' data-success-action='subscribe-success' data-form-test)
+                fieldset.fform__top.fform__checkboxes.checkboxes
+                  - var items = ['Политическая экспертиза', 'Мероприятия', 'Книжная критика']
+                  each item, index in items
+                    .checkboxes__item
+                      label.form__checkbox
+                        input.form__checkbox-input(type='checkbox' name=`subscribe-${index + 1}` value=item)
+                        .form__checkbox-block
+                          .form__mark.form__checkbox-mark
+                            +check-mark-svg
+                          .form__checkbox-text= item
+                .fform__bottom
+                  .modal__field.fform__email
+                    input.modal__input.fform__input(type='email' required placeholder='e-mail' name='email')
+                    .modal__error
+                      |Поле заполнено неверно
+                  label.fform__agreement.modal__check
+                    input.modal__check-input(type='checkbox' required name='agreement')
+                    .modal__check-mark
+                      +check-mark-svg.modal__check-svg
+                    .modal__check-text.fform__agreement-text
+                      |Согласен на обработку персональных данных в соответствии c 
+                      a.modal__check-link(href='#')
+                        |политикой конфиденциальности
+                  .fform__submit.button
+                    button.button__button.modal__button(type='submit' data-modal-response)
+                      |подписаться
+            .aside__socials(data-aos='fade-up')
+              .socials
+                h3
+                  |я в социальных сетях
+                .socials__row
+                  a.socials__item(href='#')
+                    +vk-svg.socials__vk
+                    .socials__text
+                      |Вконтакте
+                  a.socials__item(href='#')
+                    +fb-svg.socials__fb
+                    .socials__text
+                      |Facebook
+                  a.socials__item(href='#')
+                    +tg-svg.socials__tg
+                    .socials__text
+                      |Telegram

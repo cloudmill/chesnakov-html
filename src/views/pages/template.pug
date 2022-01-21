@@ -12,7 +12,7 @@ block content
       .ppage__main
         .ppage__main-container
           .page-template__main
-            .breadcrumbs
+            .breadcrumbs(data-aos='fade-up')
               ul.breadcrumbs__list
                 li.breadcrumbs__item
                   a.breadcrumbs__link(href='#')
@@ -26,9 +26,9 @@ block content
                 li.breadcrumbs__item
                   .breadcrumbs__link
                     |Риски для российской системы власти после пандемии коронавируса
-            h3.page-template__themes-title
+            h3.page-template__themes-title(data-aos='fade-up')
               |темы
-            .tags.tags--themes
+            .tags.tags--themes(data-aos='fade-up')
               ul.tags__list
                 li.tags__item
                   .tag
@@ -37,9 +37,9 @@ block content
                   li.tags__item
                     .tag
                       .tag__button= theme
-            h1.page-template__theme-title
+            h1.page-template__theme-title(data-aos='fade-up')
               |ГОСДУМА
-            a.top-card(href='#')
+            a.top-card(href='#')(data-aos='fade-up')
               .top-card__image-block
                 img.top-card__image(src="assets/images/card-photo.jpg")
               .news-item.news-item--top-card
@@ -53,7 +53,7 @@ block content
                   |Успех «списка Собянина» на выборах
                 p.news-item__date
                   |11.10.2021
-            .page-template__list.news-list
+            .page-template__list.news-list(data-aos='fade-up')
               a.news-item.news-item--news-list(href='#')
                 .pin
                   .pin__button(href='#')
@@ -102,7 +102,7 @@ block content
                   |Объясняем успех «списка Собянина» на выборах в Москве
                 p.news-item__date
                   |11.10.2021
-            .page-template__pagination.pagination
+            .page-template__pagination.pagination(data-aos='fade-up')
               a.pagination__next.pagination__next--back(href='#')
                 +pagination-next-svg.pagination__next-svg.pagination__next-svg--default
                 +pagination-next--large-svg.pagination__next-svg.pagination__next-svg--large
@@ -125,14 +125,14 @@ block content
       .ppage__aside
         .ppage__aside-container.page-template__aside-container
           .aside
-            .aside__banner
+            .aside__banner(data-aos='fade-up')
               a.banner.banner--main(href='#')
                 h3.banner__title
                   |Подпишитесь на мой блог
                 .banner__pin
                   |@
                 +logo-banner-svg.banner__logo
-            .aside__form
+            .aside__form(data-aos='fade-up')
               form.fform(data-url='url' data-success-status='mail_sent' data-success-action='subscribe-success' data-form-test)
                 fieldset.fform__top.fform__checkboxes.checkboxes
                   - var items = ['Политическая экспертиза', 'Мероприятия', 'Книжная критика']
@@ -160,7 +160,7 @@ block content
                   .fform__submit.button
                     button.button__button.modal__button(type='submit' data-modal-response)
                       |подписаться
-            .aside__socials
+            .aside__socials(data-aos='fade-up')
               .socials
                 h3
                   |я в социальных сетях
