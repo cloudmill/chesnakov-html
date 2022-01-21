@@ -50,50 +50,50 @@ block content
         .page-publications__content
           
           section.news-block
-            .news-block__top
-              .choice
-                .choice__panel-wrapper
-                  .choice__panel
-                    h1
-                      |политическая экспертиза
-                    .choice__button
-                      +arrow-svg.choice__arrow-svg
-                .choice__drop
-                  .choice__drop-content
-                    .container
-                      .tags.tags--themes.tags--rubrics
-                        ul.tags__list.choice__list
+            .choice
+              .choice__panel-wrapper
+                .choice__panel
+                  h1
+                    |политическая экспертиза
+                  .choice__button
+                    +arrow-svg.choice__arrow-svg
+              .choice__drop
+                .choice__drop-content
+                  .container
+                    .tags.tags--themes
+                      ul.tags__list.choice__list
+                        li.tags__item.choice__item
+                          a.choice__link.choice__link--rubrics.choice__link--active(href='#')
+                            |Все
+                        -
+                          var items = [
+                            'Колонки',
+                            'Интервью',
+                            'Экспертные комментарии',
+                            'Подскасты',
+                            'Видео',
+                          ]
+                        each item in items
                           li.tags__item.choice__item
-                            a.choice__link.choice__link--rubrics.choice__link--active(href='#')
-                              |Все
-                          -
-                            var items = [
-                              'Колонки',
-                              'Интервью',
-                              'Экспертные комментарии',
-                              'Подскасты',
-                              'Видео',
-                            ]
-                          each item in items
-                            li.tags__item.choice__item
-                              a.choice__link.choice__link--rubrics(href='#')= item
-                      .tags.tags--themes
-                        ul.tags__list.choice__list
-                          li.tags__item.choice__item
-                            a.choice__link.choice__link--active(href='#')
-                              |Все
-                          -
-                            var items = [
-                              'Колонки',
-                              'Интервью',
-                              'Экспертные комментарии',
-                              'Подскасты',
-                              'Видео',
-                            ]
-                          each item in items
-                            li.tags__item.choice__item
-                              a.choice__link(href='#')= item
-            
+                            a.choice__link.choice__link--rubrics(href='#')= item
+                    
+            .tags.tags--themes.tags--rubrics
+              ul.tags__list.choice__list
+                li.tags__item.choice__item
+                  a.choice__link.choice__link--active(href='#')
+                    |Все
+                -
+                  var items = [
+                    'Колонки',
+                    'Интервью',
+                    'Экспертные комментарии',
+                    'Подскасты',
+                    'Видео',
+                  ]
+                each item in items
+                  li.tags__item.choice__item
+                    a.choice__link(href='#')= item
+  
             .news-block__content.news-block__content--margin--alt
 
               a.top-card.news-block__top-card(href='#')

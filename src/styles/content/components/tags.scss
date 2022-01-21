@@ -66,10 +66,10 @@
   }
 
   &--rubrics {
-    margin-bottom: 16px;
+    margin-top: 16px;
 
     @media (min-width: $breakpoint-d) {
-      margin-bottom: 40px;
+      margin-top: 40px;
     }
   }
 }
