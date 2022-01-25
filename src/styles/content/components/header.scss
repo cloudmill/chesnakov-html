@@ -210,13 +210,13 @@
     & ~ main {
       .page-template__aside-container {
         @media (min-width: $breakpoint-d) {
-          top: 36px;
+          top: $col-gap-d;
         }
       }
 
       .page__aside-content {
         @media (min-width: $breakpoint-d) {
-          top: 36px;
+          top: $col-gap-d;
         }
       }
     }
