@@ -46,11 +46,11 @@
       @media (min-width: $breakpoint-d) {
         position: sticky;
         top: 144px;
-      }
-      
-      @media (min-width: $breakpoint-d) {
+
         margin-left: auto;
         max-width: 507px;
+
+        transition: top $transition;
       }
 
       &--main {

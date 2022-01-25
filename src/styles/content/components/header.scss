@@ -12,7 +12,8 @@
   padding: 16px 0;
 
   border-bottom: 1px solid transparent;
-  transition: transform $transition, background-color $transition, border-color $transition;
+  transition: transform $transition, background-color $transition,
+    border-color $transition;
 
   @media (min-width: $breakpoint-t) {
     padding: 20px 0;
@@ -205,8 +206,22 @@
 
   &--hide {
     transform: translateY(-100%);
+
+    & ~ main {
+      .page-template__aside-container {
+        @media (min-width: $breakpoint-d) {
+          top: 36px;
+        }
+      }
+
+      .page__aside-content {
+        @media (min-width: $breakpoint-d) {
+          top: 36px;
+        }
+      }
+    }
   }
-  
+
   &--scroll {
     background-color: var(--color-white);
     border-bottom-color: var(--color-gray-light);

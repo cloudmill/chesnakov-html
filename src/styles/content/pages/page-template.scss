@@ -48,14 +48,20 @@
   }
 
   &__aside {
+    @media (min-width: $breakpoint-d) {
+      padding-top: 144px;
+    }
+
     &-container {
       margin-bottom: 48px;
 
       @media (min-width: $breakpoint-d) {
         position: sticky;
         top: 144px;
-  
+
         margin-bottom: 80px;
+
+        transition: top $transition;
       }
     }
   }
