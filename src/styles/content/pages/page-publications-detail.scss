@@ -158,8 +158,7 @@
     &-item {
       margin-top: 4px;
       margin-left: 4px;
-      padding: 0 8px;
-      height: 21px;
+      padding: 3px 8px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -169,14 +168,11 @@
       font-size: 10px;
       line-height: (14 / 10);
       color: var(--color-gray-dark);
-      white-space: nowrap;
       text-transform: uppercase;
       transition: border-color $transition, background-color $transition,
         color $transition;
 
       @media (min-width: $breakpoint-d) {
-        height: 26px;
-
         font-size: 14px;
         line-height: (19 / 14);
       }
