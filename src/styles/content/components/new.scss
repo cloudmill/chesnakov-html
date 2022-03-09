@@ -307,16 +307,9 @@
     position: relative;
 
     display: flex;
-
-    @media (max-width: ($breakpoint-t - 1px)) {
-      height: 146px;
-    }
   }
 
   &__image {
-    position: absolute;
-    @include inset();
-
     width: 100%;
     height: 100%;
     max-width: none;
