@@ -80,10 +80,10 @@
     }
 
     &-svg {
-      max-width: 88px;
+      width: 36px;
 
       @media (min-width: $breakpoint-d) {
-        max-width: 152px;
+        width: 44px;
       }
     }
   }
