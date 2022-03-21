@@ -54,31 +54,27 @@
     }
   }
 
-  &__title,
-  &__logo {
-    @media (max-width: ($breakpoint-t - 1px)) {
-      display: none;
-    }
+  &__title-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
-
   &__title {
-    font-size: 92px;
+    font-size: 52px;
     line-height: 1;
     color: var(--color-white);
+
+    @media (min-width: $breakpoint-t) {
+      font-size: 92px;
+    }
 
     @media (min-width: $breakpoint-d) {
       font-size: 180px;
       line-height: 0.85;
     }
-  }
 
-  &__logo {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-
-    @media (max-width: ($breakpoint-d - 1px)) {
-      max-width: 46px;
+    @media (min-width: $breakpoint-xxd) {
+      font-size: 230px;
     }
   }
 
@@ -95,12 +91,12 @@
       position: absolute;
       @include inset();
 
-      padding: 186px 0 23px 0;
+      padding: 133px 0 23px 0;
       pointer-events: none;
     }
 
     @media (min-width: $breakpoint-xxd) {
-      padding-top: 234px;
+      padding-top: 160px;
     }
 
     &-content {
