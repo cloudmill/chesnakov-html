@@ -10,13 +10,13 @@
 
 .label {
   font-size: 12px;
-  line-height: (16 / 12);
+  line-height: math.div(16, 12);
   color: var(--color-gray-dark);
   text-transform: uppercase;
 
   @media (min-width: $breakpoint-d) {
     font-size: 16px;
-    line-height: (22 / 16);
+    line-height: math.div(22, 16);
   }
 }
 
@@ -134,13 +134,13 @@
 
   &__date {
     font-size: 10px;
-    line-height: (14 / 10);
+    line-height: math.div(14, 10);
     color: var(--color-gray-dark);
     text-transform: uppercase;
 
     @media (min-width: $breakpoint-d) {
       font-size: 14px;
-      line-height: (19 / 14);
+      line-height: math.div(19, 14);
     }
   }
 
@@ -253,7 +253,7 @@
     border: 1px solid var(--color-gray);
     border-radius: 4px;
     font-size: 10px;
-    line-height: (14 / 10);
+    line-height: math.div(14, 10);
     color: var(--color-gray-dark);
     white-space: nowrap;
     text-transform: uppercase;
@@ -264,7 +264,7 @@
       height: 26px;
 
       font-size: 14px;
-      line-height: (19 / 14);
+      line-height: math.div(19, 14);
     }
 
     &:hover {
@@ -391,12 +391,12 @@
 
     font-weight: 500;
     font-size: 10px;
-    line-height: (14 / 10);
+    line-height: math.div(14, 10);
     transition: color $transition;
 
     @media (min-width: $breakpoint-t) {
       font-size: 12px;
-      line-height: (16 / 12);
+      line-height: math.div(16, 12);
     }
   }
 
@@ -555,11 +555,11 @@
     &-text {
       font-weight: 500;
       font-size: 12px;
-      line-height: (16 / 12);
+      line-height: math.div(16, 12);
 
       @media (min-width: $breakpoint-d) {
         font-size: 14px;
-        line-height: (19 / 14);
+        line-height: math.div(19, 14);
       }
     }
   }
@@ -585,7 +585,7 @@
     border-radius: 4px;
     font-weight: 500;
     font-size: 12px;
-    line-height: (16 / 12);
+    line-height: math.div(16, 12);
     transition: border-color $transition;
 
     &:focus {
@@ -614,7 +614,7 @@
     &-text {
       font-weight: 500;
       font-size: 10px;
-      line-height: (14 / 10);
+      line-height: math.div(14, 10);
     }
 
     &-link {
@@ -776,13 +776,13 @@
         content: ">";
 
         font-size: 7.5px;
-        line-height: (10 / 7.5);
+        line-height: math.div(10, 7.5);
         color: var(--color-gray-dark);
         text-transform: uppercase;
 
         @media (min-width: $breakpoint-d) {
           font-size: 12px;
-          line-height: (16 / 12);
+          line-height: math.div(16, 12);
         }
       }
     }
@@ -803,7 +803,7 @@
     display: flex;
 
     font-size: 8px;
-    line-height: (11 / 8);
+    line-height: math.div(11, 8);
     white-space: nowrap;
     text-transform: uppercase;
     transition: color $transition;
@@ -822,7 +822,7 @@
 
     @media (min-width: $breakpoint-d) {
       font-size: 12px;
-      line-height: (16 / 12);
+      line-height: math.div(16, 12);
     }
   }
 
@@ -1094,7 +1094,7 @@
     border-radius: 4px;
     font-weight: 400;
     font-size: 12px;
-    line-height: (16 / 12);
+    line-height: math.div(16, 12);
     transition: border-color $transition, background-color $transition,
       color $transition;
 
@@ -1110,7 +1110,7 @@
       padding: 0 10px;
 
       font-size: 18px;
-      line-height: (25 / 18);
+      line-height: math.div(25, 18);
     }
 
     &--active,
@@ -1156,7 +1156,7 @@
 
     font-weight: normal;
     font-size: 12px;
-    line-height: (16 / 12);
+    line-height: math.div(16, 12);
     text-transform: uppercase;
 
     @media (min-width: $breakpoint-t) {
@@ -1167,7 +1167,7 @@
       width: 68px;
 
       font-size: 18px;
-      line-height: (25 / 18);
+      line-height: math.div(25, 18);
     }
   }
 }
@@ -1399,7 +1399,7 @@
     border: 1px solid var(--color-gray);
     border-radius: 4px;
     font-size: 8px;
-    line-height: (11 / 8);
+    line-height: math.div(11, 8);
     white-space: nowrap;
     text-transform: uppercase;
     transition: border-color $transition;
@@ -1416,7 +1416,7 @@
 
       font-weight: 500;
       font-size: 16px;
-      line-height: (22 / 16);
+      line-height: math.div(22, 16);
     }
   }
 
@@ -1633,7 +1633,7 @@
 
       font-weight: 500;
       font-size: 10px;
-      line-height: (14 / 10);
+      line-height: math.div(14, 10);
       transition: color $transition;
 
       @media (min-width: $breakpoint-d) {
@@ -1641,7 +1641,7 @@
         padding-bottom: 2px;
 
         font-size: 14px;
-        line-height: (19 / 14);
+        line-height: math.div(19, 14);
       }
     }
   }
@@ -1657,7 +1657,7 @@
     &-link {
       font-weight: 500;
       font-size: 10px;
-      line-height: (14 / 10);
+      line-height: math.div(14, 10);
       text-decoration-line: underline;
       text-transform: uppercase;
       transition: color $transition;
@@ -2151,11 +2151,11 @@
     }
 
     &--out {
-      animation: out #{$duration / 2} $transition-function forwards;
+      animation: out #{math.div($duration, 2)} $transition-function forwards;
     }
 
     &--in {
-      animation: in #{$duration / 2} $transition-function #{$duration / 2}
+      animation: in #{math.div($duration, 2)} $transition-function #{math.div($duration, 2)}
         forwards;
     }
 

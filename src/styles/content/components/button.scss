@@ -11,7 +11,7 @@
     background-color: var(--color-blue);
     border-radius: 4px;
     font-size: 10px;
-    line-height: (14 / 10);
+    line-height: math.div(14, 10);
     color: var(--color-white);
     white-space: nowrap;
     text-transform: uppercase;
@@ -20,7 +20,7 @@
 
     @media (min-width: $breakpoint-d) {
       font-size: 14px;
-      line-height: (19 / 14);
+      line-height: math.div(19, 14);
     }
 
     &:hover {

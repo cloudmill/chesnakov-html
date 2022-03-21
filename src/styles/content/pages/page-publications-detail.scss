@@ -132,12 +132,12 @@
 
   &__title {
     font-size: 12px;
-    line-height: (16 / 12);
+    line-height: math.div(16, 12);
     text-transform: uppercase;
 
     @media (min-width: $breakpoint-d) {
       font-size: 16px;
-      line-height: (22 / 16);
+      line-height: math.div(22, 16);
     }
   }
 
@@ -166,7 +166,7 @@
       border: 1px solid var(--color-gray);
       border-radius: 4px;
       font-size: 10px;
-      line-height: (14 / 10);
+      line-height: math.div(14, 10);
       color: var(--color-gray-dark);
       text-transform: uppercase;
       transition: border-color $transition, background-color $transition,
@@ -174,7 +174,7 @@
 
       @media (min-width: $breakpoint-d) {
         font-size: 14px;
-        line-height: (19 / 14);
+        line-height: math.div(19, 14);
       }
 
       &:hover {
@@ -443,13 +443,13 @@
 
   &__text {
     font-size: 10px;
-    line-height: (14 / 10);
+    line-height: math.div(14, 10);
     text-transform: uppercase;
     transition: color $transition;
 
     @media (min-width: $breakpoint-d) {
       font-size: 14px;
-      line-height: (19 / 14);
+      line-height: math.div(19, 14);
     }
   }
 }

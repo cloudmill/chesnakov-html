@@ -118,7 +118,7 @@
 
   &__link {
     font-size: 12px;
-    line-height: (16 / 12);
+    line-height: math.div(16, 12);
     color: var(--color-white);
     text-transform: uppercase;
     transition: color $transition;
@@ -129,7 +129,7 @@
 
     @media (min-width: $breakpoint-xxd) {
       font-size: 14px;
-      line-height: (19 / 14);
+      line-height: math.div(19, 14);
     }
   }
 

@@ -177,7 +177,7 @@
       height: 44px;
 
       font-size: 12px;
-      line-height: (16 / 12);
+      line-height: math.div(16, 12);
     }
 
     @include placeholder() {
@@ -189,7 +189,7 @@
 
       @media (min-width: $breakpoint-d) {
         font-size: 12px;
-        line-height: (16 / 12);
+        line-height: math.div(16, 12);
       }
     }
 

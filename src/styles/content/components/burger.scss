@@ -95,7 +95,7 @@
 
   &__link {
     font-size: 10px;
-    line-height: (14 / 10);
+    line-height: math.div(14, 10);
     text-transform: uppercase;
     transition: color $transition;
 

@@ -9,14 +9,14 @@
     padding: 0 20px 7px 0;
 
     font-size: 10px;
-    line-height: (14 / 10);
+    line-height: math.div(14, 10);
     text-transform: uppercase;
 
     @media (min-width: $breakpoint-d) {
       padding: 0 40px 12px 0;
 
       font-size: 14px;
-      line-height: (19 / 14);
+      line-height: math.div(19, 14);
     }
 
     &:hover {
