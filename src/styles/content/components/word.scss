@@ -2,6 +2,16 @@
   margin-bottom: -50px;
   display: flex;
 
+  &--align {
+    @media (min-width: $breakpoint-d) {
+      width: calc(#{$col-with-gap-d} * 4);
+    }
+
+    @media (min-width: $breakpoint-xxd) {
+      width: calc(#{$col-with-gap-d} * 4 - #{$col-gap-d});
+    }
+  }
+
   &__block {
     position: relative;
     top: -50px;
