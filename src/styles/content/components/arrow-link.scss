@@ -3,6 +3,12 @@
 
   display: flex;
 
+  &--top {
+    @media (min-width: $breakpoint-d) {
+      display: none;
+    }
+  }
+
   &__link {
     position: relative;
 
