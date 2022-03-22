@@ -437,13 +437,53 @@
     }
   }
 
-  &--publications {
+  @function grid-template-columns($col-count, $col-gap) {
+    @return repeat(
+      #{$col-count},
+      calc((100% - (#{$col-gap} * (#{$col-count} - 1))) / #{$col-count})
+    );
+  }
+
+  @mixin row($col-count, $gap) {
+    grid-template-columns: grid-template-columns($col-count, $gap);
+    column-gap: $gap;
+    row-gap: $gap;
+  }
+
+  &--publications-detail {
+    #{$component}{
+      &__row {
+        @include row(2, 4px);
+    
+        @media (min-width: $breakpoint-t) {
+          @include row(3, 8px);
+        }
+    
+        @media (min-width: $breakpoint-d) {
+          @include row(3, 9px);
+        }
+      }
+
+      &__item {
+        &:last-child {
+          @media (max-width: ($breakpoint-t - 1)) {
+            grid-area: 2 / 1 / span 1 / span 2;
+          }
+        }
+      }
+    }
+  }
+
+  &--2 {
     #{$component}__row {
-      grid-template-columns: repeat(2, 1fr);
-      row-gap: 8px;
-      column-gap: 8px;
+      @include row(2, 4px);
+
       @media (min-width: $breakpoint-t) {
-        grid-template-columns: repeat(4, 1fr);
+        @include row(2, 8px);
+      }
+
+      @media (min-width: $breakpoint-d) {
+        @include row(2, 9px);
       }
     }
   }
@@ -2161,8 +2201,10 @@
     }
 
     &--in {
-      animation: in #{math.div($duration, 2)} $transition-function #{math.div($duration, 2)}
-        forwards;
+      animation: in #{math.div($duration, 2)} $transition-function #{math.div(
+          $duration,
+          2
+        )} forwards;
     }
 
     &--pre-in {
