@@ -71,8 +71,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
           newText.classList.remove("slider__text--out");
           newText.classList.add("slider__text--pre-in");
-          newText.classList.add("slider__text--in");
           newText.classList.add("slider__text--active");
+          setTimeout(() => {
+            newText.classList.add("slider__text--in");
+          });
         });
 
         // update cur index
