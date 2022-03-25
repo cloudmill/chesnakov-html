@@ -59,22 +59,21 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // update text
         allTexts.forEach((texts) => {
-          const curText = texts.querySelector(".slider__text--active");
-
           const allText = texts.querySelectorAll(".slider__text");
+
+          allText.forEach((text) => {
+            text.classList.remove("slider__text--in");
+            text.classList.remove("slider__text--out");
+          });
+
+          const curText = texts.querySelector(".slider__text--active");
           const newText = allText[newIndex];
 
-          curText.classList.add("slider__text--out");
-          curText.classList.remove("slider__text--in");
-          curText.classList.remove("slider__text--pre-in");
           curText.classList.remove("slider__text--active");
-
-          newText.classList.remove("slider__text--out");
-          newText.classList.add("slider__text--pre-in");
           newText.classList.add("slider__text--active");
-          setTimeout(() => {
-            newText.classList.add("slider__text--in");
-          });
+
+          curText.classList.add("slider__text--out");
+          newText.classList.add("slider__text--in");
         });
 
         // update cur index

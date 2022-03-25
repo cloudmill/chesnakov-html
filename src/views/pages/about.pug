@@ -143,7 +143,7 @@ mixin slider
                 img.slider__img(src="assets/images/slider.jpg" style=`opacity: ${Math.random()}`)
         .slider__content(data-aos='fade-up')
           .slider__texts.slider__articles
-            .slider__text.slider__text--in.slider__text--active
+            .slider__text.slider__text--active.slider__text--in
               .slider__article
                 |Директор Центра политической конъюнктуры России (ЦПК). Руководитель Центра социальной и политической информации Института социально-политических исследований (ИСПИ) РАН.
             each i in years.slice(1)
@@ -151,7 +151,7 @@ mixin slider
                 .slider__article
                   |Директор Центра политической конъюнктуры России (ЦПК). Руководитель Центра социальной и политической информации Института социально-политических исследований (ИСПИ) РАН.
           .slider__texts.slider__dates
-            .slider__text.slider__text--in.slider__text--active
+            .slider__text.slider__text--active.slider__text--in
               .slider__date
                 |#{[...years].shift()}
             each year in years.slice(1)

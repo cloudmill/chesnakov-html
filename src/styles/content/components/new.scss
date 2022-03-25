@@ -451,14 +451,14 @@
   }
 
   &--publications-detail {
-    #{$component}{
+    #{$component} {
       &__row {
         @include row(2, 4px);
-    
+
         @media (min-width: $breakpoint-t) {
           @include row(3, 8px);
         }
-    
+
         @media (min-width: $breakpoint-d) {
           @include row(3, 9px);
         }
@@ -2126,7 +2126,9 @@
     overflow: hidden;
   }
   &__text {
-    @keyframes out {
+    $duration-half: math.div($duration, 2);
+
+    @keyframes slider__text--out {
       0% {
         transform: translateY(0);
 
@@ -2140,7 +2142,7 @@
       }
     }
 
-    @keyframes in {
+    @keyframes slider__text--in {
       0% {
         transform: translateY(100%);
 
@@ -2164,18 +2166,16 @@
     }
 
     &--out {
-      animation: out #{math.div($duration, 2)} $transition-function forwards;
+      animation-name: slider__text--out;
+      animation-duration: $duration-half;
+      animation-fill-mode: backwards;
     }
 
     &--in {
-      animation: in #{math.div($duration, 2)} $transition-function #{math.div(
-          $duration,
-          2
-        )} forwards;
-    }
-
-    &--pre-in {
-      transform: translateY(100%);
+      animation-name: slider__text--in;
+      animation-delay: $duration-half;
+      animation-duration: $duration-half;
+      animation-fill-mode: forwards;
     }
   }
 
