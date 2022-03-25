@@ -709,14 +709,11 @@
   }
 
   &__title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
     color: var(--color-white);
-
-    @media (min-width: $breakpoint-d) {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
   }
   &__text {
     @media (min-width: $breakpoint-d) {
@@ -724,40 +721,10 @@
     }
   }
 
-  &__pin {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-
-    padding-top: 8px;
-    $size: 35px;
-    width: $size;
-    height: $size;
-    display: flex;
-    justify-content: center;
-
-    background-color: var(--color-white);
-    border-radius: 2px;
-    font-family: $ff-2;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 0.85;
-    color: #6a768d;
-    text-transform: uppercase;
-
-    @media (min-width: $breakpoint-d) {
-      display: none;
-    }
-  }
-
   &__logo {
     position: absolute;
     top: 16px;
     right: 16px;
-
-    @media (max-width: ($breakpoint-t - 1px)) {
-      display: none;
-    }
 
     @media (min-width: $breakpoint-d) {
       top: 20px;
