@@ -55,15 +55,6 @@ $(() => {
         checkboxesValidated = true;
       }
 
-      console.log("form", this, {
-        url,
-        successStatus,
-        successAction,
-        params,
-        isTest,
-        checkboxesValidated,
-      });
-
       if (checkboxesValidated) {
         try {
           if (isTest) {
@@ -75,10 +66,6 @@ $(() => {
           $.post(url, params, (data) => {
             if (data.status === successStatus) {
               successAction && sendSignal(successAction);
-
-              console.log("form", this, "success");
-            } else {
-              console.log("form", this, "fail");
             }
           });
         } catch (error) {

@@ -17,16 +17,6 @@ $(() => {
       const isQuestion = modal.hasClass("modal--question");
       const isSubscribe = modal.hasClass("modal--subscribe");
 
-      console.log("modal", {
-        popupClick,
-        openClick,
-        closeClick,
-
-        isActive,
-        isQuestion,
-        isSubscribe,
-      });
-
       if (isActive) {
         if (closeClick || !popupClick) {
           modal.removeClass("modal--active");

@@ -12,8 +12,6 @@ window.addEventListener("DOMContentLoaded", () => {
     // events
 
     open.addEventListener('click', () => {
-      console.log(burger, isOpen);
-
       if (!isOpen) {
         burger.classList.add('burger--open')
 

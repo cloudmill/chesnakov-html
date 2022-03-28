@@ -25,8 +25,6 @@ window.addEventListener("DOMContentLoaded", () => {
         const dropContentHeight = dropContent.getBoundingClientRect().height;
 
         drop.style.height = `${dropContentHeight}px`;
-
-        console.log(`${dropContentHeight}px`);
       }
     });
   });
