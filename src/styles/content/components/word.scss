@@ -29,6 +29,7 @@
 
   &__letter {
     transform: translateY(calc(100% + 50px));
+    backface-visibility: hidden;
 
     &--active {
       transform: translateY(0);
