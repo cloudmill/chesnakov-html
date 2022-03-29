@@ -8,16 +8,12 @@ mixin header
               +logo-banner-svg.header__logo-svg
           nav.header__nav.header__nav--first-part
             ul.header__list
-              each item in data.nav.slice(0, 3)
+              each item in data.nav.slice(3)
                 li.header__list-item
                   a.header__link(href='#')
                     |#{item}
           nav.header__nav
             ul.header__list
-              each item in data.nav.slice(3)
-                li.header__list-item
-                  a.header__link(href='#')
-                    |#{item}
         .header__col
           ul.header__list.header__socials
             each item in data.socials
