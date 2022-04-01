@@ -416,6 +416,10 @@
     }
   }
 
+  &__title {
+    letter-spacing: 0.02em;
+  }
+
   &__text {
     margin-left: 4px;
 
@@ -743,7 +747,9 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+
     color: var(--color-white);
+    letter-spacing: 0.02em;
   }
   &__text {
     @media (min-width: $breakpoint-d) {
