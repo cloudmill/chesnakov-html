@@ -278,9 +278,19 @@
     }
 
     &:hover {
-      background-color: var(--color-blue);
-      border-color: var(--color-blue);
-      color: var(--color-white);
+      @media (min-width: $breakpoint-d) {
+        background-color: var(--color-blue);
+        border-color: var(--color-blue);
+        color: var(--color-white);
+      }
+    }
+
+    &:active {
+      @media (max-width: ($breakpoint-d - 1px)) {
+        background-color: var(--color-blue);
+        border-color: var(--color-blue);
+        color: var(--color-white);
+      }
     }
   }
 }
@@ -296,7 +306,17 @@
 
   &:hover {
     #{$component}__title {
-      color: var(--color-blue);
+      @media (min-width: $breakpoint-d) {
+        color: var(--color-blue);
+      }
+    }
+  }
+
+  &:active {
+    #{$component}__title {
+      @media (max-width: ($breakpoint-d - 1px)) {
+        color: var(--color-blue);
+      }
     }
   }
 
