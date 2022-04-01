@@ -1,48 +1,60 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const burger = document.querySelector('[data-burger]')
+  const burger = document.querySelector("[data-burger]");
 
   if (burger) {
-    const open = document.querySelector('[data-burger-open]')
-    const close = document.querySelector('[data-burger-close]')
+    const open = document.querySelector("[data-burger-open]");
+    const close = document.querySelector("[data-burger-close]");
 
     // state
 
-    let isOpen = burger.classList.contains('burger--open')
+    let isOpen = burger.classList.contains("burger--open");
 
     // events
 
-    open.addEventListener('click', () => {
+    open.addEventListener("click", () => {
       if (!isOpen) {
-        burger.classList.add('burger--open')
+        burger.classList.add("burger--open");
+
+        if (matchMedia("(max-width: 1279px)").matches) {
+          document.body.classList.add("body--burger--open");
+        }
 
         setTimeout(() => {
-          isOpen = true
-        })
+          isOpen = true;
+        });
       }
-    })
+    });
 
-    close.addEventListener('click', () => {
+    close.addEventListener("click", () => {
       if (isOpen) {
-        burger.classList.remove('burger--open')
+        burger.classList.remove("burger--open");
+
+        if (matchMedia("(max-width: 1279px)").matches) {
+          document.body.classList.remove("body--burger--open");
+        }
 
         setTimeout(() => {
-          isOpen = false
-        })
+          isOpen = false;
+        });
       }
-    })
+    });
 
-    window.addEventListener('click', (e) => {
+    window.addEventListener("click", (e) => {
       if (isOpen) {
-        const scroll = e.target.closest('.burger__scroll')
+        const scroll = e.target.closest(".burger__scroll");
 
-        if (!scroll && !$('.modal').hasClass('modal--active')) {
-          burger.classList.remove('burger--open')
+        if (!scroll && !$(".modal").hasClass("modal--active")) {
+          burger.classList.remove("burger--open");
+
+          if (matchMedia("(max-width: 1279px)").matches) {
+            document.body.classList.remove("body--burger--open");
+          }
 
           setTimeout(() => {
-            isOpen = false
-          })
+            isOpen = false;
+          });
         }
       }
-    })
+    });
   }
 });

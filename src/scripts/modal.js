@@ -24,7 +24,7 @@ $(() => {
           window.removeEventListener("wheel", handleWheel, { passive: false });
 
           if (matchMedia("(max-width: 1279px)").matches) {
-            document.body.style.overflow = "";
+            document.body.classList.remove("body--modal--open");
           }
 
           if (isQuestion) {
@@ -41,7 +41,7 @@ $(() => {
           window.addEventListener("wheel", handleWheel, { passive: false });
 
           if (matchMedia("(max-width: 1279px)").matches) {
-            document.body.style.overflow = "hidden";
+            document.body.classList.add("body--modal--open");
           }
         }
       }

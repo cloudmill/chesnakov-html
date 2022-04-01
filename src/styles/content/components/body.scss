@@ -1,0 +1,13 @@
+.body {
+  &--burger {
+    &--open {
+      overflow: hidden;
+    }
+  }
+
+  &--modal {
+    &--open {
+      overflow: hidden;
+    }
+  }
+}
