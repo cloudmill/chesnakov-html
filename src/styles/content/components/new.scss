@@ -114,7 +114,17 @@
 
   &:hover {
     #{$component}__title {
-      color: var(--color-blue);
+      @media (min-width: $breakpoint-d) {
+        color: var(--color-blue);
+      }
+    }
+  }
+
+  &:active {
+    #{$component}__title {
+      @media (max-width: ($breakpoint-d - 1px)) {
+        color: var(--color-blue);
+      }
     }
   }
 
