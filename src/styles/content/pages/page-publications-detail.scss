@@ -79,22 +79,14 @@
 }
 
 .table {
-  margin-top: 12px;
-
   @media (min-width: $breakpoint-t) {
-    margin-top: 24px;
     display: grid;
     column-gap: $col-gap-t;
     grid-template-columns: repeat(8, calc((100% - 7 * #{$col-gap-t}) / 8));
   }
 
   @media (min-width: $breakpoint-d) {
-    margin-top: 40px;
     column-gap: $col-gap-d;
-    grid-template-columns: repeat(8, calc((100% - 7 * #{$col-gap-d}) / 8));
-  }
-
-  @media (min-width: $breakpoint-xxxd) {
     grid-template-columns: repeat(7, calc((100% - 6 * #{$col-gap-d}) / 7));
   }
 
@@ -123,7 +115,7 @@
       }
     }
 
-    @media (min-width: $breakpoint-xxxd) {
+    @media (min-width: $breakpoint-d) {
       &:nth-child(4) {
         grid-area: 1 / 6 / span 1 / span 2;
       }
@@ -182,6 +174,26 @@
         border-color: var(--color-blue);
         color: var(--color-white);
       }
+    }
+  }
+
+  &--top {
+    margin-top: 12px;
+
+    @media (min-width: $breakpoint-t) {
+      margin-top: 24px;
+    }
+  
+    @media (min-width: $breakpoint-d) {
+      margin-top: 40px;
+    }
+  }
+
+  &--bottom {
+    margin-top: 48px;
+
+    @media (min-width: $breakpoint-d) {
+      margin-top: 80px;
     }
   }
 }
